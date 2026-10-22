@@ -138,14 +138,6 @@ export function App() {
   const [activeCropId, setActiveCropId] = useState(siteConfig.simulatorCrops[0].id);
   const [hectares, setHectares] = useState(120);
 
-  // Formulário Rápido de Cotação
-  const [formName, setFormName] = useState("");
-  const [formPhone, setFormPhone] = useState("");
-  const [formCulture, setFormCulture] = useState("Soja");
-  const [formArea, setFormArea] = useState("");
-  const [formGranulometry, setFormGranulometry] = useState("Peletizado 2,5mm (Plantadeiras)");
-  const [formPackaging, setFormPackaging] = useState("Big Bag de 1.000 kg");
-
   const currentCrop =
     siteConfig.simulatorCrops.find((c) => c.id === activeCropId) || siteConfig.simulatorCrops[0];
 
@@ -154,12 +146,6 @@ export function App() {
 
   const handleSimulatorWhatsapp = () => {
     const msg = `Olá Vitadubo! Estive no simulador da landing page:\n• Cultura: ${currentCrop.name}\n• Área estimada: ${hectares} hectares\n• Estimativa de Ganho: +${estimatedGainTotal} ${currentCrop.unit} (+${currentCrop.baseGain} ${currentCrop.unit}/ha)\n• Recomendação: ${currentCrop.recommendation}\n\nGostaria de receber uma cotação direta da fábrica com frete para a minha propriedade.`;
-    window.open(createWhatsappUrl(msg), "_blank");
-  };
-
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    const msg = `Olá Vitadubo! Gostaria de uma cotação direta da fábrica:\n• Nome: ${formName || "Produtor"}\n• Telefone: ${formPhone || "Informado via site"}\n• Cultura: ${formCulture}\n• Área: ${formArea ? formArea + " hectares" : "A definir"}\n• Granulometria Desejada: ${formGranulometry}\n• Tipo de Embalagem: ${formPackaging}\n\nPor favor, enviem as opções de frete e condições comerciais.`;
     window.open(createWhatsappUrl(msg), "_blank");
   };
 
@@ -199,6 +185,8 @@ export function App() {
 
           <nav className="desktop-nav" aria-label="Navegação Principal">
             <a href="#inicio">Início</a>
+            <a href="#diferencial">Esterco de Peru</a>
+            <a href="#produtos">Produtos</a>
             <a href="#colha-plus">COLHA+</a>
             <a href="#laudo">Laudo Técnico</a>
             <a href="#granulometria">Granulometria</a>
@@ -206,6 +194,7 @@ export function App() {
             <a href="#embalagens">Embalagens</a>
             <a href="#empresa">Empresa</a>
             <a href="#faq">Dúvidas</a>
+            <a href="#contato">Contato</a>
           </nav>
 
           <div className="header-actions">
@@ -238,6 +227,8 @@ export function App() {
             <div className="mobile-drawer-inner">
               <nav className="mobile-nav-links">
                 <a href="#inicio" onClick={() => setMobileMenuOpen(false)}>Início</a>
+                <a href="#diferencial" onClick={() => setMobileMenuOpen(false)}>O Segredo do Esterco de Peru</a>
+                <a href="#produtos" onClick={() => setMobileMenuOpen(false)}>Linhas de Produtos (Vitaphos / Vitaplus)</a>
                 <a href="#colha-plus" onClick={() => setMobileMenuOpen(false)}>Linha COLHA+ Classe "A"</a>
                 <a href="#laudo" onClick={() => setMobileMenuOpen(false)}>Laudo Laboratorial Oficial</a>
                 <a href="#granulometria" onClick={() => setMobileMenuOpen(false)}>Granulometria (Peletizado / Farelado)</a>
@@ -293,17 +284,17 @@ export function App() {
 
               <div className="hero-cta-group">
                 <a
-                  href={createWhatsappUrl("Olá! Gostaria de receber uma cotação do Fertilizante Orgânico Classe A COLHA+ da Vitadubo.")}
+                  href={createWhatsappUrl("Olá! Gostaria de falar com um consultor técnico da Vitadubo Fertilizantes e conhecer as linhas de produtos.")}
                   target="_blank"
                   rel="noreferrer"
                   className="btn btn-primary btn-glow"
                 >
                   <Icon name="whatsapp" className="icon-btn" />
-                  <span>Cotar COLHA+ no WhatsApp</span>
+                  <span>Falar com um Consultor</span>
                 </a>
-                <a href="#laudo" className="btn btn-secondary">
-                  <Icon name="FileText" className="icon-btn" />
-                  <span>Ver Laudo Laboratorial</span>
+                <a href="#produtos" className="btn btn-secondary">
+                  <Icon name="Package" className="icon-btn" />
+                  <span>Ver Linhas de Produtos</span>
                 </a>
               </div>
 
@@ -360,6 +351,85 @@ export function App() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION O GRANDE DIFERENCIAL: O SEGREDO DO ESTERCO DE PERU */}
+        <section className="section section-diferencial" id="diferencial">
+          <div className="container">
+            <div className="section-head centered">
+              <span className="section-tag">{siteConfig.turkeyManureDifferentiator.tag}</span>
+              <h2 className="section-title">{siteConfig.turkeyManureDifferentiator.title}</h2>
+              <p className="section-subtitle">
+                {siteConfig.turkeyManureDifferentiator.subtitle}
+              </p>
+            </div>
+
+            <div className="diferencial-grid">
+              {siteConfig.turkeyManureDifferentiator.perks.map((p, idx) => (
+                <div className="diferencial-card" key={idx}>
+                  <div className="diferencial-icon-wrap">
+                    <Icon name={p.icon} className="diferencial-icon" />
+                  </div>
+                  <h3>{p.title}</h3>
+                  <p>{p.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION PORTFÓLIO DE PRODUTOS OFICIAIS VITADUBO */}
+        <section className="section section-products" id="produtos">
+          <div className="container">
+            <div className="section-head centered">
+              <span className="section-tag">SOLUÇÕES FARELADAS E PELETIZADAS</span>
+              <h2 className="section-title">Portfólio de Alta Performance Vitadubo</h2>
+              <p className="section-subtitle">
+                Conheça nossas formulações desenvolvidas a partir de tecnologia termofílica com esterco de peru rastreado para atender da agricultura orgânica certificada às grandes extensões de grãos.
+              </p>
+            </div>
+
+            <div className="products-grid">
+              {siteConfig.productCatalog.map((prod) => (
+                <div
+                  className={`product-card ${prod.badgeType === "gold" ? "product-card-gold" : ""}`}
+                  key={prod.id}
+                >
+                  <div className="product-badge-line">
+                    <span className="product-line-label">{prod.line}</span>
+                    <span className="product-tag-pill">{prod.tag}</span>
+                  </div>
+
+                  <h3 className="product-title">{prod.name}</h3>
+                  <p className="product-summary">{prod.summary}</p>
+
+                  <ul className="product-features-list">
+                    {prod.features.map((feat, fIdx) => (
+                      <li key={fIdx}>
+                        <Icon name="check" className="icon-check text-gold" />
+                        <span>{feat}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="product-ideal-box">
+                    <small>Culturas Indicadas:</small>
+                    <strong>{prod.ideal}</strong>
+                  </div>
+
+                  <a
+                    href={createWhatsappUrl(prod.ctaMsg)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn btn-primary btn-full"
+                  >
+                    <Icon name="whatsapp" className="icon-btn" />
+                    <span>Cotar {prod.name}</span>
+                  </a>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -770,141 +840,80 @@ export function App() {
           </div>
         </section>
 
-        {/* SECTION FORMULÁRIO DE COTAÇÃO RÁPIDA & CTA FINAL */}
+        {/* SECTION CENTRAL DE VENDAS DIRETO DA FÁBRICA */}
         <section className="section section-cta-form" id="contato">
           <div className="container">
             <div className="cta-form-container">
               <div className="cta-info-side">
                 <span className="section-tag light">ATENDIMENTO DIRETO DA INDÚSTRIA</span>
                 <h2 className="cta-title">
-                  Leve a tecnologia COLHA+ <br />
-                  <span className="text-gold">para a sua propriedade.</span>
+                  Pronto para colher mais sacas <br />
+                  <span className="text-gold">por hectare na sua lavoura?</span>
                 </h2>
                 <p className="cta-desc">
-                  Compre direto da fábrica com frete programado e suporte técnico agronômico. Ligue agora ou envie sua mensagem no WhatsApp:
+                  Compre direto da fábrica em Cordilheira Alta (SC) com frete programado e suporte técnico agronômico para a sua safra. Fale agora com a nossa equipe comercial:
                 </p>
-
-                <div className="direct-call-box">
-                  <span className="call-title">Central Comercial e Técnica:</span>
-                  <a href={`tel:${siteConfig.phoneRaw}`} className="call-number-link">
-                    <Icon name="phone" className="icon-call" />
-                    <strong>{siteConfig.phoneDisplay}</strong>
-                  </a>
-                  <small>Horário de Atendimento: {siteConfig.operatingHours}</small>
-                </div>
 
                 <div className="cta-perks-list">
                   <div className="c-perk">
                     <Icon name="check" className="icon-check text-gold" />
-                    <span>Preços de fábrica sem intermediários</span>
+                    <span>Faturamento direto da indústria sem intermediários</span>
                   </div>
                   <div className="c-perk">
                     <Icon name="check" className="icon-check text-gold" />
-                    <span>Embalagens em Sacas de 40kg, Big Bags e Granel</span>
+                    <span>Embalagens em Sacas de 25kg, 40kg, Big Bags de 1.000kg e Granel</span>
                   </div>
                   <div className="c-perk">
                     <Icon name="check" className="icon-check text-gold" />
-                    <span>Laudos de conformidade MAPA, IMA e IBD</span>
+                    <span>Entrega programada para a janela ideal de plantio na sua região</span>
+                  </div>
+                  <div className="c-perk">
+                    <Icon name="check" className="icon-check text-gold" />
+                    <span>Linhas oficiais: Vitaphos Max, Vitaphos Max Pro, Vitaplus Max Plus e COLHA+</span>
+                  </div>
+                  <div className="c-perk">
+                    <Icon name="check" className="icon-check text-gold" />
+                    <span>Laudos oficiais de conformidade MAPA, IMA e certificação IBD</span>
                   </div>
                 </div>
               </div>
 
               <div className="cta-form-side">
                 <div className="quote-form-card glass-panel">
-                  <h3>Solicitar Cotação Direta da Fábrica</h3>
-                  <p>Preencha os dados e receba a proposta comercial pronta no WhatsApp.</p>
+                  <div className="contact-card-header">
+                    <span className="contact-badge-pill">FÁBRICA CORDILHEIRA ALTA • SC</span>
+                    <h3>Central de Vendas &amp; Cotação Direta</h3>
+                    <p>Atendimento comercial imediato para produtores rurais, cooperativas e revendas:</p>
+                  </div>
 
-                  <form onSubmit={handleFormSubmit} className="quote-form">
-                    <div className="form-group">
-                      <label htmlFor="name">Seu Nome ou Fazenda:</label>
-                      <input
-                        id="name"
-                        type="text"
-                        placeholder="Ex: Carlos / Fazenda Boa Vista"
-                        value={formName}
-                        onChange={(e) => setFormName(e.target.value)}
-                        required
-                      />
-                    </div>
-
-                    <div className="form-group">
-                      <label htmlFor="phone">Seu WhatsApp com DDD:</label>
-                      <input
-                        id="phone"
-                        type="tel"
-                        placeholder="Ex: (49) 99999-9999"
-                        value={formPhone}
-                        onChange={(e) => setFormPhone(e.target.value)}
-                        required
-                      />
-                    </div>
-
-                    <div className="form-row">
-                      <div className="form-group">
-                        <label htmlFor="culture">Cultura:</label>
-                        <select
-                          id="culture"
-                          value={formCulture}
-                          onChange={(e) => setFormCulture(e.target.value)}
-                        >
-                          <option value="Soja">Soja</option>
-                          <option value="Milho">Milho</option>
-                          <option value="Trigo / Cereais">Trigo / Cereais</option>
-                          <option value="Café">Café</option>
-                          <option value="Pastagens / Silagem">Pastagens / Silagem</option>
-                          <option value="Hortifrúti / Pomar">Hortifrúti / Pomar</option>
-                          <option value="Outra Cultura">Outra Cultura</option>
-                        </select>
-                      </div>
-
-                      <div className="form-group">
-                        <label htmlFor="area">Área (ha):</label>
-                        <input
-                          id="area"
-                          type="number"
-                          placeholder="Ex: 100"
-                          value={formArea}
-                          onChange={(e) => setFormArea(e.target.value)}
-                        />
-                      </div>
-                    </div>
-
-                    <div className="form-group">
-                      <label htmlFor="gran">Granulometria Desejada:</label>
-                      <select
-                        id="gran"
-                        value={formGranulometry}
-                        onChange={(e) => setFormGranulometry(e.target.value)}
-                      >
-                        <option value="Peletizado 2,5mm (Plantadeiras)">Peletizado 2,5mm (Plantadeiras)</option>
-                        <option value="Peletizado 5,5mm (Café / Fruticultura)">Peletizado 5,5mm (Café / Fruticultura)</option>
-                        <option value="Farelado (Distribuição a Lanço)">Farelado (Distribuição a Lanço)</option>
-                        <option value="Preciso de recomendação técnica">Preciso de recomendação técnica</option>
-                      </select>
-                    </div>
-
-                    <div className="form-group">
-                      <label htmlFor="pack">Tipo de Embalagem:</label>
-                      <select
-                        id="pack"
-                        value={formPackaging}
-                        onChange={(e) => setFormPackaging(e.target.value)}
-                      >
-                        <option value="Big Bag de 1.000 kg">Big Bag de 1.000 kg</option>
-                        <option value="Big Bag de 500 kg">Big Bag de 500 kg</option>
-                        <option value="Sacas de 40 kg">Sacas de 40 kg</option>
-                        <option value="A Granel">A Granel</option>
-                      </select>
-                    </div>
-
-                    <button type="submit" className="btn btn-primary btn-full btn-lg">
+                  <div className="contact-card-actions">
+                    <a
+                      href={createWhatsappUrl("Olá! Gostaria de falar com o time comercial da Vitadubo Fertilizantes e solicitar uma cotação direta da fábrica.")}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="btn btn-primary btn-full btn-lg btn-glow"
+                    >
                       <Icon name="whatsapp" className="icon-btn" />
-                      <span>Gerar Cotação no WhatsApp (49) 3199-2722</span>
-                    </button>
-                    <small className="form-privacy-note">
-                      🔒 Seus dados são protegidos e usados unicamente para o contato comercial da Vitadubo.
-                    </small>
-                  </form>
+                      <span>Falar no WhatsApp (49) 3199-2722</span>
+                    </a>
+
+                    <div className="direct-call-box mt-4">
+                      <span className="call-title">Ligação Telefônica Direta:</span>
+                      <a href={`tel:${siteConfig.phoneRaw}`} className="call-number-link">
+                        <Icon name="phone" className="icon-call" />
+                        <strong>{siteConfig.phoneDisplay}</strong>
+                      </a>
+                      <small>Horário de Atendimento: {siteConfig.operatingHours}</small>
+                      <small className="factory-location-note">
+                        📍 <strong>Endereço da Indústria:</strong> {siteConfig.address}
+                      </small>
+                    </div>
+
+                    <div className="field-visit-note">
+                      <Icon name="ShieldCheck" className="icon-sm text-gold" />
+                      <span>Nossos agrônomos atendem produtores direto em suas propriedades com monitoramento de produtividade.</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -934,24 +943,25 @@ export function App() {
               <h4>Navegação</h4>
               <ul className="footer-links-list">
                 <li><a href="#inicio">Início</a></li>
-                <li><a href="#colha-plus">Fertilizante COLHA+</a></li>
+                <li><a href="#diferencial">Esterco de Peru</a></li>
+                <li><a href="#produtos">Linhas de Produtos</a></li>
+                <li><a href="#colha-plus">COLHA+ Classe "A"</a></li>
                 <li><a href="#laudo">Laudo Laboratorial</a></li>
-                <li><a href="#granulometria">Granulometrias</a></li>
                 <li><a href="#simulador">Simulador de Safra</a></li>
-                <li><a href="#embalagens">Embalagens &amp; Cargas</a></li>
-                <li><a href="#empresa">Nossa Missão &amp; Valores</a></li>
+                <li><a href="#embalagens">Embalagens</a></li>
+                <li><a href="#contato">Central de Vendas</a></li>
               </ul>
             </div>
 
             <div className="footer-col">
-              <h4>Apresentações COLHA+</h4>
+              <h4>Produtos Vitadubo</h4>
               <ul className="footer-links-list">
-                <li><a href="#granulometria">Peletizado de 2,5mm</a></li>
-                <li><a href="#granulometria">Peletizado de 5,5mm</a></li>
-                <li><a href="#granulometria">Farelado para Lanço</a></li>
-                <li><a href="#embalagens">Sacas de 40 kg</a></li>
-                <li><a href="#embalagens">Big Bags 500kg e 1.000kg</a></li>
-                <li><a href="#embalagens">Carregamento a Granel</a></li>
+                <li><a href="#produtos">Vitaphos Max (Orgânico)</a></li>
+                <li><a href="#produtos">Vitaphos Max Pro</a></li>
+                <li><a href="#produtos">Vitaplus Max Plus</a></li>
+                <li><a href="#colha-plus">COLHA+ Classe "A"</a></li>
+                <li><a href="#embalagens">Sacas de 25kg e 40kg</a></li>
+                <li><a href="#embalagens">Big Bags 1.000kg e Granel</a></li>
               </ul>
             </div>
 
@@ -985,7 +995,7 @@ export function App() {
 
           <div className="footer-bottom-bar">
             <span>{siteConfig.copyright}</span>
-            <span>Central Comercial: {siteConfig.phoneDisplay} • SC 468 Km 05</span>
+            <span>Central Comercial: {siteConfig.phoneDisplay} • Cordilheira Alta - SC</span>
           </div>
         </div>
       </footer>

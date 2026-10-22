@@ -767,6 +767,206 @@ img {
 }
 
 /* ==========================================================================
+   SECTION DIFERENCIAL (O SEGREDO DO ESTERCO DE PERU)
+   ========================================================================== */
+.section-diferencial {
+  background: var(--bg-page);
+  border-bottom: 1px solid var(--line-warm);
+}
+
+.diferencial-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.diferencial-card {
+  background: #ffffff;
+  border: 1px solid var(--line-warm);
+  border-radius: var(--radius-lg);
+  padding: 30px 24px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+
+.diferencial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--gold-400);
+}
+
+.diferencial-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: var(--bg-tint);
+  border: 1px solid rgba(20, 61, 39, 0.12);
+  display: grid;
+  place-items: center;
+  margin-bottom: 18px;
+  color: var(--forest-700);
+  transition: background 0.2s, color 0.2s;
+}
+
+.diferencial-card:hover .diferencial-icon-wrap {
+  background: var(--forest-850);
+  color: var(--gold-400);
+  border-color: var(--forest-850);
+}
+
+.diferencial-icon {
+  width: 26px;
+  height: 26px;
+}
+
+.diferencial-card h3 {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--forest-900);
+  margin: 0 0 10px;
+  line-height: 1.25;
+}
+
+.diferencial-card p {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==========================================================================
+   SECTION PORTFOLIO DE PRODUTOS
+   ========================================================================== */
+.section-products {
+  background: #ffffff;
+  border-bottom: 1px solid var(--line-warm);
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.product-card {
+  background: var(--bg-page);
+  border: 1.5px solid var(--line-warm);
+  border-radius: var(--radius-lg);
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--gold-500);
+}
+
+.product-card-gold {
+  border-color: rgba(223, 186, 107, 0.5);
+  background: linear-gradient(180deg, rgba(251, 245, 230, 0.5) 0%, #ffffff 100%);
+}
+
+.product-badge-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.product-line-label {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--forest-700);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.product-tag-pill {
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  background: var(--forest-900);
+  color: var(--gold-300);
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+}
+
+.product-card-gold .product-tag-pill {
+  background: var(--gold-500);
+  color: var(--forest-950);
+}
+
+.product-title {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--forest-900);
+  margin: 0 0 10px;
+}
+
+.product-summary {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0 0 18px;
+}
+
+.product-features-list {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.product-features-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--ink-secondary);
+  line-height: 1.45;
+}
+
+.product-features-list li .icon-check {
+  margin-top: 2px;
+}
+
+.product-ideal-box {
+  background: var(--bg-tint);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+.product-ideal-box small {
+  display: block;
+  font-size: 10.5px;
+  color: var(--muted);
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.product-ideal-box strong {
+  display: block;
+  font-size: 12px;
+  color: var(--forest-900);
+  line-height: 1.4;
+}
+
+/* ==========================================================================
    SECTION COLHA+ CLASSE "A"
    ========================================================================== */
 .section-colha {
@@ -1813,7 +2013,7 @@ img {
   flex-shrink: 0;
 }
 
-/* Quote Form Card */
+/* Quote Form Card / Direct Hub */
 .quote-form-card {
   padding: 32px;
   border-radius: var(--radius-lg);
@@ -1822,76 +2022,65 @@ img {
   box-shadow: 0 20px 50px rgba(4, 18, 11, 0.4);
 }
 
-.quote-form-card h3 {
-  font-size: 20px;
-  margin: 0 0 4px;
-  color: #ffffff;
+.contact-card-header {
+  margin-bottom: 24px;
 }
 
-.quote-form-card p {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.7);
-  margin: 0 0 20px;
+.contact-badge-pill {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  background: rgba(223, 186, 107, 0.18);
+  border: 1px solid var(--gold-400);
+  color: var(--gold-300);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  margin-bottom: 12px;
 }
 
-.quote-form {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 12px;
-}
-
-.form-group label {
-  font-size: 11.5px;
+.contact-card-header h3 {
+  font-family: var(--font-serif);
+  font-size: 24px;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.85);
+  color: #ffffff;
+  margin: 0 0 8px;
 }
 
-.form-group input,
-.form-group select {
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(223, 186, 107, 0.25);
-  padding: 11px 13px;
-  border-radius: var(--radius-sm);
-  color: #ffffff;
-  font-family: inherit;
+.contact-card-header p {
   font-size: 13.5px;
-  outline: none;
-  transition: border-color 0.2s, background 0.2s;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+  line-height: 1.5;
 }
 
-.form-group input::placeholder {
-  color: rgba(255, 255, 255, 0.4);
+.contact-card-actions {
+  display: flex;
+  flex-direction: column;
 }
 
-.form-group input:focus,
-.form-group select:focus {
-  border-color: var(--gold-400);
-  background: rgba(255, 255, 255, 0.12);
-}
-
-.form-group select option {
-  background: var(--forest-950);
-  color: #ffffff;
-}
-
-.form-privacy-note {
+.factory-location-note {
   display: block;
-  font-size: 10.5px;
-  color: rgba(255, 255, 255, 0.5);
-  text-align: center;
-  margin-top: 4px;
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 8px;
+  line-height: 1.4;
+  border-top: 1px solid rgba(223, 186, 107, 0.15);
+  padding-top: 8px;
+}
+
+.field-visit-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(223, 186, 107, 0.1);
+  border: 1px solid rgba(223, 186, 107, 0.2);
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  margin-top: 16px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.45;
 }
 
 /* ==========================================================================
@@ -2177,6 +2366,11 @@ img {
     grid-template-columns: 1fr 1fr;
   }
 
+  .diferencial-grid,
+  .products-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .granulometry-grid {
     grid-template-columns: 1fr;
   }
@@ -2246,6 +2440,11 @@ img {
   }
 
   .certifications-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .diferencial-grid,
+  .products-grid {
     grid-template-columns: 1fr;
   }
 

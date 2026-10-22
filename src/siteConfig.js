@@ -15,10 +15,10 @@ export const siteConfig = {
   whatsappNumber: "554931992722",
   whatsappDisplay: "(49) 3199-2722",
   email: "contato@vitadubo.com.br",
-  address: "Linha Três Irmãos, S/N Rodovia SC 468 - Km 05 - Interior | CEP 89819-000",
-  factoryRegion: "Santa Catarina — Atendimento para todo o Brasil e Exportação para América do Sul",
+  address: "SC-157, KM 89 - Área Industrial, Cordilheira Alta - SC | CEP 89819-000",
+  factoryRegion: "Fábrica em Cordilheira Alta (SC) — Atendimento para todo o Brasil e Exportação para América do Sul",
   operatingHours: "Segunda a Sexta: 07h30 às 18h00 | Sábado: 08h00 às 12h00",
-  whatsappMessage: "Olá! Gostaria de falar com o time técnico e comercial da Vitadubo Fertilizantes e solicitar uma cotação da linha COLHA+.",
+  whatsappMessage: "Olá! Gostaria de falar com o time técnico e comercial da Vitadubo Fertilizantes e solicitar uma cotação.",
 
   // Hero Section
   heroEyebrow: "TECNOLOGIA CLASSE 'A' • LINHA COLHA+ • MAPA & IBD",
@@ -34,7 +34,105 @@ export const siteConfig = {
     { value: "pH 7,2-7,6", label: "Ação Corretiva do Solo", sub: "Neutraliza a acidez química" }
   ],
 
-  heroQuickPill: "🌱 Vendas diretas da indústria em Sacas de 40kg, Big Bags de 500kg / 1.000kg e A Granel",
+  heroQuickPill: "🌱 Vendas diretas da fábrica em Sacas de 25kg, Sacas de 40kg, Big Bags de 1.000kg e A Granel",
+
+  // O Grande Diferencial: O Segredo do Esterco de Peru
+  turkeyManureDifferentiator: {
+    tag: "O DIFERENCIAL TECNOLÓGICO VITADUBO",
+    title: "Por que a base de esterco de peru entrega mais resultados?",
+    subtitle:
+      "Ao contrário da cama de frango comum, o esterco de peru passa por compostagem industrial controlada com rastreamento rigoroso desde os aviários parceiros até nossa planta em Cordilheira Alta (SC).",
+    perks: [
+      {
+        icon: "TrendingUp",
+        title: "Carga Nitrogenada & Nutrientes Superiores",
+        desc: "Diferente de outros compostos, o esterco de peru é altamente concentrado em material nitrogenado, fósforo, potássio, cálcio, magnésio e enxofre naturais."
+      },
+      {
+        icon: "Droplets",
+        title: "Retenção Hídrica & Resistência à Seca",
+        desc: "Melhora a estrutura física do solo e a microporosidade, permitindo reter água no perfil radicular e proteger a lavoura contra veranicos."
+      },
+      {
+        icon: "Award",
+        title: "Solo Biologicamente Ativo & Raiz Forte",
+        desc: "Estimula os microrganismos benéficos da terra, desbloqueia nutrientes fixados e potencializa o desenvolvimento radicular profundo."
+      },
+      {
+        icon: "ShieldCheck",
+        title: "Rastreabilidade e Origem 100% Controlada",
+        desc: "Coleta direta nos aviários até a fábrica em Cordilheira Alta (SC), com tratamento termofílico que elimina patógenos e invasoras."
+      }
+    ]
+  },
+
+  // Linhas Oficiais de Produtos Vitadubo
+  productCatalog: [
+    {
+      id: "vitaphos-max",
+      name: "Vitaphos Max",
+      line: "Linha Orgânica Premium",
+      tag: "CERTIFICADO ORGÂNICO IBD",
+      badgeType: "gold",
+      summary: "Fertilizante orgânico puro desenvolvido para enriquecer a biologia do solo com certificação oficial para cultivo orgânico.",
+      features: [
+        "Certificação Nacional e Internacional para Agricultura Orgânica",
+        "Segurança jurídica e técnica total para produtores certificados",
+        "Puro à base de esterco de peru industrializado",
+        "Disponível em versões Farelada e Peletizada"
+      ],
+      ideal: "Produção orgânica certificada, hortifrúti, café e pomares.",
+      ctaMsg: "Olá! Gostaria de receber cotação e laudo do Vitaphos Max (Linha Orgânica Certificada)."
+    },
+    {
+      id: "vitaphos-max-pro",
+      name: "Vitaphos Max Pro",
+      line: "Linha Organomineral",
+      tag: "EQUILÍBRIO & ARRANQUE",
+      badgeType: "green",
+      summary: "A união equilibrada entre a nutrição biológica do esterco de peru e minerais nobres para desenvolvimento rápido e consistente.",
+      features: [
+        "Nutre a planta imediatamente e regenera o solo a longo prazo",
+        "Ativação microbiana com rápida absorção de macro e micronutrientes",
+        "Excelente arranque vegetativo e formação radicular",
+        "Peletizado homogêneo para plantio direto"
+      ],
+      ideal: "Soja, Milho, Trigo, Café e Culturas Anuais.",
+      ctaMsg: "Olá! Gostaria de receber cotação do Vitaphos Max Pro (Organomineral Equilíbrio)."
+    },
+    {
+      id: "vitaplus-max-plus",
+      name: "Vitaplus Max Plus",
+      line: "Linha Organomineral",
+      tag: "MÁXIMA PRODUTIVIDADE",
+      badgeType: "gold",
+      summary: "Fórmula de alta densidade biológica focada em altíssima concentração de matéria orgânica para ganho recorde de sacas por hectare.",
+      features: [
+        "Máxima concentração de matéria orgânica nobre estabilizada",
+        "Redução severa de perdas por lixiviação e volatilização",
+        "Maior peso hectolítrico (PH) e granação uniforme até a ponta",
+        "Potencializador de rendimento para safras de alto investimento"
+      ],
+      ideal: "Lavouras de alta tecnologia, Soja safra/safrinha e Cereais.",
+      ctaMsg: "Olá! Gostaria de receber cotação do Vitaplus Max Plus (Organomineral Alta Concentração)."
+    },
+    {
+      id: "colha-plus",
+      name: "COLHA+ Classe 'A'",
+      line: "Orgânico Simples Classe 'A'",
+      tag: "CLASSE A & CTC 592",
+      badgeType: "green",
+      summary: "O fertilizante orgânico revolucionário da Vitadubo, formulado para reduzir custos operacionais e corrigir o pH do solo.",
+      features: [
+        "Laudo oficial comprovado com 73,17% de matéria orgânica",
+        "Super CTC de 592,59 mmolc/kg com retenção de 4 a 6x em água",
+        "pH corretivo neutro/alcalino (7,2 a 7,6) contra acidez química",
+        "Pellets de 2,5mm e 5,5mm com fluxo perfeito em plantadeiras"
+      ],
+      ideal: "Todos os tipos de solo e culturas em plantio direto e a lanço.",
+      ctaMsg: "Olá! Gostaria de receber cotação do Fertilizante Orgânico Classe A COLHA+."
+    }
+  ],
 
   // Missão, Visão e Valores (Oficiais do Folder)
   mission: {
@@ -96,10 +194,10 @@ export const siteConfig = {
 
   // Embalagens Oficiais da Fábrica
   packagings: [
-    { title: "Sacas de 40 kg", note: "Paletizadas com filme stretch para proteção contra umidade.", badge: "Exportação & Mercado Interno" },
-    { title: "Big Bags de 500 kg", note: "Fácil manuseio para tratores com guincho e pequenas operações.", badge: "Praticidade" },
+    { title: "Sacas Plásticas de 25 kg", note: "Fácil manuseio para hortifrúti, pomares e pequenas e médias áreas.", badge: "Praticidade" },
+    { title: "Sacas Tradicionais de 40 kg", note: "Paletizadas com filme stretch para proteção contra umidade.", badge: "Exportação & Mercado Interno" },
     { title: "Big Bags de 1.000 kg", note: "Válvula inferior de vazão contínua para abastecimento rápido de plantadeiras.", badge: "Alta Escala" },
-    { title: "A Granel", note: "Carregamento direto da esteira industrial para frotas de caminhões caçamba.", badge: "Logística Pesada" }
+    { title: "Cargas A Granel", note: "Carregamento direto da esteira industrial para frotas de caminhões caçamba.", badge: "Logística Pesada" }
   ],
 
   // Órgãos Reguladores e Certificações Oficiais
@@ -232,7 +330,7 @@ export const siteConfig = {
 
   // Rodapé Oficial
   footerDescription:
-    "VITADUBO Fertilizantes Ltda — Indústria de Fertilizantes Orgânicos e Organominerais. Linha COLHA+ Classe 'A'. Linha Três Irmãos, SC 468 Km 05 - SC. Telefone comercial: (49) 3199-2722.",
+    "VITADUBO Fertilizantes Ltda — Indústria de Fertilizantes Orgânicos e Organominerais. SC-157, KM 89 - Área Industrial, Cordilheira Alta - SC. Telefone comercial: (49) 3199-2722.",
   cnpjText: "Indústria 100% Brasileira • Registrada no MAPA, IMA e IBD • Exportação para América do Sul",
   copyright: `© ${new Date().getFullYear()} VITADUBO FERTILIZANTES LTDA. Todos os direitos reservados.`
 };
