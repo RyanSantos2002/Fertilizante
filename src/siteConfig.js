@@ -15,13 +15,28 @@ export const siteConfig = {
   whatsappNumber: "554931992722",
   whatsappDisplay: "(49) 3199-2722",
   email: "contato@vitadubo.com.br",
-  address: "SC-157, KM 89 - Área Industrial, Cordilheira Alta - SC | CEP 89819-000",
+  cnpj: "42.493.126/0001-95",
+  address: "SC-157, KM 89 - Linha Fernando Machado, Cordilheira Alta - SC | CEP 89819-000",
   factoryRegion: "Fábrica em Cordilheira Alta (SC) — Atendimento para todo o Brasil e Exportação para América do Sul",
   operatingHours: "Segunda a Sexta: 07h30 às 18h00 | Sábado: 08h00 às 12h00",
   whatsappMessage: "Olá! Gostaria de falar com o time técnico e comercial da Vitadubo Fertilizantes e solicitar uma cotação.",
+  certificateUrl: "/certificado-qima-vitadubo.pdf",
+
+  // Certificado Oficial de Conformidade QIMA — Programa Regenera
+  qimaCertificate: {
+    badge: "CERTIFICAÇÃO AUDITADA • QIMA REGENERA",
+    title: "Certificado de Conformidade — Programa Regenera (QIMA)",
+    certNumber: "REG0048/26",
+    companyCode: "I-0240SC",
+    validity: "08/07/2026 a 04/07/2029",
+    norm: "Regenera For Inputs, 2ª Edição (ODS 2 — Fome Zero e Agricultura Sustentável)",
+    scope: "Produção e Comercialização de Fertilizantes para uso na agricultura.",
+    description:
+      "A Vitadubo Fertilizantes Ltda é auditada oficialmente pela QIMA e atende aos requisitos da norma Regenera For Inputs, promovendo práticas que regeneram o solo, aumentam a eficiência na produção agrícola e garantem segurança alimentar, rastreabilidade e conformidade regulatória."
+  },
 
   // Hero Section
-  heroEyebrow: "TECNOLOGIA CLASSE 'A' • LINHA COLHA+ • MAPA & IBD",
+  heroEyebrow: "TECNOLOGIA CLASSE 'A' • CERTIFICADO QIMA REGENERA, MAPA & IBD",
   heroTitleLine1: "Nutrição biológica de alta performance",
   heroTitleLine2: "com a força do COLHA+ Classe 'A'.",
   heroDescription:
@@ -202,10 +217,10 @@ export const siteConfig = {
 
   // Órgãos Reguladores e Certificações Oficiais
   certifications: [
+    { name: "QIMA • Regenera", role: "Certificado de Conformidade REG0048/26 (2026–2029)", desc: "Auditado na norma Regenera For Inputs (ODS 2), atestando regeneração do solo e rastreabilidade." },
     { name: "MAPA", role: "Ministério da Agricultura, Pecuária e Abastecimento", desc: "Registro e auditoria federal permanente de conformidade e garantias mínimas." },
     { name: "IMA", role: "Instituto do Meio Ambiente de Santa Catarina", desc: "Licenciamento e controle ambiental industrial rigoroso." },
-    { name: "IBD Certificações", role: "Maior certificadora orgânica da América Latina", desc: "Credenciamento para agricultura sustentável e manejo orgânico." },
-    { name: "Vigilância & Bombeiros", role: "Vigilância Sanitária e Município", desc: "Processos auditados e conformidade sanitária plena." }
+    { name: "IBD Certificações", role: "Maior certificadora orgânica da América Latina", desc: "Credenciamento para agricultura sustentável e manejo orgânico." }
   ],
 
   // Benefícios Comprovados do COLHA+ Classe "A"
@@ -320,7 +335,7 @@ export const siteConfig = {
     },
     {
       q: "Quais certificações e licenças a Vitadubo possui?",
-      a: "A Vitadubo opera em conformidade estrita com o Ministério da Agricultura (MAPA), Instituto do Meio Ambiente de Santa Catarina (IMA), credenciamento no IBD Certificações (maior certificadora da América Latina), Vigilância Sanitária e Corpo de Bombeiros."
+      a: "A Vitadubo possui o Certificado de Conformidade QIMA — Programa Regenera (Nº REG0048/26, Norma Regenera For Inputs alinhada ao ODS 2), além de operar em conformidade estrita com o Ministério da Agricultura (MAPA), Instituto do Meio Ambiente de Santa Catarina (IMA), IBD Certificações, Vigilância Sanitária e Corpo de Bombeiros."
     },
     {
       q: "Como solicitar uma cotação direta da fábrica com frete para a minha fazenda?",
@@ -330,7 +345,7 @@ export const siteConfig = {
 
   // Rodapé Oficial
   footerDescription:
-    "VITADUBO Fertilizantes Ltda — Indústria de Fertilizantes Orgânicos e Organominerais. SC-157, KM 89 - Área Industrial, Cordilheira Alta - SC. Telefone comercial: (49) 3199-2722.",
-  cnpjText: "Indústria 100% Brasileira • Registrada no MAPA, IMA e IBD • Exportação para América do Sul",
+    "VITADUBO Fertilizantes Ltda (CNPJ 42.493.126/0001-95) — Indústria de Fertilizantes Orgânicos e Organominerais. SC-157, KM 89 - Linha Fernando Machado, Cordilheira Alta - SC. Telefone comercial: (49) 3199-2722.",
+  cnpjText: "CNPJ: 42.493.126/0001-95 • Certificada QIMA Regenera, MAPA, IMA e IBD",
   copyright: `© ${new Date().getFullYear()} VITADUBO FERTILIZANTES LTDA. Todos os direitos reservados.`
 };

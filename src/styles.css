@@ -1187,11 +1187,165 @@ img {
 }
 
 /* ==========================================================================
-   SECTION LAUDO LABORATORIAL
+   SECTION LAUDO LABORATORIAL & CERTIFICADO QIMA REGENERA
    ========================================================================== */
 .section-lab {
   background: var(--forest-950);
   color: #ffffff;
+}
+
+.trust-cert-link {
+  color: #ffffff;
+  transition: color 0.2s;
+  text-decoration: underline;
+  text-decoration-color: rgba(223, 186, 107, 0.5);
+  text-underline-offset: 3px;
+}
+
+.trust-cert-link:hover {
+  color: var(--gold-300);
+}
+
+.mobile-cert-link {
+  color: var(--forest-800) !important;
+  background: rgba(223, 186, 107, 0.18) !important;
+  border: 1px solid var(--gold-400) !important;
+  font-weight: 700 !important;
+  margin-top: 6px;
+}
+
+.qima-cert-banner {
+  display: grid;
+  grid-template-columns: 1.55fr 0.9fr;
+  gap: 32px;
+  align-items: center;
+  padding: 32px;
+  margin-bottom: 32px;
+  background: linear-gradient(135deg, rgba(12, 46, 29, 0.92) 0%, rgba(7, 27, 17, 0.95) 100%);
+  border: 2px solid var(--gold-400);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.45), 0 0 28px rgba(223, 186, 107, 0.14);
+}
+
+.qima-cert-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.qima-pill-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--gold-btn-gradient);
+  color: var(--forest-950);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+}
+
+.qima-pill-code {
+  display: inline-block;
+  background: rgba(223, 186, 107, 0.14);
+  border: 1px solid rgba(223, 186, 107, 0.35);
+  color: var(--gold-300);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 11px;
+  border-radius: var(--radius-full);
+}
+
+.qima-cert-title {
+  font-family: var(--font-serif);
+  font-size: 25px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 10px;
+  line-height: 1.25;
+}
+
+.qima-cert-desc {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.6;
+  margin: 0 0 20px;
+}
+
+.qima-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(223, 186, 107, 0.18);
+}
+
+.qima-meta-item small {
+  display: block;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--gold-300);
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.qima-meta-item strong {
+  display: block;
+  font-size: 12.5px;
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+.qima-cert-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.24);
+  padding: 22px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(223, 186, 107, 0.22);
+}
+
+.qima-verify-note {
+  display: block;
+  text-align: center;
+  font-size: 11px;
+  color: var(--gold-200);
+  line-height: 1.4;
+  margin-top: 2px;
+}
+
+@media (max-width: 1080px) {
+  .qima-cert-banner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .qima-meta-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .qima-cert-banner {
+    padding: 20px 16px;
+  }
+
+  .qima-cert-title {
+    font-size: 20px;
+  }
+
+  .qima-meta-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .qima-cert-actions {
+    padding: 16px 14px;
+  }
 }
 
 .lab-panel-wrapper {

@@ -188,7 +188,7 @@ export function App() {
             <a href="#diferencial">Esterco de Peru</a>
             <a href="#produtos">Produtos</a>
             <a href="#colha-plus">COLHA+</a>
-            <a href="#laudo">Laudo Técnico</a>
+            <a href="#laudo">Laudo &amp; Certificados</a>
             <a href="#granulometria">Granulometria</a>
             <a href="#simulador">Simulador</a>
             <a href="#embalagens">Embalagens</a>
@@ -230,13 +230,22 @@ export function App() {
                 <a href="#diferencial" onClick={() => setMobileMenuOpen(false)}>O Segredo do Esterco de Peru</a>
                 <a href="#produtos" onClick={() => setMobileMenuOpen(false)}>Linhas de Produtos (Vitaphos / Vitaplus)</a>
                 <a href="#colha-plus" onClick={() => setMobileMenuOpen(false)}>Linha COLHA+ Classe "A"</a>
-                <a href="#laudo" onClick={() => setMobileMenuOpen(false)}>Laudo Laboratorial Oficial</a>
+                <a href="#laudo" onClick={() => setMobileMenuOpen(false)}>Laudo &amp; Certificado QIMA Regenera</a>
                 <a href="#granulometria" onClick={() => setMobileMenuOpen(false)}>Granulometria (Peletizado / Farelado)</a>
                 <a href="#simulador" onClick={() => setMobileMenuOpen(false)}>Simulador de Safra</a>
                 <a href="#embalagens" onClick={() => setMobileMenuOpen(false)}>Embalagens &amp; Logística</a>
                 <a href="#empresa" onClick={() => setMobileMenuOpen(false)}>Nossa Missão &amp; Valores</a>
                 <a href="#faq" onClick={() => setMobileMenuOpen(false)}>Dúvidas Frequentes</a>
                 <a href="#contato" onClick={() => setMobileMenuOpen(false)}>Falar Conosco</a>
+                <a
+                  href={siteConfig.certificateUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="mobile-cert-link"
+                >
+                  📄 Ver Certificado Oficial QIMA (PDF)
+                </a>
               </nav>
 
               <div className="mobile-drawer-footer">
@@ -296,6 +305,15 @@ export function App() {
                   <Icon name="Package" className="icon-btn" />
                   <span>Ver Linhas de Produtos</span>
                 </a>
+                <a
+                  href={siteConfig.certificateUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary btn-cert-hero"
+                >
+                  <Icon name="FileText" className="icon-btn text-gold" />
+                  <span>Ver Certificado Oficial</span>
+                </a>
               </div>
 
               <div className="hero-trust-bar">
@@ -312,8 +330,15 @@ export function App() {
                 <div className="trust-item">
                   <Icon name="ShieldCheck" className="trust-icon text-gold" />
                   <div>
-                    <small>Conformidade Oficial</small>
-                    <strong>MAPA • IMA • IBD Orgânico</strong>
+                    <small>Conformidade &amp; Certificações Oficiais</small>
+                    <a
+                      href={siteConfig.certificateUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="trust-cert-link"
+                    >
+                      <strong>QIMA Regenera • MAPA • IMA • IBD ↗</strong>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -502,15 +527,70 @@ export function App() {
           </div>
         </section>
 
-        {/* SECTION LAUDO LABORATORIAL OFICIAL */}
+        {/* SECTION LAUDO LABORATORIAL OFICIAL E CERTIFICAÇÕES */}
         <section className="section section-lab" id="laudo">
           <div className="container">
             <div className="section-head centered light">
               <span className="section-tag light">TRANSPARÊNCIA TOTAL &amp; COMPROVAÇÃO CIENTÍFICA</span>
-              <h2 className="section-title">Laudo Técnico Laboratorial Oficial</h2>
+              <h2 className="section-title">Laudo Técnico &amp; Certificações Oficiais</h2>
               <p className="section-subtitle light">
-                Amostra Nº 036278/2022 • Fertilizante Orgânico Simples Classe "A" – COLHA+ da Vitadubo Fertilizantes Ltda.
+                Amostra Nº 036278/2022 • Fertilizante Orgânico Simples Classe "A" – COLHA+ • Empresa Auditada QIMA Regenera
               </p>
+            </div>
+
+            {/* Destaque Oficial: Certificado QIMA Programa Regenera */}
+            <div className="qima-cert-banner glass-panel" id="certificados">
+              <div className="qima-cert-content">
+                <div className="qima-cert-badge-row">
+                  <span className="qima-pill-gold">
+                    <Icon name="ShieldCheck" className="icon-sm" />
+                    {siteConfig.qimaCertificate.badge}
+                  </span>
+                  <span className="qima-pill-code">Certificado Nº {siteConfig.qimaCertificate.certNumber}</span>
+                  <span className="qima-pill-code">Cód. {siteConfig.qimaCertificate.companyCode}</span>
+                </div>
+
+                <h3 className="qima-cert-title">{siteConfig.qimaCertificate.title}</h3>
+                <p className="qima-cert-desc">{siteConfig.qimaCertificate.description}</p>
+
+                <div className="qima-meta-grid">
+                  <div className="qima-meta-item">
+                    <small>Empresa Certificada</small>
+                    <strong>Vitadubo Fertilizantes Ltda (CNPJ: {siteConfig.cnpj})</strong>
+                  </div>
+                  <div className="qima-meta-item">
+                    <small>Norma &amp; Sustentabilidade</small>
+                    <strong>{siteConfig.qimaCertificate.norm}</strong>
+                  </div>
+                  <div className="qima-meta-item">
+                    <small>Validade Oficial</small>
+                    <strong>{siteConfig.qimaCertificate.validity}</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div className="qima-cert-actions">
+                <a
+                  href={siteConfig.certificateUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary btn-glow btn-full"
+                >
+                  <Icon name="FileText" className="icon-btn" />
+                  <span>Visualizar Certificado (PDF)</span>
+                </a>
+                <a
+                  href={siteConfig.certificateUrl}
+                  download="Certificado-Conformidade-QIMA-Vitadubo.pdf"
+                  className="btn btn-secondary btn-full"
+                >
+                  <Icon name="Award" className="icon-btn text-gold" />
+                  <span>Baixar Certificado Oficial</span>
+                </a>
+                <small className="qima-verify-note">
+                  ✓ Documento oficial assinado digitalmente com QR Code de autenticidade QIMA
+                </small>
+              </div>
             </div>
 
             <div className="lab-panel-wrapper glass-panel">
@@ -873,7 +953,7 @@ export function App() {
                   </div>
                   <div className="c-perk">
                     <Icon name="check" className="icon-check text-gold" />
-                    <span>Laudos oficiais de conformidade MAPA, IMA e certificação IBD</span>
+                    <span>Certificado Oficial de Conformidade QIMA Regenera, MAPA, IMA e IBD</span>
                   </div>
                 </div>
               </div>
@@ -895,6 +975,16 @@ export function App() {
                     >
                       <Icon name="whatsapp" className="icon-btn" />
                       <span>Falar no WhatsApp (49) 3199-2722</span>
+                    </a>
+
+                    <a
+                      href={siteConfig.certificateUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-secondary btn-full mt-2"
+                    >
+                      <Icon name="FileText" className="icon-btn text-gold" />
+                      <span>Ver Certificado de Conformidade QIMA (PDF)</span>
                     </a>
 
                     <div className="direct-call-box mt-4">
@@ -946,7 +1036,8 @@ export function App() {
                 <li><a href="#diferencial">Esterco de Peru</a></li>
                 <li><a href="#produtos">Linhas de Produtos</a></li>
                 <li><a href="#colha-plus">COLHA+ Classe "A"</a></li>
-                <li><a href="#laudo">Laudo Laboratorial</a></li>
+                <li><a href="#laudo">Laudo &amp; Certificados</a></li>
+                <li><a href={siteConfig.certificateUrl} target="_blank" rel="noopener noreferrer">Certificado QIMA (PDF) ↗</a></li>
                 <li><a href="#simulador">Simulador de Safra</a></li>
                 <li><a href="#embalagens">Embalagens</a></li>
                 <li><a href="#contato">Central de Vendas</a></li>
