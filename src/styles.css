@@ -176,12 +176,28 @@ img {
 }
 
 .top-social-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   color: #ffffff;
   transition: color 0.2s;
 }
 
+.top-social-icon {
+  width: 15px;
+  height: 15px;
+  color: var(--gold-400);
+  flex-shrink: 0;
+  transition: transform 0.2s, color 0.2s;
+}
+
 .top-social-item:hover {
   color: var(--gold-400);
+}
+
+.top-social-item:hover .top-social-icon {
+  transform: scale(1.1);
+  color: var(--gold-300);
 }
 
 .top-social-sep {
@@ -530,10 +546,11 @@ img {
   margin: 0 auto;
   position: relative;
   z-index: 3;
-  display: grid;
-  grid-template-columns: 1.18fr 0.92fr;
-  gap: 48px;
-  align-items: center;
+  display: block;
+}
+
+.hero-left {
+  max-width: 880px;
 }
 
 .hero-eyebrow-pill {
@@ -1570,6 +1587,185 @@ img {
   height: 24px;
   flex-shrink: 0;
   margin-top: 2px;
+}
+
+/* ==========================================================================
+   BLOCO PROCESSO INDUSTRIAL + QUADRO COMPARATIVO (RESFRIADO VS ALTA TEMP)
+   ========================================================================== */
+.industrial-process-panel {
+  margin-top: 44px;
+  background: #ffffff;
+  border: 1.5px solid var(--line-warm);
+  border-radius: var(--radius-lg);
+  padding: 44px 40px;
+  box-shadow: var(--shadow-md);
+}
+
+.industrial-process-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 28px;
+}
+
+.industrial-process-title {
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 700;
+  color: var(--forest-950);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.industrial-process-text-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 32px;
+  margin-bottom: 36px;
+}
+
+.industrial-process-paragraph {
+  font-size: 15px;
+  color: var(--ink-secondary);
+  line-height: 1.72;
+  margin: 0;
+  background: var(--bg-page);
+  padding: 20px 22px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line-warm);
+  border-left: 4px solid var(--gold-500);
+}
+
+.industrial-table-card {
+  background: linear-gradient(145deg, #071910 0%, #0b2618 100%);
+  border: 2px solid var(--gold-400);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  color: #ffffff;
+  box-shadow: var(--shadow-lg);
+}
+
+.industrial-table-head {
+  margin-bottom: 20px;
+}
+
+.industrial-table-head h4 {
+  font-size: clamp(18px, 2.2vw, 23px);
+  font-weight: 800;
+  color: var(--gold-300);
+  margin: 0;
+  line-height: 1.35;
+}
+
+.industrial-table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(223, 186, 107, 0.25);
+  background: rgba(5, 14, 9, 0.72);
+}
+
+.industrial-comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14.5px;
+  min-width: 640px;
+}
+
+.industrial-comparison-table th {
+  text-align: left;
+  padding: 16px 18px;
+  font-size: 13.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--gold-300);
+  background: rgba(223, 186, 107, 0.12);
+  border-bottom: 1.5px solid rgba(223, 186, 107, 0.32);
+}
+
+.industrial-comparison-table td {
+  padding: 16px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  vertical-align: top;
+  line-height: 1.58;
+}
+
+.industrial-comparison-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.industrial-comparison-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.ind-criterion-cell {
+  width: 22%;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.ind-advantage-cell {
+  width: 39%;
+  color: #bbf7d0;
+  font-weight: 500;
+}
+
+.ind-check-dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(34, 197, 94, 0.22);
+  color: #4ade80;
+  font-size: 12px;
+  font-weight: 800;
+  margin-right: 8px;
+}
+
+.ind-disadvantage-cell {
+  width: 39%;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.industrial-table-footnotes {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(223, 186, 107, 0.22);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.industrial-ref-text {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.58;
+}
+
+.industrial-note-text {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.76);
+  background: rgba(223, 186, 107, 0.08);
+  border-left: 3px solid var(--gold-400);
+  padding: 10px 14px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  line-height: 1.55;
+}
+
+@media (max-width: 900px) {
+  .industrial-process-panel {
+    padding: 28px 20px;
+  }
+  .industrial-process-text-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .industrial-table-card {
+    padding: 22px 16px;
+  }
 }
 
 /* ==========================================================================

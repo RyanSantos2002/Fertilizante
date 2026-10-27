@@ -122,6 +122,24 @@ function Icon({ name, className = "" }) {
           <polyline points="20 6 9 17 4 12" />
         </svg>
       );
+    case "facebook":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+        </svg>
+      );
+    case "instagram":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+        </svg>
+      );
+    case "youtube":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+        </svg>
+      );
     default:
       return null;
   }
@@ -189,22 +207,21 @@ function App() {
           <span className="top-banner-badge">🌾 {siteConfig.companyBadge}</span>
 
           <div className="top-banner-socials">
-            <a href={siteConfig.socials.facebookUrl} target="_blank" rel="noreferrer" className="top-social-item">
-              {siteConfig.socials.facebookLabel}
+            <a href={siteConfig.socials.facebookUrl} target="_blank" rel="noreferrer" className="top-social-item" aria-label="Facebook Vitadubo Fertilizantes">
+              <Icon name="facebook" className="top-social-icon" />
+              <span>{siteConfig.socials.facebookName}</span>
             </a>
             <span className="top-social-sep">-</span>
-            <a href={siteConfig.socials.instagramUrl} target="_blank" rel="noreferrer" className="top-social-item">
-              {siteConfig.socials.instagramLabel}
+            <a href={siteConfig.socials.instagramUrl} target="_blank" rel="noreferrer" className="top-social-item" aria-label="Instagram Vitadubo">
+              <Icon name="instagram" className="top-social-icon" />
+              <span>{siteConfig.socials.instagramName}</span>
             </a>
             <span className="top-social-sep">-</span>
-            <a href={siteConfig.socials.youtubeUrl} target="_blank" rel="noreferrer" className="top-social-item">
-              {siteConfig.socials.youtubeLabel}
+            <a href={siteConfig.socials.youtubeUrl} target="_blank" rel="noreferrer" className="top-social-item" aria-label="YouTube Vitadubo Fertilizantes">
+              <Icon name="youtube" className="top-social-icon" />
+              <span>{siteConfig.socials.youtubeName}</span>
             </a>
           </div>
-
-          <a href={`tel:${siteConfig.phoneRaw}`} className="top-banner-cta">
-            📞 {siteConfig.phoneDisplay}
-          </a>
         </div>
       </div>
 
@@ -327,85 +344,6 @@ function App() {
               <div className="hero-slogan-banner">
                 <span>🌱 {siteConfig.hero.slogan}</span>
               </div>
-
-              <div className="hero-cta-group">
-                <a
-                  href={createWhatsappUrl()}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn btn-primary btn-glow"
-                >
-                  <Icon name="whatsapp" className="icon-btn" />
-                  <span>Fale com um Especialista</span>
-                </a>
-                <a href="#produtos" className="btn btn-secondary">
-                  <span>Nossos Produtos</span>
-                  <Icon name="arrow-right" className="icon-btn" />
-                </a>
-                <a
-                  href={siteConfig.certificateUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn btn-secondary"
-                >
-                  <Icon name="FileText" className="icon-btn text-gold" />
-                  <span>Certificado QIMA (PDF)</span>
-                </a>
-              </div>
-
-              <div className="hero-trust-bar">
-                <div className="trust-item">
-                  <Icon name="phone" className="trust-icon" />
-                  <div>
-                    <small>Telefone &amp; WhatsApp Oficial</small>
-                    <a href={`tel:${siteConfig.phoneRaw}`} className="trust-phone">
-                      {siteConfig.phoneDisplay}
-                    </a>
-                  </div>
-                </div>
-                <div className="trust-divider" />
-                <div className="trust-item">
-                  <Icon name="ShieldCheck" className="trust-icon text-gold" />
-                  <div>
-                    <small>Sede Industrial — Santa Catarina</small>
-                    <a href="#contato" className="trust-cert-link">
-                      <strong>Cordilheira Alta/SC • SC 157 KM 89</strong>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="hero-right">
-              <div className="hero-feature-card glass-panel">
-                {/* LOGOMARCA VITADUBO FERTILIZANTES EM DESTAQUE */}
-                <div className="hero-brand-showcase">
-                  <img
-                    src="/vitadubo-logo.svg"
-                    alt="Logomarca Oficial Vitadubo Fertilizantes"
-                    className="hero-main-logo-img"
-                  />
-                  <span className="hero-brand-tag">FERTILIZANTES ORGÂNICOS E ORGANOMINERAIS À BASE DE ESTERCO DE PERU</span>
-                </div>
-
-                <div className="hero-metrics-list">
-                  {siteConfig.hero.stats.map((st, i) => (
-                    <div className="stat-card-row" key={i}>
-                      <div className="stat-val-circle">{st.value}</div>
-                      <div className="stat-text-info">
-                        <strong>{st.label}</strong>
-                        <span>{st.sub}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="feature-card-footer">
-                  <div className="footer-pill-notice">
-                    <span>🌾 Embalagens: Sacas de 25 kg, 40 kg, Big Bag 1.000 kg e A Granel</span>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -504,7 +442,6 @@ function App() {
             {/* Nosso Compromisso */}
             <div className="commitment-banner">
               <div className="commitment-inner">
-                <span className="section-tag light">NOSSO COMPROMISSO</span>
                 <h3>{siteConfig.about.commitment.title}</h3>
                 <p>{siteConfig.about.commitment.text}</p>
                 <strong className="commitment-signature">{siteConfig.about.commitment.signature}</strong>
@@ -538,7 +475,7 @@ function App() {
               <div className="aviary-image-container">
                 <img
                   src={siteConfig.turkeyManure.infographicImage}
-                  alt="Por quê o esterco de peru é melhor? Comparação entre Galinha (5 cm), Frango (8 cm) e Peru (16 cm) sobre 10 cm de maravalha"
+                  alt="Por quê o esterco de peru é melhor? Comparação entre Galinha (5 cm), Frango (8 cm) e Peru (20 cm) sobre 10 cm de maravalha"
                   className="aviary-infographic-img"
                 />
               </div>
@@ -709,6 +646,65 @@ function App() {
                   <span>
                     {siteConfig.turkeyManure.studyChart.source} {siteConfig.turkeyManure.studyChart.complementarySources}
                   </span>
+                </div>
+              </div>
+            </div>
+
+            {/* =============================================================
+                BLOCO PROCESSO INDUSTRIAL + QUADRO COMPARATIVO COM FONTE
+                ============================================================= */}
+            <div className="industrial-process-panel" id="processo-industrial">
+              <div className="industrial-process-header">
+                <span className="section-tag">{siteConfig.turkeyManure.industrialProcess.badge}</span>
+                <h3 className="industrial-process-title">{siteConfig.turkeyManure.industrialProcess.title}</h3>
+              </div>
+
+              <div className="industrial-process-text-grid">
+                {siteConfig.turkeyManure.industrialProcess.paragraphs.map((p, idx) => (
+                  <p key={idx} className="industrial-process-paragraph">{p}</p>
+                ))}
+              </div>
+
+              <div className="industrial-table-card">
+                <div className="industrial-table-head">
+                  <h4>{siteConfig.turkeyManure.industrialProcess.tableTitle}</h4>
+                </div>
+
+                <div className="industrial-table-wrapper">
+                  <table className="industrial-comparison-table">
+                    <thead>
+                      <tr>
+                        {siteConfig.turkeyManure.industrialProcess.tableHeaders.map((th, i) => (
+                          <th key={i}>{th}</th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {siteConfig.turkeyManure.industrialProcess.tableRows.map((row, idx) => (
+                        <tr key={idx}>
+                          <td className="ind-criterion-cell">
+                            <strong>{row.criterion}</strong>
+                          </td>
+                          <td className="ind-advantage-cell">
+                            <span className="ind-check-dot">✓</span>
+                            <span>{row.cooledAdvantage}</span>
+                          </td>
+                          <td className="ind-disadvantage-cell">
+                            <span>{row.heatedDisadvantage}</span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+
+                <div className="industrial-table-footnotes">
+                  <p className="industrial-ref-text">
+                    <strong>📚 {siteConfig.turkeyManure.industrialProcess.references}</strong>
+                  </p>
+                  <p className="industrial-note-text">
+                    <strong>Nota técnica:</strong> {siteConfig.turkeyManure.industrialProcess.technicalNote}
+                  </p>
                 </div>
               </div>
             </div>
@@ -1157,9 +1153,9 @@ function App() {
           <div className="container">
             <div className="section-head centered light">
               <span className="section-tag light">TRANSPARÊNCIA TOTAL &amp; COMPROVAÇÃO OFICIAL</span>
-              <h2 className="section-title">Certificações QIMA &amp; Garantias Físico-Químicas</h2>
+              <h2 className="section-title">Certificações QIMA — Agricultura Orgânica &amp; Regenerativa</h2>
               <p className="section-subtitle light">
-                Documentos auditados pela QIMA (Programa Regenera &amp; Agricultura Orgânica) e Laudo Técnico Laboratorial da Vitadubo Fertilizantes.
+                Documentos oficiais auditados pela QIMA (Programa Regenera &amp; Agricultura Orgânica) da Vitadubo Fertilizantes.
               </p>
             </div>
 
@@ -1218,65 +1214,6 @@ function App() {
                   <Icon name="FileText" className="icon-btn text-gold" />
                   <span>Declaração Vitaphos Max Orgânico (PDF)</span>
                 </a>
-                <a
-                  href={siteConfig.folderUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn btn-secondary btn-full"
-                >
-                  <Icon name="FileText" className="icon-btn text-gold" />
-                  <span>Folder Institucional Completo (PDF)</span>
-                </a>
-              </div>
-            </div>
-
-            {/* Tabela Resumo de Garantias e Laudo Laboratorial */}
-            <div className="lab-panel-wrapper glass-panel">
-              <div className="lab-header-info">
-                <div>
-                  <span className="lab-meta-label">INDÚSTRIA:</span>
-                  <strong>{siteConfig.companyLegalName}</strong>
-                </div>
-                <div>
-                  <span className="lab-meta-label">SEDE INDUSTRIAL:</span>
-                  <span>{siteConfig.address}</span>
-                </div>
-                <div>
-                  <span className="lab-meta-label">LAUDO LABORATORIAL:</span>
-                  <span className="lab-sample-pill">Amostra Nº {siteConfig.labReport.sampleId}</span>
-                </div>
-              </div>
-
-              <div className="lab-table-container">
-                <table className="lab-table">
-                  <thead>
-                    <tr>
-                      <th>Ensaio / Parâmetro</th>
-                      <th>Resultado Auditado</th>
-                      <th>Diferencial Agronômico no Solo</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {siteConfig.labReport.parameters.map((param, index) => (
-                      <tr key={index} className={param.highlight ? "highlight-row" : ""}>
-                        <td className="param-name">
-                          <strong>{param.name}</strong>
-                        </td>
-                        <td className="param-value">
-                          <span className="val-badge">{param.value}</span>
-                        </td>
-                        <td className="param-note">{param.note}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-
-              <div className="lab-footer-note">
-                <Icon name="Award" className="lab-footer-icon" />
-                <p>
-                  <strong>Micronutrientes naturais presentes na base orgânica:</strong> {siteConfig.labReport.micros}
-                </p>
               </div>
             </div>
           </div>
@@ -1563,7 +1500,6 @@ function App() {
                 <li><a href="#inicio">Início</a></li>
                 <li><a href="#quem-somos">Quem Somos</a></li>
                 <li><a href="#esterco-de-peru">Esterco de Peru</a></li>
-                <li><a href="#grafico-nutrientes">Estudo &amp; Gráfico de Nutrientes</a></li>
                 <li><a href="#produtos">Nossos Produtos</a></li>
                 <li><a href="#formule-npk">Formule seu NPK</a></li>
                 <li><a href="#embalagens">Nossas Embalagens</a></li>

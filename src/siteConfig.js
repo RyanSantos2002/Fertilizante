@@ -24,10 +24,13 @@ export const siteConfig = {
     "Olá! Gostaria de falar com a equipe da Vitadubo Fertilizantes e conhecer as soluções à base de esterco de peru.",
 
   socials: {
-    facebookLabel: "FB: VITADUBO FERTILIZANTES",
+    facebookName: "VITADUBO FERTILIZANTES",
+    facebookLabel: "FACEBOOK: VITADUBO FERTILIZANTES",
     facebookUrl: "https://www.facebook.com/search/top?q=VITADUBO%20FERTILIZANTES",
-    instagramLabel: "INSTA: @VITADUBO",
+    instagramName: "@VITADUBO",
+    instagramLabel: "INSTAGRAM: @VITADUBO",
     instagramUrl: "https://www.instagram.com/vitadubo/",
+    youtubeName: "@VITADUBOFERTILIZANTES",
     youtubeLabel: "YOUTUBE: @VITADUBOFERTILIZANTES",
     youtubeUrl: "https://www.youtube.com/@vitadubofertilizantes"
   },
@@ -128,14 +131,14 @@ export const siteConfig = {
     infographicImage: "/comparacao-esterco-aves.png",
     blocks: [
       {
-        badge: "3x vs. Galinha • 2x vs. Frango",
+        badge: "4x vs. Galinha • 2,5x vs. Frango",
         title: "Maior acúmulo no mesmo período",
-        text: "Nas condições descritas, o esterco de peru forma uma camada acumulada maior sobre a mesma cama inicial de maravalha, ou seja, 3x mais esterco comparado à galinha e 2x mais esterco comparado ao frango."
+        text: "Nas condições descritas, o esterco de peru forma uma camada acumulada maior sobre a mesma cama inicial de maravalha, ou seja, 4x mais esterco comparado à galinha e 2,5x mais esterco comparado ao frango."
       },
       {
-        badge: "16 cm de Esterco Puro",
-        title: "Até 3x mais acúmulo de esterco no mesmo período",
-        text: "Considerando a mesma cama inicial de 10 cm de maravalha e o mesmo período de criação, o peru apresenta um acúmulo de esterco até 3 vezes maior que o da galinha e 2 vezes maior que o do frango, formando uma matéria-prima com potencial para uma relação esterco/maravalha mais favorável."
+        badge: "20 cm de Esterco Puro",
+        title: "Até 4x mais acúmulo de esterco no mesmo período",
+        text: "Considerando a mesma cama inicial de 10 cm de maravalha e o mesmo período de criação, o peru apresenta um acúmulo de esterco até 4 vezes maior que o da galinha e 2,5 vezes maior que o do frango, formando uma matéria-prima com potencial para uma relação esterco/maravalha mais favorável."
       },
       {
         badge: "Nutrição Superior de Origem",
@@ -212,6 +215,55 @@ export const siteConfig = {
           desc: "Com 4,0% de Nitrogênio e 47% de Matéria Orgânica já na cama bruta (ultrapassando 73% após o beneficiamento industrial Vitadubo), nutre e condiciona o solo simultaneamente."
         }
       ]
+    },
+
+    // Processo Industrial e Quadro Comparativo (Esterco Resfriado vs Secado em Alta Temperatura)
+    industrialProcess: {
+      badge: "TECNOLOGIA DE PROCESSAMENTO • PRESERVAÇÃO NUTRICIONAL E BIOLÓGICA",
+      title: "A diferença está no processo industrial",
+      paragraphs: [
+        "Nem todo fertilizante orgânico passa pelo mesmo processo de industrialização. A temperatura utilizada no processamento pode influenciar a preservação do nitrogênio, da matéria orgânica e de outros componentes importantes para a qualidade do fertilizante.",
+        "Na Vitadubo, valorizamos um processo que prioriza a qualidade da matéria-prima e o cuidado com suas características naturais. O resfriamento dos pellets, sem uma etapa adicional de secagem térmica intensa, evita a exposição desnecessária do produto a temperaturas elevadas, reduzindo o risco de perdas de nitrogênio e de alterações em compostos orgânicos sensíveis ao calor.",
+        "A secagem em altas temperaturas também possui aplicações industriais importantes, mas seus efeitos sobre a composição do fertilizante dependem da temperatura efetivamente atingida pelo material e do tempo de exposição.",
+        "Por isso, compreender as diferenças entre os processos é fundamental para avaliar a qualidade de um fertilizante orgânico. Mais do que industrializar, buscamos valorizar os nutrientes e a matéria orgânica presentes em nossa matéria-prima, contribuindo para uma agricultura que reconhece a importância do solo e de sua fertilidade."
+      ],
+      tableTitle: "Quadro comparativo: esterco industrializado resfriado × esterco secado em alta temperatura",
+      tableHeaders: [
+        "Critério",
+        "Esterco industrializado resfriado — vantagem",
+        "Esterco secado em alta temperatura — possível desvantagem"
+      ],
+      tableRows: [
+        {
+          criterion: "Nitrogênio",
+          cooledAdvantage: "Menor exposição a perdas térmicas durante o processamento.",
+          heatedDisadvantage: "O aquecimento pode favorecer a volatilização de nitrogênio na forma de amônia."
+        },
+        {
+          criterion: "Matéria orgânica",
+          cooledAdvantage: "Menor exposição dos compostos orgânicos ao calor intenso.",
+          heatedDisadvantage: "O calor pode transformar ou degradar determinados compostos orgânicos."
+        },
+        {
+          criterion: "Atividade biológica",
+          cooledAdvantage: "Maior possibilidade de preservar parte da microbiota naturalmente presente.",
+          heatedDisadvantage: "Temperaturas elevadas podem reduzir a população de microrganismos sensíveis ao calor."
+        },
+        {
+          criterion: "Fósforo",
+          cooledAdvantage: "Menor exposição a alterações provocadas pelo tratamento térmico.",
+          heatedDisadvantage: "O aquecimento pode alterar a distribuição das formas químicas de fósforo e sua disponibilidade."
+        },
+        {
+          criterion: "Compostos orgânicos sensíveis",
+          cooledAdvantage: "Menor exposição a transformações térmicas.",
+          heatedDisadvantage: "Alguns compostos orgânicos podem sofrer alterações conforme a temperatura e o tempo de exposição."
+        }
+      ],
+      references:
+        "Referências científicas: estudos sobre secagem de esterco de aves, perdas de nitrogênio e alterações nas formas de fósforo — ScienceDirect: \"Drying, a practical technology for reduction of poultry litter (environmental) pollution: methods and their effects on important parameters\"; MDPI (2020): \"The Effect of Drying Temperature on Nitrogen Loss and Pathogen Removal in Laying Hen Manure\"; Communications in Soil Science and Plant Analysis (Vol. 38, No. 13-14, 2007): \"Effect of Drying on Phosphorus Distribution in Poultry Manure\".",
+      technicalNote:
+        "os efeitos dependem da temperatura efetiva do material, do tempo de exposição e das condições de processamento. Para comprovar diferenças na qualidade agronômica, recomenda-se comparar amostras do mesmo lote por meio de análises laboratoriais."
     }
   },
 
@@ -223,7 +275,7 @@ export const siteConfig = {
 
     // Produto 1: Fertilizante Orgânico Simples Classe "A"
     organicSimple: {
-      badge: "CLASSE 'A' • 100% BASE DE ESTERCO DE PERU",
+      badge: 'SIMPLES CLASSE "A" - PRODUTO ORGÂNICO',
       title: "Fertilizante Orgânico Simples Classe “A” – À Base de Esterco de Peru",
       subtitle: "Mais matéria orgânica, melhor aproveitamento dos nutrientes e cuidado com a fertilidade do solo.",
       description:

@@ -21,7 +21,7 @@
       <stop offset="50%" stop-color="#a87a36" />
       <stop offset="100%" stop-color="#e5c375" />
     </linearGradient>
-    <linearGradient id="lightGoldTextGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="lightGoldTextGrad" gradientUnits="userSpaceOnUse" x1="127" y1="394" x2="466" y2="394">
       <stop offset="0%" stop-color="#f5e1a4" />
       <stop offset="50%" stop-color="#dfba6b" />
       <stop offset="100%" stop-color="#c59b4c" />
@@ -39,7 +39,7 @@
   <!-- Pure Vector Geometric Brand Typography: VITADUBO -->
   <g fill="none" stroke="url(#lightGoldTextGrad)" stroke-width="3.2" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10">
     <path d="M 127 374 L 145 415 L 163 374" />
-    <path d="M 178 374 L 178 415" />
+    <path d="M 178 374 L 178.01 415" />
     <path d="M 193 374 L 223 374 M 208 374 L 208 415" />
     <path d="M 231 415 L 250 373 L 269 415 M 237.5 401 L 262.5 401" />
     <path d="M 283 374 L 299 374 C 312 374 320 382.5 320 394.5 C 320 406.5 312 415 299 415 L 283 415 Z" />
