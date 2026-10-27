@@ -1,351 +1,539 @@
 // Configuração Oficial da Landing Page — VITADUBO Fertilizantes
-// Dados extraídos dos folders técnicos, laudos laboratoriais e especificações da fábrica.
+// Estrutura e textos oficiais conforme documento institucional da Vitadubo Fertilizantes,
+// estudos científicos (Menezes et al., 2026 - Rio Verde/GO), certificados QIMA Regenera e folders técnicos.
 
 export const siteConfig = {
   // Informações da Empresa & Marca
   companyName: "VITADUBO Fertilizantes",
-  companyBadge: "100% BRASILEIRA • EXPORTAÇÃO AMÉRICA DO SUL",
+  companyLegalName: "Vitadubo Fertilizantes Ltda",
+  cnpj: "42.493.126/0001-95",
+  companyBadge: "100% BRASILEIRA • PADRÃO EXPORTAÇÃO",
   companySubtitle: "INDÚSTRIA DE FERTILIZANTES ORGÂNICOS E ORGANOMINERAIS",
-  flagshipProduct: "Fertilizante Orgânico Simples Classe 'A' — COLHA+",
-  slogan: "A inteligência biológica que transforma o solo, reduz custos e garante safras recordes.",
+  foundedYear: "2021",
 
-  // Contato & Atendimento Oficial
+  // Contatos Oficiais & Redes Sociais
   phoneDisplay: "(49) 3199-2722",
   phoneRaw: "+554931992722",
   whatsappNumber: "554931992722",
   whatsappDisplay: "(49) 3199-2722",
-  email: "contato@vitadubo.com.br",
-  cnpj: "42.493.126/0001-95",
-  address: "SC-157, KM 89 - Linha Fernando Machado, Cordilheira Alta - SC | CEP 89819-000",
-  factoryRegion: "Fábrica em Cordilheira Alta (SC) — Atendimento para todo o Brasil e Exportação para América do Sul",
+  email: "vitadubofertilizantes@gmail.com",
+  address: "SC 157 | KM 89 | Cordilheira Alta/SC | CEP 89.819-000",
+  addressDetailed: "SC 157, KM 89 – Linha Fernando Machado – Cordilheira Alta/SC | CEP 89.819-000",
   operatingHours: "Segunda a Sexta: 07h30 às 18h00 | Sábado: 08h00 às 12h00",
-  whatsappMessage: "Olá! Gostaria de falar com o time técnico e comercial da Vitadubo Fertilizantes e solicitar uma cotação.",
-  certificateUrl: "/certificado-qima-vitadubo.pdf",
+  whatsappMessage:
+    "Olá! Gostaria de falar com a equipe da Vitadubo Fertilizantes e conhecer as soluções à base de esterco de peru.",
 
-  // Certificado Oficial de Conformidade QIMA — Programa Regenera
-  qimaCertificate: {
-    badge: "CERTIFICAÇÃO AUDITADA • QIMA REGENERA",
-    title: "Certificado de Conformidade — Programa Regenera (QIMA)",
-    certNumber: "REG0048/26",
-    companyCode: "I-0240SC",
-    validity: "08/07/2026 a 04/07/2029",
-    norm: "Regenera For Inputs, 2ª Edição (ODS 2 — Fome Zero e Agricultura Sustentável)",
-    scope: "Produção e Comercialização de Fertilizantes para uso na agricultura.",
-    description:
-      "A Vitadubo Fertilizantes Ltda é auditada oficialmente pela QIMA e atende aos requisitos da norma Regenera For Inputs, promovendo práticas que regeneram o solo, aumentam a eficiência na produção agrícola e garantem segurança alimentar, rastreabilidade e conformidade regulatória."
+  socials: {
+    facebookLabel: "FB: VITADUBO FERTILIZANTES",
+    facebookUrl: "https://www.facebook.com/search/top?q=VITADUBO%20FERTILIZANTES",
+    instagramLabel: "INSTA: @VITADUBO",
+    instagramUrl: "https://www.instagram.com/vitadubo/",
+    youtubeLabel: "YOUTUBE: @VITADUBOFERTILIZANTES",
+    youtubeUrl: "https://www.youtube.com/@vitadubofertilizantes"
   },
 
-  // Hero Section
-  heroEyebrow: "TECNOLOGIA CLASSE 'A' • CERTIFICADO QIMA REGENERA, MAPA & IBD",
-  heroTitleLine1: "Nutrição biológica de alta performance",
-  heroTitleLine2: "com a força do COLHA+ Classe 'A'.",
-  heroDescription:
-    "Desenvolvido a partir de matérias-primas nobres com compostagem industrial de precisão. O Fertilizante Orgânico Simples Classe 'A' COLHA+ retém de 4 a 6 vezes o seu próprio peso em água, eleva a CTC do solo para 592 mmolc/kg e corrige o pH ácido gerado por fertilizantes químicos convencionais.",
+  // Arquivos & Documentos Oficiais (PDFs)
+  folderUrl: "/folder-vitadubo-2024.pdf",
+  certificateUrl: "/certificado-qima-vitadubo.pdf",
+  vitaphosDeclarationUrl: "/declaracao-qima-vitaphos-max.pdf",
 
-  heroStats: [
-    { value: "73,17%", label: "Matéria Orgânica Nobre", sub: "Laudo oficial comprovado" },
-    { value: "4 a 6x", label: "Retenção de Água", sub: "Resistência extrema a veranicos" },
-    { value: "592,5", label: "CTC (mmolc/kg)", sub: "Capacidade de Troca Catiônica" },
-    { value: "pH 7,2-7,6", label: "Ação Corretiva do Solo", sub: "Neutraliza a acidez química" }
-  ],
+  // Vídeos Oficiais do YouTube
+  videos: {
+    institutionalId: "17FZiOCBrxc",
+    institutionalUrl: "https://www.youtube.com/watch?v=17FZiOCBrxc",
+    institutionalEmbed: "https://www.youtube.com/embed/17FZiOCBrxc",
+    productId: "IDMpCt-YUBM",
+    productUrl: "https://www.youtube.com/watch?v=IDMpCt-YUBM",
+    productEmbed: "https://www.youtube.com/embed/IDMpCt-YUBM"
+  },
 
-  heroQuickPill: "🌱 Vendas diretas da fábrica em Sacas de 25kg, Sacas de 40kg, Big Bags de 1.000kg e A Granel",
-
-  // O Grande Diferencial: O Segredo do Esterco de Peru
-  turkeyManureDifferentiator: {
-    tag: "O DIFERENCIAL TECNOLÓGICO VITADUBO",
-    title: "Por que a base de esterco de peru entrega mais resultados?",
-    subtitle:
-      "Ao contrário da cama de frango comum, o esterco de peru passa por compostagem industrial controlada com rastreamento rigoroso desde os aviários parceiros até nossa planta em Cordilheira Alta (SC).",
-    perks: [
-      {
-        icon: "TrendingUp",
-        title: "Carga Nitrogenada & Nutrientes Superiores",
-        desc: "Diferente de outros compostos, o esterco de peru é altamente concentrado em material nitrogenado, fósforo, potássio, cálcio, magnésio e enxofre naturais."
-      },
-      {
-        icon: "Droplets",
-        title: "Retenção Hídrica & Resistência à Seca",
-        desc: "Melhora a estrutura física do solo e a microporosidade, permitindo reter água no perfil radicular e proteger a lavoura contra veranicos."
-      },
-      {
-        icon: "Award",
-        title: "Solo Biologicamente Ativo & Raiz Forte",
-        desc: "Estimula os microrganismos benéficos da terra, desbloqueia nutrientes fixados e potencializa o desenvolvimento radicular profundo."
-      },
-      {
-        icon: "ShieldCheck",
-        title: "Rastreabilidade e Origem 100% Controlada",
-        desc: "Coleta direta nos aviários até a fábrica em Cordilheira Alta (SC), com tratamento termofílico que elimina patógenos e invasoras."
-      }
+  // 1. SEÇÃO INÍCIO (HERO)
+  hero: {
+    eyebrow: "TECNOLOGIA, NATUREZA E COMPROMISSO COM O CAMPO",
+    titleLine1: "Nutrição que transforma o solo.",
+    titleLine2: "Tecnologia que impulsiona o agro.",
+    paragraph1:
+      "Desenvolvemos soluções em fertilizantes que unem matéria-prima orgânica, conhecimento técnico e processos de transformação para contribuir com a fertilidade do solo e o desenvolvimento das culturas.",
+    paragraph2:
+      "Com uma linha de fertilizantes à base de ESTERCO DE PERU, a Vitadubo trabalha para entregar qualidade, eficiência e alternativas que valorizam os recursos da natureza e as necessidades do produtor rural.",
+    slogan: "Vitadubo. Tecnologia, natureza e compromisso com o campo.",
+    stats: [
+      { value: "3x Mais", label: "Acúmulo de Esterco", sub: "No aviário em relação à galinha (2x vs. frango)" },
+      { value: "+92% P / +95% K", label: "Superioridade Nutricional", sub: "Mais Fósforo e Potássio na cama de peru" },
+      { value: "73,17%", label: "Matéria Orgânica Nobre", sub: "CTC de 592,59 mmolc/kg e pH 7,2 a 7,6" },
+      { value: "QIMA & MAPA", label: "Qualidade Certificada", sub: "Aprovado para Agricultura Orgânica e Regenerativa" }
     ]
   },
 
-  // Linhas Oficiais de Produtos Vitadubo
-  productCatalog: [
-    {
-      id: "vitaphos-max",
-      name: "Vitaphos Max",
-      line: "Linha Orgânica Premium",
-      tag: "CERTIFICADO ORGÂNICO IBD",
-      badgeType: "gold",
-      summary: "Fertilizante orgânico puro desenvolvido para enriquecer a biologia do solo com certificação oficial para cultivo orgânico.",
-      features: [
-        "Certificação Nacional e Internacional para Agricultura Orgânica",
-        "Segurança jurídica e técnica total para produtores certificados",
-        "Puro à base de esterco de peru industrializado",
-        "Disponível em versões Farelada e Peletizada"
-      ],
-      ideal: "Produção orgânica certificada, hortifrúti, café e pomares.",
-      ctaMsg: "Olá! Gostaria de receber cotação e laudo do Vitaphos Max (Linha Orgânica Certificada)."
+  // 2. SEÇÃO QUEM SOMOS
+  about: {
+    tag: "QUEM SOMOS • DESDE 2021 EM CORDILHEIRA ALTA/SC",
+    title: "Vitadubo Fertilizantes",
+    paragraphs: [
+      "A Vitadubo Fertilizantes é uma empresa brasileira dedicada à fabricação de fertilizantes orgânicos e organominerais, com atuação voltada ao desenvolvimento de soluções para o setor agrícola.",
+      "Com sede em Cordilheira Alta/SC, a empresa surgiu no ano de 2021, com o propósito de valorizar matérias-primas regionais e transformá-las em produtos que contribuam para o manejo da fertilidade do solo e para as necessidades da agricultura.",
+      "Nossa atuação combina experiência prática, aprimoramento de processos e busca por soluções que atendam às demandas de produtores rurais, revendas, distribuidores e parceiros comerciais.",
+      "Mais do que fabricar fertilizantes, buscamos construir uma empresa reconhecida pela seriedade, pela qualidade de seus produtos e pela confiança nas relações que estabelece com o mercado."
+    ],
+    mission: {
+      title: "Nossa missão",
+      text: "Desenvolver e fabricar fertilizantes orgânicos e organominerais com qualidade, valorizando matérias-primas orgânicas e oferecendo soluções que atendam às necessidades da agricultura, com responsabilidade, eficiência e compromisso com nossos clientes."
     },
-    {
-      id: "vitaphos-max-pro",
-      name: "Vitaphos Max Pro",
-      line: "Linha Organomineral",
-      tag: "EQUILÍBRIO & ARRANQUE",
-      badgeType: "green",
-      summary: "A união equilibrada entre a nutrição biológica do esterco de peru e minerais nobres para desenvolvimento rápido e consistente.",
-      features: [
-        "Nutre a planta imediatamente e regenera o solo a longo prazo",
-        "Ativação microbiana com rápida absorção de macro e micronutrientes",
-        "Excelente arranque vegetativo e formação radicular",
-        "Peletizado homogêneo para plantio direto"
-      ],
-      ideal: "Soja, Milho, Trigo, Café e Culturas Anuais.",
-      ctaMsg: "Olá! Gostaria de receber cotação do Vitaphos Max Pro (Organomineral Equilíbrio)."
+    vision: {
+      title: "Nossa visão",
+      text: "Ser uma empresa de referência no mercado de fertilizantes, reconhecida pela qualidade, pela especialização em matérias-primas diferenciadas, pela capacidade de inovação e pelo relacionamento de confiança com clientes e parceiros."
     },
-    {
-      id: "vitaplus-max-plus",
-      name: "Vitaplus Max Plus",
-      line: "Linha Organomineral",
-      tag: "MÁXIMA PRODUTIVIDADE",
-      badgeType: "gold",
-      summary: "Fórmula de alta densidade biológica focada em altíssima concentração de matéria orgânica para ganho recorde de sacas por hectare.",
-      features: [
-        "Máxima concentração de matéria orgânica nobre estabilizada",
-        "Redução severa de perdas por lixiviação e volatilização",
-        "Maior peso hectolítrico (PH) e granação uniforme até a ponta",
-        "Potencializador de rendimento para safras de alto investimento"
-      ],
-      ideal: "Lavouras de alta tecnologia, Soja safra/safrinha e Cereais.",
-      ctaMsg: "Olá! Gostaria de receber cotação do Vitaplus Max Plus (Organomineral Alta Concentração)."
-    },
-    {
-      id: "colha-plus",
-      name: "COLHA+ Classe 'A'",
-      line: "Orgânico Simples Classe 'A'",
-      tag: "CLASSE A & CTC 592",
-      badgeType: "green",
-      summary: "O fertilizante orgânico revolucionário da Vitadubo, formulado para reduzir custos operacionais e corrigir o pH do solo.",
-      features: [
-        "Laudo oficial comprovado com 73,17% de matéria orgânica",
-        "Super CTC de 592,59 mmolc/kg com retenção de 4 a 6x em água",
-        "pH corretivo neutro/alcalino (7,2 a 7,6) contra acidez química",
-        "Pellets de 2,5mm e 5,5mm com fluxo perfeito em plantadeiras"
-      ],
-      ideal: "Todos os tipos de solo e culturas em plantio direto e a lanço.",
-      ctaMsg: "Olá! Gostaria de receber cotação do Fertilizante Orgânico Classe A COLHA+."
+    values: [
+      {
+        title: "Qualidade e compromisso",
+        desc: "Trabalhar com responsabilidade em todas as etapas, da seleção da matéria-prima à fabricação dos produtos."
+      },
+      {
+        title: "Ética e transparência",
+        desc: "Construir relações comerciais pautadas pela honestidade, pelo respeito e pela clareza."
+      },
+      {
+        title: "Inovação e desenvolvimento",
+        desc: "Buscar continuamente melhorias nos processos produtivos e no desenvolvimento de soluções para o mercado agrícola."
+      },
+      {
+        title: "Responsabilidade e sustentabilidade",
+        desc: "Valorizar o aproveitamento de matérias-primas orgânicas e incentivar práticas responsáveis na fabricação de fertilizantes."
+      },
+      {
+        title: "Respeito ao cliente",
+        desc: "Compreender as necessidades de cada parceiro e buscar soluções compatíveis com suas demandas."
+      },
+      {
+        title: "Parceria e confiança",
+        desc: "Construir relacionamentos duradouros com produtores, revendas, distribuidores, fornecedores e colaboradores."
+      }
+    ],
+    commitment: {
+      title: "Nosso compromisso",
+      text: "Acreditamos que uma empresa sólida se constrói com trabalho, conhecimento e relações de confiança. Por isso, a Vitadubo segue dedicada ao aprimoramento de seus processos, à qualidade de seus produtos e ao desenvolvimento de soluções para uma agricultura cada vez mais exigente.",
+      signature: "Vitadubo Fertilizantes — compromisso com a qualidade, confiança nas parcerias e dedicação à agricultura."
     }
-  ],
-
-  // Missão, Visão e Valores (Oficiais do Folder)
-  mission: {
-    title: "Nossa Missão",
-    text: "A Vitadubo Fertilizantes é uma empresa revolucionária que tem como missão melhorar os processos produtivos convencionais. Para isso, investe na inovação através de pesquisas com alta tecnologia, transformando conhecimento em produtos de ponta para a agricultura 100% brasileira e para exportação."
-  },
-  vision: {
-    title: "Nossa Visão",
-    text: "Ser protagonista e parceira do produtor rural no aumento da produtividade, redução de custos e desenvolvimento sustentável."
-  },
-  values: {
-    title: "Nossos Valores",
-    text: "Praticamos o comportamento ético e moral com integridade. Prezamos pela simplicidade e humildade. Somos apaixonados pelo que fazemos, atendendo os amigos produtores direto em suas propriedades. Temos orgulho de trabalhar para o agro!"
   },
 
-  // Laudo Laboratorial Oficial (Amostra Nº 036278/2022)
+  // 3. SEÇÃO ESTERCO DE PERU + GRÁFICO E ESTUDO DE RIO VERDE (GO)
+  turkeyManure: {
+    tag: "ESTERCO DE PERU • O DIFERENCIAL TECNOLÓGICO VITADUBO",
+    title: "Por que a base de esterco de peru entrega mais resultados?",
+    subtitle: "Esterco de peru: mais acúmulo de esterco, uma matéria-prima diferenciada.",
+    intro:
+      "A diferença começa dentro do aviário. Considerando uma cama inicial de maravalha de 10 cm para cada tipo de ave e o mesmo período de criação, o peru apresenta maior acúmulo de esterco em relação à galinha e ao frango.",
+    originTitle: "A diferença está na origem",
+    originSubtitle: "Acúmulo de esterco observado sobre uma cama inicial de maravalha de 10 cm, no mesmo período.",
+    infographicImage: "/comparacao-esterco-aves.png",
+    blocks: [
+      {
+        badge: "3x vs. Galinha • 2x vs. Frango",
+        title: "Maior acúmulo no mesmo período",
+        text: "Nas condições descritas, o esterco de peru forma uma camada acumulada maior sobre a mesma cama inicial de maravalha, ou seja, 3x mais esterco comparado à galinha e 2x mais esterco comparado ao frango."
+      },
+      {
+        badge: "16 cm de Esterco Puro",
+        title: "Até 3x mais acúmulo de esterco no mesmo período",
+        text: "Considerando a mesma cama inicial de 10 cm de maravalha e o mesmo período de criação, o peru apresenta um acúmulo de esterco até 3 vezes maior que o da galinha e 2 vezes maior que o do frango, formando uma matéria-prima com potencial para uma relação esterco/maravalha mais favorável."
+      },
+      {
+        badge: "Nutrição Superior de Origem",
+        title: "Matéria-prima diferenciada",
+        text: "A Vitadubo valoriza essa característica na fabricação de fertilizantes à base de esterco de peru, aliando a origem da matéria-prima ao processamento industrial. Pelo peru ser uma ave de maior porte, comparado a galinha e ao frango, o peru recebe uma alimentação mais completa, nutricionalmente superior para atender às suas exigências de crescimento e desenvolvimento, o que, aliado à maior proporção de esterco em relação à maravalha, torna essa matéria-prima um diferencial para a fabricação de fertilizantes orgânicos da Vitadubo."
+      }
+    ],
+
+    // Gráfico & Estudo Científico (Menezes et al., 2026 - Rio Verde/GO)
+    studyChart: {
+      badge: "EVIDÊNCIA CIENTÍFICA • ESTUDO COMPARATIVO DE CAMAS DE AVES",
+      title: "Nutrientes encontrados nas camas de aves",
+      subtitle: "Percentual de nutriente na amostra, conforme estudo de Rio Verde (GO).",
+      legendChicken: "Cama de frango",
+      legendTurkey: "Cama de peru",
+      source: "Fonte: Menezes et al., Use of Poultry Waste in Brazilian Agriculture (2026).",
+      complementarySources:
+        "Dados corroborados pela literatura bromatológica avícola (Embrapa Suínos e Aves / Sistemas de Produção de Perus de Corte): dietas hiperproteicas de ciclo longo (120 a 140 dias) e menor relação maravalha/excreta elevam significativamente a concentração de N, P₂O₅, K₂O e ácidos húmicos na cama de peru.",
+      bars: [
+        {
+          nutrient: "Nitrogênio",
+          symbol: "N",
+          chickenValue: 2.8,
+          chickenDisplay: "2,8%",
+          turkeyValue: 4.0,
+          turkeyDisplay: "4%",
+          tableTurkeyDisplay: "4,0%",
+          diff: "+43%",
+          role: "Crescimento vegetativo vigoroso, síntese de clorofila e proteínas nos grãos."
+        },
+        {
+          nutrient: "Fósforo",
+          symbol: "P",
+          chickenValue: 1.3,
+          chickenDisplay: "1,3%",
+          turkeyValue: 2.5,
+          turkeyDisplay: "2,5%",
+          tableTurkeyDisplay: "2,5%",
+          diff: "+92%",
+          role: "Arranque radicular profundo, energia celular (ATP), florada e pegamento de vagens."
+        },
+        {
+          nutrient: "Potássio",
+          symbol: "K",
+          chickenValue: 1.9,
+          chickenDisplay: "1,9%",
+          turkeyValue: 3.7,
+          turkeyDisplay: "3,7%",
+          tableTurkeyDisplay: "3,7%",
+          diff: "+95%",
+          role: "Enchimento de grãos, peso de mil sementes (PMS), regulação osmótica e tolerância a secas."
+        }
+      ],
+      tableRows: [
+        { nutrient: "Nitrogênio (N)", chicken: "2,8%", turkey: "4,0%", diff: "+43%", highlight: true },
+        { nutrient: "Fósforo (P)", chicken: "1,3%", turkey: "2,5%", diff: "+92%", highlight: true },
+        { nutrient: "Potássio (K)", chicken: "1,9%", turkey: "3,7%", diff: "+95%", highlight: true },
+        { nutrient: "Matéria Orgânica", chicken: "34%", turkey: "47%", diff: "+38%", highlight: true }
+      ],
+      agronomicHighlights: [
+        {
+          metric: "+92% de Fósforo (P)",
+          title: "Quase o dobro de Fósforo biodisponível",
+          desc: "Enquanto a cama de frango entrega 1,3% de Fósforo, a cama de peru atinge 2,5% — protegido por substâncias húmicas que reduzem a fixação pelo ferro e alumínio do solo."
+        },
+        {
+          metric: "+95% de Potássio (K)",
+          title: "Quase 2x mais Potássio para enchimento",
+          desc: "Saltando de 1,9% (frango) para 3,7% (peru), garante plantas mais resistentes ao acamamento, maior calibre de frutos e grãos mais pesados na colheita."
+        },
+        {
+          metric: "+43% N e +38% M.O.",
+          title: "Alta densidade biológica e menor relação C/N",
+          desc: "Com 4,0% de Nitrogênio e 47% de Matéria Orgânica já na cama bruta (ultrapassando 73% após o beneficiamento industrial Vitadubo), nutre e condiciona o solo simultaneamente."
+        }
+      ]
+    }
+  },
+
+  // 4. SEÇÃO NOSSOS PRODUTOS
+  productsSection: {
+    eyebrow: "NOSSOS PRODUTOS • SOLUÇÕES FARELADAS E PELETIZADAS PARA LANÇO",
+    title: "Portfólio de Alta Performance Vitadubo",
+    subtitle: "Conheça nossas formulações desenvolvidas a partir da mais alta tecnologia com esterco de peru rastreado.",
+
+    // Produto 1: Fertilizante Orgânico Simples Classe "A"
+    organicSimple: {
+      badge: "CLASSE 'A' • 100% BASE DE ESTERCO DE PERU",
+      title: "Fertilizante Orgânico Simples Classe “A” – À Base de Esterco de Peru",
+      subtitle: "Mais matéria orgânica, melhor aproveitamento dos nutrientes e cuidado com a fertilidade do solo.",
+      description:
+        "O Fertilizante Orgânico Simples Classe “A” da Vitadubo é uma solução para produtores que buscam incorporar macro e micro nutrientes, além de alta CTC, ácidos húmicos e fúlvicos, alta matéria orgânica ao solo e complementar o manejo da fertilidade de suas lavouras.",
+      benefits: [
+        {
+          title: "Rico em matéria orgânica:",
+          desc: "contribui para melhorar as características físicas, químicas e biológicas do solo."
+        },
+        {
+          title: "Ácidos húmicos e fúlvicos:",
+          desc: "favorecem os processos relacionados à disponibilidade e ao aproveitamento de nutrientes."
+        },
+        {
+          title: "Melhoria da CTC:",
+          desc: "auxilia na capacidade do solo de reter e disponibilizar nutrientes."
+        },
+        {
+          title: "Atividade biológica:",
+          desc: "contribui para um ambiente favorável ao desenvolvimento de microrganismos do solo."
+        },
+        {
+          title: "Retenção de água:",
+          desc: "a matéria orgânica pode aumentar a capacidade do solo de armazenar água."
+        },
+        {
+          title: "Fornecimento gradual de nutrientes:",
+          desc: "disponibiliza nutrientes conforme as características do fertilizante e as condições do solo."
+        },
+        {
+          title: "Condicionamento do solo:",
+          desc: "contribui para a estrutura e a manutenção da fertilidade."
+        },
+        {
+          title: "Versatilidade de uso:",
+          desc: "pode ser utilizado em diferentes culturas, conforme a recomendação técnica."
+        },
+        {
+          title: "Valorização da matéria orgânica:",
+          desc: "possui a matéria-prima orgânica mais nobre do Brasil para a fabricação de fertilizantes para a agricultura."
+        }
+      ]
+    },
+
+    // Produto 2: Vitaphos Max
+    vitaphosMax: {
+      badge: "ORGANOMINERAL CLASSE 'A' • APROVADO AGRICULTURA ORGÂNICA (QIMA)",
+      title: "Fertilizante Organomineral Classe “A” — Vitaphos Max",
+      subtitle: "O equilíbrio entre matéria orgânica e nutrição mineral.",
+      paragraphs: [
+        "O Vitaphos Max, da Vitadubo Fertilizantes, combina matéria orgânica proveniente de esterco de peru com fonte mineral de fósforo, reunindo dois componentes importantes para o manejo da fertilidade do solo.",
+        "Desenvolvido para integrar matéria orgânica e nutrientes minerais em uma única solução, o produto auxilia no planejamento da adubação, contribuindo para a manutenção da fertilidade e o desenvolvimento das culturas, conforme as características do solo e as necessidades nutricionais das plantas."
+      ],
+      differentials: [
+        {
+          title: "Composição combinada:",
+          desc: "matéria orgânica de alta qualidade associada a uma fonte mineral de fósforo."
+        },
+        {
+          title: "Contribuição à fertilidade do solo:",
+          desc: "integra o fornecimento de nutrientes ao manejo da matéria orgânica."
+        },
+        {
+          title: "Aproveitamento de recursos:",
+          desc: "valoriza uma matéria-prima orgânica na fabricação de fertilizantes."
+        },
+        {
+          title: "Praticidade na adubação:",
+          desc: "reúne componentes orgânicos e minerais em um único produto."
+        },
+        {
+          title: "Solução para a agricultura:",
+          desc: "desenvolvido para atender a diferentes estratégias de manejo nutricional, respeitando as recomendações técnicas para cada cultura."
+        }
+      ],
+      certTitle: "Certificado para uso na Agricultura Orgânica",
+      certText1:
+        "O Vitaphos Max — Fertilizante Organomineral Classe “A”, da Vitadubo Fertilizantes, conta com certificação da QIMA para uso na agricultura orgânica.",
+      certText2:
+        "Vitaphos Max: uma solução certificada para produtores que buscam alternativas alinhadas às exigências da agricultura orgânica.",
+      artImage: "/arte-vitaphos-max-qima.png",
+      mapaReg: "MAPA SC 003049-0.000002",
+      qimaDeclarationNumber: "AI1401/26",
+      approvedNorms: ["BR", "BD", "CA", "CE", "IB", "JP", "US"]
+    },
+
+    // Produto 3: Fertilizantes Organominerais Classe "A" — Vitadubo (Personalizados)
+    organomineralCustom: {
+      badge: "ORGANOMINERAIS CLASSE 'A' • FORMULAÇÕES SOB MEDIDA",
+      title: "Fertilizantes Organominerais Classe “A” — Vitadubo",
+      subtitle: "Uma formulação personalizada para a necessidade de cada lavoura.",
+      paragraphs: [
+        "A Vitadubo Fertilizantes desenvolve fertilizantes organominerais à base de esterco de peru, combinando matéria orgânica com fontes minerais de nutrientes para oferecer soluções personalizadas às necessidades do agronegócio.",
+        "Aqui, a formulação NPK pode ser definida conforme a necessidade de cada cliente. Trabalhamos com diferentes fontes de nutrientes, como sulfato de amônio, superfosfato triplo e cloreto de potássio (KCl), permitindo desenvolver formulações específicas de nitrogênio (N), fósforo (P) e potássio (K), conforme a viabilidade técnica e as especificações desejadas."
+      ],
+      tagline: "Seu fertilizante. Sua formulação. Sua necessidade.",
+      highlights: [
+        {
+          title: "NPK personalizado:",
+          desc: "formulações desenvolvidas de acordo com os teores de nutrientes desejados pelo cliente."
+        },
+        {
+          title: "Flexibilidade na composição:",
+          desc: "combinação de diferentes fontes minerais para atender aos objetivos nutricionais de cada cultura."
+        },
+        {
+          title: "Solução sob medida:",
+          desc: "desenvolvimento de produtos considerando a cultura, as características do solo e a estratégia de adubação."
+        },
+        {
+          title: "Praticidade no manejo:",
+          desc: "nutrientes reunidos em um único fertilizante, conforme a formulação desenvolvida."
+        }
+      ],
+      closingTitle: "Sua lavoura tem necessidades específicas. Nossa formulação também.",
+      closingText:
+        "Na Vitadubo, acreditamos que cada propriedade tem seus próprios desafios. Por isso, oferecemos a possibilidade de desenvolver formulações personalizadas, buscando alinhar a composição do fertilizante às necessidades do produtor e às recomendações técnicas para sua cultura.",
+      closingSignature: "Vitadubo Fertilizantes — fertilizantes personalizados para quem busca soluções sob medida para o campo."
+    }
+  },
+
+  // 5. SEÇÃO FORMULE SEU NPK
+  formulateNpk: {
+    tag: "PERSONALIZAÇÃO NUTRICIONAL • DIRETO DA INDÚSTRIA",
+    title: "Formule seu NPK",
+    subtitle: "Seu fertilizante, desenvolvido para a necessidade da sua lavoura.",
+    paragraphs: [
+      "Na Vitadubo Fertilizantes, cada lavoura tem suas particularidades. Por isso, oferecemos a possibilidade de desenvolver fertilizantes organominerais com formulações NPK personalizadas, combinando matéria orgânica à base de esterco de peru com diferentes fontes minerais de nutrientes.",
+      "Você escolhe os teores desejados de nitrogênio (N), fósforo (P) e potássio (K), e nossa equipe avalia as possibilidades de formulação conforme as matérias-primas disponíveis, a viabilidade técnica e as especificações necessárias para o produto."
+    ],
+    componentsTitle: "Personalize sua formulação",
+    components: [
+      {
+        symbol: "N",
+        name: "Nitrogênio (N)",
+        desc: "Opções de fontes nitrogenadas (como sulfato de amônio), conforme a formulação."
+      },
+      {
+        symbol: "P",
+        name: "Fósforo (P)",
+        desc: "Diferentes fontes fosfatadas (como superfosfato triplo) para compor o teor desejado."
+      },
+      {
+        symbol: "K",
+        name: "Potássio (K)",
+        desc: "Alternativas de alta eficiência como o cloreto de potássio (KCl)."
+      },
+      {
+        symbol: "MO",
+        name: "Matéria orgânica",
+        desc: "Esterco de peru como componente da formulação, respeitando os requisitos aplicáveis ao produto."
+      }
+    ],
+    howItWorksTitle: "Como funciona?",
+    steps: [
+      {
+        step: "1",
+        title: "Informe a formulação desejada.",
+        desc: "Diga quais teores de NPK você procura."
+      },
+      {
+        step: "2",
+        title: "Compartilhe sua necessidade.",
+        desc: "Informe a cultura, a finalidade e, se disponível, a análise de solo ou a recomendação agronômica."
+      },
+      {
+        step: "3",
+        title: "Avaliamos a viabilidade.",
+        desc: "Nossa equipe verifica as possibilidades de composição e fabricação."
+      },
+      {
+        step: "4",
+        title: "Receba uma proposta.",
+        desc: "Apresentamos as opções tecnicamente viáveis para sua avaliação comercial."
+      }
+    ],
+    ctaTitle: "Vamos desenvolver sua formulação?",
+    ctaText:
+      "Entre em contato com a Vitadubo e descubra as possibilidades de desenvolver um fertilizante organomineral alinhado às necessidades da sua operação.",
+    ctaSignature: "Vitadubo Fertilizantes — flexibilidade na formulação, soluções para o seu campo.",
+    ctaButton: "SOLICITE SUA FORMULAÇÃO PERSONALIZADA"
+  },
+
+  // 6. CERTIFICAÇÕES OFICIAIS QIMA REGENERA & LAUDO TÉCNICO
+  qimaCertificate: {
+    badge: "CERTIFICAÇÃO AUDITADA • QIMA REGENERA",
+    title: "Certificados de Conformidade QIMA — Programa Regenera & Agricultura Orgânica",
+    certNumber: "REG0048/26",
+    declarationNumber: "AI1401/26",
+    companyCode: "I-0240SC",
+    validity: "08/07/2026 a 04/07/2029",
+    norm: "Regenera For Inputs, 2ª Edição (ODS 2 — Fome Zero e Agricultura Sustentável)",
+    scope:
+      "Produção e Comercialização de Fertilizantes e Condicionadores de Solo para uso na Agricultura Regenerativa e na Produção Orgânica (Normas BR, BD, CA, CE, IB, JP e US).",
+    description:
+      "A Vitadubo Fertilizantes Ltda (Código I-0240SC) possui Certificado de Conformidade (Nº REG0048/26) e Declaração de Conformidade do insumo Vitaphos MAX (Nº AI1401/26) emitidos pela QIMA, auditando método de produção, matérias-primas nobres, controle de contaminantes e rastreabilidade integral."
+  },
+
   labReport: {
     sampleId: "036278/2022",
-    identification: "Fertilizante Orgânico Simples Classe A — COLHA+",
-    type: "Fertilizante Orgânico Registrado",
-    location: "Linha Três Irmãos, S/N Rodovia SC 468 - Km 05",
     parameters: [
-      { name: "Matéria Orgânica", value: "73,17%", highlight: true, note: "Puro enriquecimento biológico" },
-      { name: "Capacidade de Troca Catiônica (CTC)", value: "592,59 mmolc/kg", highlight: true, note: "Retenção superior de cátions" },
-      { name: "Nitrogênio Total (N)", value: "4,74%", highlight: false, note: "Liberação gradual contínua" },
-      { name: "Fósforo Total (P₂O₅)", value: "4,33%", highlight: false, note: "Fração protegida sem fixação" },
-      { name: "Potássio (K₂O)", value: "4,88%", highlight: false, note: "Sem perdas por lixiviação" },
-      { name: "Cálcio (Ca)", value: "4,89%", highlight: false, note: "Estruturação celular e radicular" },
-      { name: "Carbono Orgânico", value: "28,72%", highlight: true, note: "Energia para microbiota benéfica" },
-      { name: "Magnésio (Mg)", value: "0,97%", highlight: false, note: "Ativação de clorofila" },
-      { name: "Relação C/N", value: "6", highlight: false, note: "Maturidade e estabilidade perfeita" },
-      { name: "Umidade (a 65ºC)", value: "10,61%", highlight: false, note: "Secagem e estabilidade industrial" },
-      { name: "Faixa de pH", value: "7,2 a 7,6", highlight: true, note: "Tamponamento contra pH ácido químico" }
+      { name: "Matéria Orgânica Total", value: "73,17%", note: "Altíssima concentração húmica e condicionamento físico-biológico", highlight: true },
+      { name: "Carbono Orgânico Total", value: "40,63%", note: "Reserva energética para a microbiota benéfica da rizosfera", highlight: true },
+      { name: "CTC (Capacidade de Troca Catiônica)", value: "592,59 mmolc/kg", note: "Retém nutrientes no solo evitando lixiviação pelas chuvas", highlight: true },
+      { name: "Relação CTC / Carbono", value: "14,58", note: "Matéria orgânica humificada e estabilizada de alto padrão", highlight: false },
+      { name: "pH (Potencial Hidrogeniônico)", value: "7,2 a 7,6", note: "Ação condicionadora que neutraliza a acidez de adubos químicos", highlight: true },
+      { name: "Retenção Hídrica no Solo", value: "4 a 6x o peso", note: "Reserva de água que protege a lavoura em veranicos", highlight: true }
     ],
-    micros: "Contém micronutrientes essenciais balanceados: Boro (B), Cobre (Cu), Manganês (Mn), Ferro (Fe), Zinco (Zn) e Molibdênio (Mo)."
+    micros: "Boro (B), Cobre (Cu), Ferro (Fe), Manganês (Mn), Zinco (Zn), Cálcio (Ca), Magnésio (Mg) e Enxofre (S)."
   },
 
-  // Granulometrias Oficiais Disponíveis
-  granulometries: [
-    {
-      type: "Peletizado 2,5mm",
-      tag: "PLANTADEIRAS & PRECISÃO",
-      desc: "Pellets ultra homogêneos de 2,5mm. Escoamento perfeito em caixas de plantadeiras e adubadoras pneumáticas, sem pó e sem embuchamento.",
-      ideal: "Plantio direto de Soja, Milho, Trigo e Cereais."
-    },
-    {
-      type: "Peletizado 5,5mm",
-      tag: "LIBERAÇÃO CONTROLADA & CAFÉ",
-      desc: "Pellets mais densos de 5,5mm para liberação lenta e prolongada dos nutrientes. Ideal para culturas perenes e cobertura.",
-      ideal: "Café, Pomares de Fruticultura, Cana e Pastagens."
-    },
-    {
-      type: "Farelado",
-      tag: "DISTRIBUIÇÃO A LANÇO",
-      desc: "Estrutura farelada rica em microporosidade para incorporação ampla no perfil do solo através de calcareadoras e distribuidores a lanço.",
-      ideal: "Correção de perfil, pré-plantio, hortifrúti e áreas degradadas."
-    }
-  ],
+  // 7. SEÇÃO NOSSAS EMBALAGENS
+  packagingSection: {
+    tag: "NOSSAS EMBALAGENS • LOGÍSTICA E ACONDICIONAMENTO",
+    title: "Nossas Embalagens",
+    subtitle: "Soluções que se adaptam à sua necessidade.",
+    intro:
+      "A Vitadubo Fertilizantes oferece diferentes opções de acondicionamento para facilitar o transporte, o armazenamento e a aplicação dos fertilizantes, atendendo desde pequenas demandas até operações agrícolas de grande escala.",
+    options: [
+      {
+        weight: "25 kg",
+        title: "Saca de 25 kg",
+        badge: "Praticidade & Manejo Localizado",
+        desc: "Praticidade para aplicações localizadas, pequenas propriedades e necessidades específicas de adubação."
+      },
+      {
+        weight: "40 kg",
+        title: "Saca de 40 kg",
+        badge: "Alta Versatilidade no Campo",
+        desc: "Uma opção versátil para facilitar o manuseio e atender às diferentes demandas do produtor rural."
+      },
+      {
+        weight: "1.000 kg",
+        title: "Big Bag de 1.000 kg",
+        badge: "Operações de Maior Volume",
+        desc: "Ideal para operações de maior volume, proporcionando praticidade na movimentação, no armazenamento e na logística."
+      },
+      {
+        weight: "GRANEL",
+        title: "Granel",
+        badge: "Abastecimento em Escala",
+        desc: "Alternativa para grandes volumes, voltada a operações que buscam eficiência logística e abastecimento em escala."
+      }
+    ],
+    closingText:
+      "Na Vitadubo, buscamos oferecer opções que se adequem à realidade de cada cliente, considerando o volume necessário e as condições de transporte e armazenamento.",
+    closingSignature: "Vitadubo Fertilizantes — praticidade e flexibilidade do transporte à lavoura."
+  },
 
-  // Embalagens Oficiais da Fábrica
-  packagings: [
-    { title: "Sacas Plásticas de 25 kg", note: "Fácil manuseio para hortifrúti, pomares e pequenas e médias áreas.", badge: "Praticidade" },
-    { title: "Sacas Tradicionais de 40 kg", note: "Paletizadas com filme stretch para proteção contra umidade.", badge: "Exportação & Mercado Interno" },
-    { title: "Big Bags de 1.000 kg", note: "Válvula inferior de vazão contínua para abastecimento rápido de plantadeiras.", badge: "Alta Escala" },
-    { title: "Cargas A Granel", note: "Carregamento direto da esteira industrial para frotas de caminhões caçamba.", badge: "Logística Pesada" }
-  ],
+  // 8. SEÇÃO FALE COM UM ESPECIALISTA
+  specialistSection: {
+    tag: "FALE COM UM ESPECIALISTA • ORIENTAÇÃO AGRONÔMICA",
+    title: "Fale com um Especialista",
+    subtitle: "A solução ideal para a necessidade da sua lavoura começa com uma boa orientação.",
+    paragraphs: [
+      "Cada cultura possui exigências nutricionais específicas. Por isso, a Vitadubo oferece atendimento personalizado para ajudar você a conhecer nossos fertilizantes, esclarecer dúvidas e identificar as soluções mais adequadas para sua propriedade.",
+      "Nossa equipe está preparada para apresentar as opções do portfólio, orientar sobre as formulações disponíveis e auxiliar na escolha do fertilizante conforme as características do solo, a cultura e os objetivos de produção.",
+      "Precisa de uma formulação NPK personalizada? Converse conosco! Desenvolvemos opções de fertilizantes organominerais conforme as necessidades do cliente e a viabilidade técnica de fabricação.",
+      "Entre em contato com a Vitadubo e descubra como nossas soluções podem fazer parte do manejo nutricional da sua lavoura."
+    ],
+    signature: "Vitadubo Fertilizantes — atendimento próximo, soluções personalizadas e compromisso com o agronegócio.",
+    ctaButton: "FALE COM NOSSA EQUIPE"
+  },
 
-  // Órgãos Reguladores e Certificações Oficiais
-  certifications: [
-    { name: "QIMA • Regenera", role: "Certificado de Conformidade REG0048/26 (2026–2029)", desc: "Auditado na norma Regenera For Inputs (ODS 2), atestando regeneração do solo e rastreabilidade." },
-    { name: "MAPA", role: "Ministério da Agricultura, Pecuária e Abastecimento", desc: "Registro e auditoria federal permanente de conformidade e garantias mínimas." },
-    { name: "IMA", role: "Instituto do Meio Ambiente de Santa Catarina", desc: "Licenciamento e controle ambiental industrial rigoroso." },
-    { name: "IBD Certificações", role: "Maior certificadora orgânica da América Latina", desc: "Credenciamento para agricultura sustentável e manejo orgânico." }
-  ],
-
-  // Benefícios Comprovados do COLHA+ Classe "A"
-  flagshipBenefits: [
-    {
-      title: "Reter de 4 a 6x mais água que o próprio peso",
-      desc: "A matéria orgânica rica em substâncias húmicas age como micro-reservatório hídrico, reduzindo o estresse nos veranicos e a erosão do solo."
-    },
-    {
-      title: "pH de 7,2 a 7,6: Corretivo natural da acidez química",
-      desc: "Os fertilizantes minerais comuns são fortemente ácidos (pH 3,5 a 4,5). O COLHA+ atua como neutralizador, preservando as raízes e a absorção radicular."
-    },
-    {
-      title: "Matéria-prima nobre de cama e esterco de aves",
-      desc: "Compostagem termofílica acelerada que elimina patógenos e sementes invasoras, combinando Cálcio, Magnésio, Enxofre e micronutrientes orgânicos."
-    },
-    {
-      title: "Super CTC de 592,59 mmolc/kg",
-      desc: "Área superficial específica muito superior à das argilas do solo, garantindo que o nutriente fique retido para a planta e não seja lavado pela chuva."
-    },
-    {
-      title: "Ativação microbiana e saúde biológica",
-      desc: "Estímulo contínuo a micorrizas e bactérias fixadoras, transformando a fertilidade nativa da terra em sacas na colheita."
-    },
-    {
-      title: "Redução de custos e maior margem financeira",
-      desc: "Menor perda por lixiviação e volatilização gera um aproveitamento de até 40% superior aos insumos químicos puros."
-    }
-  ],
-
-  // Simulador de Culturas & Produtividade
-  simulatorCrops: [
-    {
-      id: "soja",
-      name: "Soja",
-      unit: "sacas/ha",
-      baseGain: 5.8,
-      recommendation: "Vitadubo COLHA+ Peletizado 2,5mm no Sulco",
-      waterRetention: "+35%",
-      rootDepth: "+35cm",
-      summary: "Maior ramificação lateral, vagens no baixeiro e granação uniforme até a ponta."
-    },
-    {
-      id: "milho",
-      name: "Milho Safra / Safrinha",
-      unit: "sacas/ha",
-      baseGain: 15.2,
-      recommendation: "Vitadubo COLHA+ no Plantio + Organomineral Cobertura",
-      waterRetention: "+30%",
-      rootDepth: "+40cm",
-      summary: "Colmo resistente contra tombamentos e espigas cheias até a ponta sem falhas."
-    },
-    {
-      id: "trigo",
-      name: "Trigo e Cereais de Inverno",
-      unit: "sacas/ha",
-      baseGain: 8.4,
-      recommendation: "Vitadubo COLHA+ 2,5mm Micro-Grânulos",
-      waterRetention: "+28%",
-      rootDepth: "+25cm",
-      summary: "Afilhamento vigoroso com perfilhamento uniforme e alto peso hectolítrico (PH)."
-    },
-    {
-      id: "cafe",
-      name: "Café Arábica e Conilon",
-      unit: "sacas beneficiadas/ha",
-      baseGain: 6.8,
-      recommendation: "Vitadubo COLHA+ Peletizado 5,5mm na Projeção da Saia",
-      waterRetention: "+45%",
-      rootDepth: "+45cm",
-      summary: "Maior retenção de água, peneira alta, maturação uniforme e diminuição de bienalidade."
-    },
-    {
-      id: "pastagem",
-      name: "Pastagens & Silagem",
-      unit: "toneladas MS/ha",
-      baseGain: 5.2,
-      recommendation: "Vitadubo COLHA+ Farelado ou 5,5mm a Lanço",
-      waterRetention: "+40%",
-      rootDepth: "+50cm",
-      summary: "Rebrota rápida, maior palatabilidade do gado e menor taxa de degradação da forrageira."
-    },
-    {
-      id: "hf",
-      name: "Hortifrúti e Olericultura",
-      unit: "% de padrão comercial",
-      baseGain: 25,
-      recommendation: "Vitadubo COLHA+ Farelado incorporado aos canteiros",
-      waterRetention: "+50%",
-      rootDepth: "+20cm",
-      summary: "Folhas brilhantes, frutos de maior calibre, doçura elevada e pós-colheita estendida."
-    }
-  ],
-
-  // Perguntas Frequentes (FAQ) Atualizadas
-  faq: [
-    {
-      q: "O Fertilizante Orgânico Simples Classe 'A' COLHA+ pode ser usado em qualquer plantadeira?",
-      a: "Sim! Disponibilizamos a versão Peletizada de 2,5mm especialmente desenvolvida para distribuidores de adubo e caixas de plantadeiras mecânicas e pneumáticas. Os grânulos possuem alta dureza, não quebram, não geram pó excessivo e fluem perfeitamente sem embuchar."
-    },
-    {
-      q: "Como o COLHA+ ajuda na retenção de água em épocas de estiagem?",
-      a: "Devido ao teor superior de 73% de matéria orgânica nobre estabilizada e estrutura microporosa, o COLHA+ consegue absorver e reter de 4 a 6 vezes o seu próprio peso em água. Isso forma uma reserva hídrica no perfil radicular, mantendo a planta hidratada e alimentada mesmo durante veranicos prolongados."
-    },
-    {
-      q: "Qual a importância do pH de 7,2 a 7,6 do COLHA+?",
-      a: "Os adubos químicos minerais tradicionais possuem pH ácido (em média 3,5 a 4,5), o que queima radicelas e trava a absorção de nutrientes. O COLHA+ tem pH neutro a levemente alcalino (7,2 a 7,6), funcionando como condicionador e corretivo biológico imediato da rizosfera."
-    },
-    {
-      q: "Quais são as embalagens disponíveis para compra?",
-      a: "Fornecemos em Sacas de 40 kg (padrão mercado interno e exportação), Big Bags reforçados de 500 kg, Big Bags de 1.000 kg (com válvula de descarga rápida) e carregamento A Granel para caminhões caçamba."
-    },
-    {
-      q: "Quais certificações e licenças a Vitadubo possui?",
-      a: "A Vitadubo possui o Certificado de Conformidade QIMA — Programa Regenera (Nº REG0048/26, Norma Regenera For Inputs alinhada ao ODS 2), além de operar em conformidade estrita com o Ministério da Agricultura (MAPA), Instituto do Meio Ambiente de Santa Catarina (IMA), IBD Certificações, Vigilância Sanitária e Corpo de Bombeiros."
-    },
-    {
-      q: "Como solicitar uma cotação direta da fábrica com frete para a minha fazenda?",
-      a: "Basta entrar em contato pelo nosso telefone comercial (49) 3199-2722 ou pelo botão de WhatsApp nesta página. Atendemos todo o território nacional e enviamos propostas com frete CIF ou FOB."
-    }
-  ],
+  // 9. SEÇÃO SEJA NOSSO PARCEIRO COMERCIAL
+  partnerSection: {
+    tag: "EXPANSÃO COMERCIAL • REPRESENTANTES, REVENDAS E DISTRIBUIDORES",
+    title: "Seja Nosso Parceiro Comercial",
+    subtitle: "Cresça junto com a Vitadubo Fertilizantes.",
+    paragraphs: [
+      "Estamos ampliando nossa presença no mercado agrícola e buscamos representantes comerciais, revendas e distribuidores interessados em construir parcerias duradouras com a Vitadubo.",
+      "Acreditamos que boas parcerias são construídas com confiança, transparência e oportunidades de crescimento para todos. Por isso, buscamos profissionais e empresas que conheçam o mercado agrícola, valorizem o relacionamento com os clientes e queiram ampliar suas oportunidades comerciais."
+    ],
+    whyTitle: "Por que ser parceiro da Vitadubo?",
+    whyReasons: [
+      {
+        title: "Portfólio diferenciado:",
+        desc: "fertilizantes orgânicos e organominerais para o mercado agrícola."
+      },
+      {
+        title: "Formulações personalizadas:",
+        desc: "possibilidade de desenvolver opções de NPK conforme a viabilidade técnica e as necessidades dos clientes."
+      },
+      {
+        title: "Oportunidades comerciais:",
+        desc: "atuação junto a produtores rurais, revendas e distribuidores."
+      },
+      {
+        title: "Relacionamento próximo:",
+        desc: "contato direto com nossa equipe para esclarecimentos e suporte comercial."
+      },
+      {
+        title: "Parceria transparente:",
+        desc: "condições comerciais definidas com clareza e respeito entre as partes."
+      }
+    ],
+    whoTitle: "Quem buscamos?",
+    whoText1:
+      "Representantes comerciais, lojas agropecuárias, cooperativas, distribuidores e empresas que desejam ampliar seu portfólio com soluções em fertilizantes.",
+    whoText2: "Se você atua no agronegócio e busca novas oportunidades de negócio, queremos conhecer você.",
+    growTitle: "Vamos crescer juntos?",
+    growText:
+      "Preencha o formulário de contato e informe sua cidade, região de atuação e interesse comercial. Nossa equipe entrará em contato para avaliar as possibilidades de parceria.",
+    signature: "Vitadubo Fertilizantes — conectando soluções, parceiros e oportunidades no agronegócio.",
+    ctaButton: "QUERO SER PARCEIRO VITADUBO"
+  },
 
   // Rodapé Oficial
   footerDescription:
-    "VITADUBO Fertilizantes Ltda (CNPJ 42.493.126/0001-95) — Indústria de Fertilizantes Orgânicos e Organominerais. SC-157, KM 89 - Linha Fernando Machado, Cordilheira Alta - SC. Telefone comercial: (49) 3199-2722.",
-  cnpjText: "CNPJ: 42.493.126/0001-95 • Certificada QIMA Regenera, MAPA, IMA e IBD",
+    "VITADUBO Fertilizantes Ltda (CNPJ 42.493.126/0001-95) — Indústria de Fertilizantes Orgânicos e Organominerais à base de Esterco de Peru. Sede: SC 157 | KM 89 | Cordilheira Alta/SC | CEP 89.819-000.",
+  cnpjText: "CNPJ: 42.493.126/0001-95 • Certificada QIMA Regenera & MAPA • Padrão Exportação",
   copyright: `© ${new Date().getFullYear()} VITADUBO FERTILIZANTES LTDA. Todos os direitos reservados.`
 };

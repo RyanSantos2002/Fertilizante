@@ -3,13 +3,13 @@ import { createRoot } from "react-dom/client";
 import { siteConfig } from "./siteConfig";
 import "./styles.css";
 
-// Formatação do link direto para WhatsApp
+// Formatação de link direto para WhatsApp
 function createWhatsappUrl(customText) {
   const text = customText || siteConfig.whatsappMessage;
   return `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(text)}`;
 }
 
-// Biblioteca de Ícones SVG inline com acabamento elegante
+// Biblioteca de Ícones SVG inline
 function Icon({ name, className = "" }) {
   switch (name) {
     case "phone":
@@ -31,20 +31,6 @@ function Icon({ name, className = "" }) {
           <path d="m9 12 2 2 4-4" />
         </svg>
       );
-    case "Droplets":
-      return (
-        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z" />
-          <path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97" />
-        </svg>
-      );
-    case "TrendingUp":
-      return (
-        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
-          <polyline points="16 7 22 7 22 13" />
-        </svg>
-      );
     case "Award":
       return (
         <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -55,7 +41,7 @@ function Icon({ name, className = "" }) {
     case "FileText":
       return (
         <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
           <polyline points="14 2 14 8 20 8" />
           <line x1="16" y1="13" x2="8" y2="13" />
           <line x1="16" y1="17" x2="8" y2="17" />
@@ -78,17 +64,41 @@ function Icon({ name, className = "" }) {
           <circle cx="12" cy="10" r="3" />
         </svg>
       );
+    case "Mail":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <rect width="20" height="16" x="2" y="4" rx="2" />
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+        </svg>
+      );
+    case "Play":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+          <polygon points="5 3 19 12 5 21 5 3" />
+        </svg>
+      );
+    case "BarChart":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <line x1="12" y1="20" x2="12" y2="10" />
+          <line x1="18" y1="20" x2="18" y2="4" />
+          <line x1="6" y1="20" x2="6" y2="16" />
+        </svg>
+      );
+    case "Users":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
+          <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+        </svg>
+      );
     case "arrow-right":
       return (
         <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <line x1="5" y1="12" x2="19" y2="12" />
           <polyline points="12 5 19 12 12 19" />
-        </svg>
-      );
-    case "chevron-down":
-      return (
-        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="6 9 12 15 18 9" />
         </svg>
       );
     case "menu":
@@ -112,96 +122,115 @@ function Icon({ name, className = "" }) {
           <polyline points="20 6 9 17 4 12" />
         </svg>
       );
-    case "calculator":
-      return (
-        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="4" y="2" width="16" height="20" rx="2" />
-          <line x1="8" y1="6" x2="16" y2="6" />
-          <line x1="16" y1="14" x2="16" y2="18" />
-          <path d="M16 10h.01" />
-          <path d="M12 10h.01" />
-          <path d="M8 10h.01" />
-          <path d="M12 14h.01" />
-          <path d="M8 14h.01" />
-          <path d="M12 18h.01" />
-          <path d="M8 18h.01" />
-        </svg>
-      );
     default:
       return null;
   }
 }
 
-export function App() {
+function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [openFaq, setOpenFaq] = useState(0);
-  const [activeCropId, setActiveCropId] = useState(siteConfig.simulatorCrops[0].id);
-  const [hectares, setHectares] = useState(120);
 
-  const currentCrop =
-    siteConfig.simulatorCrops.find((c) => c.id === activeCropId) || siteConfig.simulatorCrops[0];
+  // Estado do Formulário "Formule seu NPK"
+  const [npkForm, setNpkForm] = useState({
+    n: "04",
+    p: "14",
+    k: "08",
+    crop: "",
+    packaging: "Big Bag de 1.000 kg",
+    city: "",
+    name: "",
+    phone: ""
+  });
 
-  // Cálculo estimado de ganho total
-  const estimatedGainTotal = Math.round(currentCrop.baseGain * hectares);
+  // Estado do Formulário "Seja Nosso Parceiro Comercial"
+  const [partnerForm, setPartnerForm] = useState({
+    name: "",
+    company: "",
+    role: "Representante Comercial",
+    cityRegion: "",
+    phone: "",
+    message: ""
+  });
 
-  const handleSimulatorWhatsapp = () => {
-    const msg = `Olá Vitadubo! Estive no simulador da landing page:\n• Cultura: ${currentCrop.name}\n• Área estimada: ${hectares} hectares\n• Estimativa de Ganho: +${estimatedGainTotal} ${currentCrop.unit} (+${currentCrop.baseGain} ${currentCrop.unit}/ha)\n• Recomendação: ${currentCrop.recommendation}\n\nGostaria de receber uma cotação direta da fábrica com frete para a minha propriedade.`;
-    window.open(createWhatsappUrl(msg), "_blank");
-  };
+  function handleNpkSubmit(e) {
+    e.preventDefault();
+    const msg =
+      `Olá! Gostaria de solicitar uma *Formulação NPK Personalizada* na Vitadubo Fertilizantes:\n\n` +
+      `• *Formulação NPK desejada:* ${npkForm.n} - ${npkForm.p} - ${npkForm.k} (com base de Esterco de Peru)\n` +
+      `• *Cultura / Finalidade:* ${npkForm.crop || "A definir com especialista"}\n` +
+      `• *Acondicionamento de preferência:* ${npkForm.packaging}\n` +
+      `• *Cidade / UF:* ${npkForm.city || "Não informada"}\n` +
+      `• *Nome:* ${npkForm.name || "Cliente"}\n` +
+      `• *Telefone:* ${npkForm.phone || ""}`;
+    window.open(createWhatsappUrl(msg), "_blank", "noopener,noreferrer");
+  }
+
+  function handlePartnerSubmit(e) {
+    e.preventDefault();
+    const msg =
+      `Olá! Quero ser um *Parceiro Comercial da Vitadubo Fertilizantes*:\n\n` +
+      `• *Nome:* ${partnerForm.name}\n` +
+      `• *Empresa / Negócio:* ${partnerForm.company || "Atuação autônoma"}\n` +
+      `• *Perfil de Atuação:* ${partnerForm.role}\n` +
+      `• *Cidade e Região de Atuação:* ${partnerForm.cityRegion}\n` +
+      `• *Telefone / WhatsApp:* ${partnerForm.phone}\n` +
+      `• *Interesse Comercial:* ${partnerForm.message || "Representação / Revenda do portfólio Vitadubo"}`;
+    window.open(createWhatsappUrl(msg), "_blank", "noopener,noreferrer");
+  }
+
+  // Escala máxima do gráfico (4.0% = 100% da altura útil das barras)
+  const maxChartVal = 4.2;
 
   return (
     <div className="site-wrapper">
-      {/* Top Banner Informativo da Indústria */}
+      {/* TOP BAR CORPORATIVA: SELO PADRÃO EXPORTAÇÃO + REDES SOCIAIS OFICIAIS */}
       <div className="top-banner">
-        <div className="top-banner-content">
-          <span className="top-banner-pill">🌾 {siteConfig.companyBadge}</span>
-          <span className="top-banner-text">
-            <strong>VITADUBO Fertilizantes:</strong> Linha COLHA+ Classe "A". Atendimento e Vendas Direto da Fábrica:{" "}
-            <a href={`tel:${siteConfig.phoneRaw}`} className="top-banner-link">
-              <strong>{siteConfig.phoneDisplay}</strong>
+        <div className="top-banner-inner">
+          <span className="top-banner-badge">🌾 {siteConfig.companyBadge}</span>
+
+          <div className="top-banner-socials">
+            <a href={siteConfig.socials.facebookUrl} target="_blank" rel="noreferrer" className="top-social-item">
+              {siteConfig.socials.facebookLabel}
             </a>
-          </span>
-          <a
-            href={createWhatsappUrl("Olá! Gostaria de falar com o time comercial da Vitadubo Fertilizantes e consultar preços do COLHA+ Classe A.")}
-            target="_blank"
-            rel="noreferrer"
-            className="top-banner-cta"
-          >
-            Falar no WhatsApp
+            <span className="top-social-sep">-</span>
+            <a href={siteConfig.socials.instagramUrl} target="_blank" rel="noreferrer" className="top-social-item">
+              {siteConfig.socials.instagramLabel}
+            </a>
+            <span className="top-social-sep">-</span>
+            <a href={siteConfig.socials.youtubeUrl} target="_blank" rel="noreferrer" className="top-social-item">
+              {siteConfig.socials.youtubeLabel}
+            </a>
+          </div>
+
+          <a href={`tel:${siteConfig.phoneRaw}`} className="top-banner-cta">
+            📞 {siteConfig.phoneDisplay}
           </a>
         </div>
       </div>
 
-      {/* Header Sticky com Glassmorphism e Logotipo Oficial */}
+      {/* HEADER PRINCIPAL COM LOGOMARCA OFICIAL E MENU SOLICITADO */}
       <header className="site-header">
         <div className="header-inner">
-          <a href="#inicio" className="brand-logo-link" aria-label="Vitadubo Fertilizantes - Início">
+          <a href="#inicio" className="brand-logo-link" aria-label="Vitadubo Fertilizantes — Início">
             <img
-              src="/vitadubo-logo-horizontal.svg"
-              alt="VITADUBO Fertilizantes — Logotipo Oficial"
+              src="/vitadubo-logo-dark.svg"
+              alt="VITADUBO Fertilizantes — Logomarca Oficial"
               className="brand-logo-img"
             />
           </a>
 
           <nav className="desktop-nav" aria-label="Navegação Principal">
             <a href="#inicio">Início</a>
-            <a href="#diferencial">Esterco de Peru</a>
-            <a href="#produtos">Produtos</a>
-            <a href="#colha-plus">COLHA+</a>
-            <a href="#laudo">Laudo &amp; Certificados</a>
-            <a href="#granulometria">Granulometria</a>
-            <a href="#simulador">Simulador</a>
-            <a href="#embalagens">Embalagens</a>
-            <a href="#empresa">Empresa</a>
-            <a href="#faq">Dúvidas</a>
-            <a href="#contato">Contato</a>
+            <a href="#quem-somos">Quem Somos</a>
+            <a href="#esterco-de-peru">Esterco de Peru</a>
+            <a href="#produtos">Nossos Produtos</a>
+            <a href="#formule-npk">Formule seu NPK</a>
+            <a href="#embalagens">Nossas Embalagens</a>
+            <a href="#parceiro">Seja um Parceiro Comercial</a>
+            <a href="#contato" className="nav-contact-pill">Contatos</a>
           </nav>
 
           <div className="header-actions">
-            <a href={`tel:${siteConfig.phoneRaw}`} className="header-phone-link" title="Ligue para a Vitadubo">
-              <Icon name="phone" className="icon-phone" />
-              <span>{siteConfig.phoneDisplay}</span>
-            </a>
             <a
               href={createWhatsappUrl()}
               target="_blank"
@@ -209,7 +238,7 @@ export function App() {
               className="btn btn-whatsapp-header"
             >
               <Icon name="whatsapp" className="icon-btn" />
-              <span>Cotação WhatsApp</span>
+              <span>{siteConfig.phoneDisplay}</span>
             </a>
             <button
               className="mobile-toggle"
@@ -227,30 +256,28 @@ export function App() {
             <div className="mobile-drawer-inner">
               <nav className="mobile-nav-links">
                 <a href="#inicio" onClick={() => setMobileMenuOpen(false)}>Início</a>
-                <a href="#diferencial" onClick={() => setMobileMenuOpen(false)}>O Segredo do Esterco de Peru</a>
-                <a href="#produtos" onClick={() => setMobileMenuOpen(false)}>Linhas de Produtos (Vitaphos / Vitaplus)</a>
-                <a href="#colha-plus" onClick={() => setMobileMenuOpen(false)}>Linha COLHA+ Classe "A"</a>
-                <a href="#laudo" onClick={() => setMobileMenuOpen(false)}>Laudo &amp; Certificado QIMA Regenera</a>
-                <a href="#granulometria" onClick={() => setMobileMenuOpen(false)}>Granulometria (Peletizado / Farelado)</a>
-                <a href="#simulador" onClick={() => setMobileMenuOpen(false)}>Simulador de Safra</a>
-                <a href="#embalagens" onClick={() => setMobileMenuOpen(false)}>Embalagens &amp; Logística</a>
-                <a href="#empresa" onClick={() => setMobileMenuOpen(false)}>Nossa Missão &amp; Valores</a>
-                <a href="#faq" onClick={() => setMobileMenuOpen(false)}>Dúvidas Frequentes</a>
-                <a href="#contato" onClick={() => setMobileMenuOpen(false)}>Falar Conosco</a>
+                <a href="#quem-somos" onClick={() => setMobileMenuOpen(false)}>Quem Somos</a>
+                <a href="#esterco-de-peru" onClick={() => setMobileMenuOpen(false)}>Esterco de Peru (Gráfico & Estudo)</a>
+                <a href="#produtos" onClick={() => setMobileMenuOpen(false)}>Nossos Produtos</a>
+                <a href="#formule-npk" onClick={() => setMobileMenuOpen(false)}>Formule seu NPK</a>
+                <a href="#embalagens" onClick={() => setMobileMenuOpen(false)}>Nossas Embalagens</a>
+                <a href="#especialista" onClick={() => setMobileMenuOpen(false)}>Fale com um Especialista</a>
+                <a href="#parceiro" onClick={() => setMobileMenuOpen(false)}>Seja um Parceiro Comercial</a>
+                <a href="#contato" onClick={() => setMobileMenuOpen(false)}>Contatos</a>
                 <a
                   href={siteConfig.certificateUrl}
                   target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setMobileMenuOpen(false)}
+                  rel="noreferrer"
                   className="mobile-cert-link"
+                  onClick={() => setMobileMenuOpen(false)}
                 >
-                  📄 Ver Certificado Oficial QIMA (PDF)
+                  📄 Certificado Oficial QIMA (PDF)
                 </a>
               </nav>
 
               <div className="mobile-drawer-footer">
                 <div className="mobile-contact-card">
-                  <p className="mobile-card-title">Central Direta da Fábrica</p>
+                  <p className="mobile-card-title">Central de Atendimento Vitadubo</p>
                   <a href={`tel:${siteConfig.phoneRaw}`} className="mobile-phone-cta">
                     <Icon name="phone" className="icon-sm" />
                     <strong>{siteConfig.phoneDisplay}</strong>
@@ -259,10 +286,10 @@ export function App() {
                     href={createWhatsappUrl()}
                     target="_blank"
                     rel="noreferrer"
-                    className="btn btn-primary btn-full mt-2"
+                    className="btn btn-primary btn-full"
                   >
                     <Icon name="whatsapp" className="icon-btn" />
-                    Chamar no WhatsApp
+                    <span>Falar com Especialista no WhatsApp</span>
                   </a>
                 </div>
               </div>
@@ -272,47 +299,57 @@ export function App() {
       </header>
 
       <main>
-        {/* HERO SECTION ELEGANTE COM TONS DOURADOS E TERROSOS */}
+        {/* =================================================================
+            1. SEÇÃO INÍCIO (HERO) COM LOGOMARCA VITADUBO FERTILIZANTES
+            ================================================================= */}
         <section className="hero-section" id="inicio">
-          <div className="hero-backdrop" />
-          <div className="hero-grid-pattern" />
+          <div className="hero-bg-overlay" />
+          <div className="hero-glow-orb orb-1" />
+          <div className="hero-glow-orb orb-2" />
 
           <div className="hero-container">
             <div className="hero-left">
               <div className="hero-eyebrow-pill">
                 <span className="pill-dot" />
-                <span>{siteConfig.heroEyebrow}</span>
+                <span>{siteConfig.hero.eyebrow}</span>
               </div>
 
               <h1 className="hero-heading">
-                {siteConfig.heroTitleLine1}
-                <span className="hero-highlight"> {siteConfig.heroTitleLine2}</span>
+                {siteConfig.hero.titleLine1}
+                <span className="hero-highlight">{siteConfig.hero.titleLine2}</span>
               </h1>
 
-              <p className="hero-description">{siteConfig.heroDescription}</p>
+              <p className="hero-description">{siteConfig.hero.paragraph1}</p>
+              <p className="hero-description hero-description-strong">
+                Com uma linha de fertilizantes à base de <strong className="text-gold">ESTERCO DE PERU</strong>, a Vitadubo trabalha para entregar qualidade, eficiência e alternativas que valorizam os recursos da natureza e as necessidades do produtor rural.
+              </p>
+
+              <div className="hero-slogan-banner">
+                <span>🌱 {siteConfig.hero.slogan}</span>
+              </div>
 
               <div className="hero-cta-group">
                 <a
-                  href={createWhatsappUrl("Olá! Gostaria de falar com um consultor técnico da Vitadubo Fertilizantes e conhecer as linhas de produtos.")}
+                  href={createWhatsappUrl()}
                   target="_blank"
                   rel="noreferrer"
                   className="btn btn-primary btn-glow"
                 >
                   <Icon name="whatsapp" className="icon-btn" />
-                  <span>Falar com um Consultor</span>
+                  <span>Fale com um Especialista</span>
                 </a>
                 <a href="#produtos" className="btn btn-secondary">
-                  <Icon name="Package" className="icon-btn" />
-                  <span>Ver Linhas de Produtos</span>
+                  <span>Nossos Produtos</span>
+                  <Icon name="arrow-right" className="icon-btn" />
                 </a>
                 <a
                   href={siteConfig.certificateUrl}
                   target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-secondary btn-cert-hero"
+                  rel="noreferrer"
+                  className="btn btn-secondary"
                 >
                   <Icon name="FileText" className="icon-btn text-gold" />
-                  <span>Ver Certificado Oficial</span>
+                  <span>Certificado QIMA (PDF)</span>
                 </a>
               </div>
 
@@ -320,7 +357,7 @@ export function App() {
                 <div className="trust-item">
                   <Icon name="phone" className="trust-icon" />
                   <div>
-                    <small>Atendimento Comercial Direto</small>
+                    <small>Telefone &amp; WhatsApp Oficial</small>
                     <a href={`tel:${siteConfig.phoneRaw}`} className="trust-phone">
                       {siteConfig.phoneDisplay}
                     </a>
@@ -330,14 +367,9 @@ export function App() {
                 <div className="trust-item">
                   <Icon name="ShieldCheck" className="trust-icon text-gold" />
                   <div>
-                    <small>Conformidade &amp; Certificações Oficiais</small>
-                    <a
-                      href={siteConfig.certificateUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="trust-cert-link"
-                    >
-                      <strong>QIMA Regenera • MAPA • IMA • IBD ↗</strong>
+                    <small>Sede Industrial — Santa Catarina</small>
+                    <a href="#contato" className="trust-cert-link">
+                      <strong>Cordilheira Alta/SC • SC 157 KM 89</strong>
                     </a>
                   </div>
                 </div>
@@ -346,20 +378,18 @@ export function App() {
 
             <div className="hero-right">
               <div className="hero-feature-card glass-panel">
-                <div className="card-logo-emblem">
+                {/* LOGOMARCA VITADUBO FERTILIZANTES EM DESTAQUE */}
+                <div className="hero-brand-showcase">
                   <img
-                    src="/vitadubo-emblem.svg"
-                    alt="Emblema Vitadubo"
-                    className="emblem-img"
+                    src="/vitadubo-logo.svg"
+                    alt="Logomarca Oficial Vitadubo Fertilizantes"
+                    className="hero-main-logo-img"
                   />
-                  <div>
-                    <span className="emblem-eyebrow">TECNOLOGIA INDUSTRIAL</span>
-                    <strong className="emblem-product-title">COLHA+ Classe "A"</strong>
-                  </div>
+                  <span className="hero-brand-tag">FERTILIZANTES ORGÂNICOS E ORGANOMINERAIS À BASE DE ESTERCO DE PERU</span>
                 </div>
 
                 <div className="hero-metrics-list">
-                  {siteConfig.heroStats.map((st, i) => (
+                  {siteConfig.hero.stats.map((st, i) => (
                     <div className="stat-card-row" key={i}>
                       <div className="stat-val-circle">{st.value}</div>
                       <div className="stat-text-info">
@@ -372,7 +402,7 @@ export function App() {
 
                 <div className="feature-card-footer">
                   <div className="footer-pill-notice">
-                    <span>🌾 {siteConfig.heroQuickPill}</span>
+                    <span>🌾 Embalagens: Sacas de 25 kg, 40 kg, Big Bag 1.000 kg e A Granel</span>
                   </div>
                 </div>
               </div>
@@ -380,166 +410,760 @@ export function App() {
           </div>
         </section>
 
-        {/* SECTION O GRANDE DIFERENCIAL: O SEGREDO DO ESTERCO DE PERU */}
-        <section className="section section-diferencial" id="diferencial">
+        {/* =================================================================
+            2. SEÇÃO QUEM SOMOS + VÍDEO INSTITUCIONAL + MISSÃO, VISÃO E VALORES
+            ================================================================= */}
+        <section className="section section-about" id="quem-somos">
           <div className="container">
             <div className="section-head centered">
-              <span className="section-tag">{siteConfig.turkeyManureDifferentiator.tag}</span>
-              <h2 className="section-title">{siteConfig.turkeyManureDifferentiator.title}</h2>
+              <span className="section-tag">{siteConfig.about.tag}</span>
+              <h2 className="section-title">{siteConfig.about.title}</h2>
               <p className="section-subtitle">
-                {siteConfig.turkeyManureDifferentiator.subtitle}
+                Indústria brasileira sediada em Cordilheira Alta/SC, dedicada a transformar matérias-primas nobres em alta performance agrícola.
               </p>
             </div>
 
-            <div className="diferencial-grid">
-              {siteConfig.turkeyManureDifferentiator.perks.map((p, idx) => (
-                <div className="diferencial-card" key={idx}>
-                  <div className="diferencial-icon-wrap">
-                    <Icon name={p.icon} className="diferencial-icon" />
+            <div className="about-top-grid">
+              <div className="about-story-col">
+                {siteConfig.about.paragraphs.map((p, idx) => (
+                  <p key={idx} className="about-paragraph">{p}</p>
+                ))}
+
+                <div className="about-location-badge">
+                  <Icon name="MapPin" className="icon-sm text-gold" />
+                  <div>
+                    <strong>Sede Industrial Própria desde 2021</strong>
+                    <span>{siteConfig.address}</span>
                   </div>
-                  <h3>{p.title}</h3>
-                  <p>{p.desc}</p>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
+              </div>
 
-        {/* SECTION PORTFÓLIO DE PRODUTOS OFICIAIS VITADUBO */}
-        <section className="section section-products" id="produtos">
-          <div className="container">
-            <div className="section-head centered">
-              <span className="section-tag">SOLUÇÕES FARELADAS E PELETIZADAS</span>
-              <h2 className="section-title">Portfólio de Alta Performance Vitadubo</h2>
-              <p className="section-subtitle">
-                Conheça nossas formulações desenvolvidas a partir de tecnologia termofílica com esterco de peru rastreado para atender da agricultura orgânica certificada às grandes extensões de grãos.
-              </p>
-            </div>
-
-            <div className="products-grid">
-              {siteConfig.productCatalog.map((prod) => (
-                <div
-                  className={`product-card ${prod.badgeType === "gold" ? "product-card-gold" : ""}`}
-                  key={prod.id}
-                >
-                  <div className="product-badge-line">
-                    <span className="product-line-label">{prod.line}</span>
-                    <span className="product-tag-pill">{prod.tag}</span>
+              <div className="about-video-col">
+                <div className="video-card-frame">
+                  <div className="video-badge-header">
+                    <span className="video-live-dot" />
+                    <strong>VÍDEO INSTITUCIONAL — CONHEÇA A VITADUBO FERTILIZANTES</strong>
                   </div>
-
-                  <h3 className="product-title">{prod.name}</h3>
-                  <p className="product-summary">{prod.summary}</p>
-
-                  <ul className="product-features-list">
-                    {prod.features.map((feat, fIdx) => (
-                      <li key={fIdx}>
-                        <Icon name="check" className="icon-check text-gold" />
-                        <span>{feat}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="product-ideal-box">
-                    <small>Culturas Indicadas:</small>
-                    <strong>{prod.ideal}</strong>
-                  </div>
-
-                  <a
-                    href={createWhatsappUrl(prod.ctaMsg)}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="btn btn-primary btn-full"
-                  >
-                    <Icon name="whatsapp" className="icon-btn" />
-                    <span>Cotar {prod.name}</span>
-                  </a>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* SECTION CARRO-CHEFE: FERTILIZANTE ORGÂNICO SIMPLES CLASSE "A" - COLHA+ */}
-        <section className="section section-colha" id="colha-plus">
-          <div className="container">
-            <div className="section-head centered">
-              <span className="section-tag">TECNOLOGIA &amp; EXCELÊNCIA AGRONÔMICA</span>
-              <h2 className="section-title">Fertilizante Orgânico Simples Classe "A" – COLHA+</h2>
-              <p className="section-subtitle">
-                O insumo de alta performance da Vitadubo desenvolvido a partir de cama e esterco de aves selecionados, atuando como fertilizante, condicionador e corretivo biológico do solo.
-              </p>
-            </div>
-
-            <div className="colha-showcase-grid">
-              {/* Card visual da embalagem oficial */}
-              <div className="colha-visual-card">
-                <div className="colha-sack-mockup">
-                  <div className="sack-badge-export">EXPORTAÇÃO &amp; BRASIL</div>
-                  <div className="sack-inner">
-                    <img
-                      src="/vitadubo-emblem.svg"
-                      alt="Vitadubo"
-                      className="sack-emblem-img"
+                  <div className="video-responsive-embed">
+                    <iframe
+                      src={siteConfig.videos.institutionalEmbed}
+                      title=" Institucional Vitadubo Fertilizantes"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                      loading="lazy"
                     />
-                    <span className="sack-brand">VITADUBO</span>
-                    <h3 className="sack-title">FERTILIZANTE ORGÂNICO SIMPLES</h3>
-                    <div className="sack-class">CLASSE "A"</div>
-                    <div className="sack-product-name">COLHA+</div>
-                    <p className="sack-specs">Matéria Orgânica Nobre 73% • Compostagem Termofílica</p>
-                    <div className="sack-weights">Sacas de 40 kg • Big Bags 500kg / 1.000kg • A Granel</div>
+                  </div>
+                  <div className="video-card-footer">
+                    <span>Assista e conheça nossa estrutura industrial e compromisso com o campo.</span>
+                    <a
+                      href={siteConfig.videos.institutionalUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="video-ext-link"
+                    >
+                      Abrir no YouTube ↗
+                    </a>
                   </div>
                 </div>
-                <div className="colha-app-badge">
-                  <Icon name="check" className="icon-check text-gold" />
-                  <span>Aplicação em distribuidores de calcário, a lanço e plantadeiras de precisão</span>
-                </div>
               </div>
+            </div>
 
-              {/* 6 Benefícios Comprovados */}
-              <div className="colha-benefits-list">
-                {siteConfig.flagshipBenefits.map((b, idx) => (
-                  <div className="colha-benefit-item" key={idx}>
-                    <div className="colha-benefit-num">0{idx + 1}</div>
+            {/* Missão & Visão */}
+            <div className="mission-vision-grid">
+              <div className="mv-card">
+                <span className="pillar-tag-badge">PROPÓSITO INDUSTRIAL</span>
+                <h3>{siteConfig.about.mission.title}</h3>
+                <p>{siteConfig.about.mission.text}</p>
+              </div>
+              <div className="mv-card highlight-card">
+                <span className="pillar-tag-badge highlight">FUTURO &amp; EXCELÊNCIA</span>
+                <h3>{siteConfig.about.vision.title}</h3>
+                <p>{siteConfig.about.vision.text}</p>
+              </div>
+            </div>
+
+            {/* Nossos Valores (6 cards) */}
+            <div className="values-block">
+              <h3 className="subsection-heading centered">Nossos valores</h3>
+              <div className="values-grid">
+                {siteConfig.about.values.map((val, i) => (
+                  <div className="value-item-card" key={i}>
+                    <div className="value-check-icon">
+                      <Icon name="ShieldCheck" className="icon-sm" />
+                    </div>
                     <div>
-                      <h4 className="colha-benefit-title">{b.title}</h4>
-                      <p className="colha-benefit-desc">{b.desc}</p>
+                      <h4>{val.title}</h4>
+                      <p>{val.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="colha-cta-bar">
-              <div className="colha-cta-text">
-                <strong>Quer saber a dosagem exata para a sua lavoura?</strong>
-                <span>Nossos agrônomos calculam a recomendação agronômica ideal para a sua análise de solo.</span>
+            {/* Nosso Compromisso */}
+            <div className="commitment-banner">
+              <div className="commitment-inner">
+                <span className="section-tag light">NOSSO COMPROMISSO</span>
+                <h3>{siteConfig.about.commitment.title}</h3>
+                <p>{siteConfig.about.commitment.text}</p>
+                <strong className="commitment-signature">{siteConfig.about.commitment.signature}</strong>
               </div>
-              <a
-                href={createWhatsappUrl("Olá! Gostaria de consultar a dosagem recomendada do Fertilizante Orgânico Classe A COLHA+ para a minha propriedade.")}
-                target="_blank"
-                rel="noreferrer"
-                className="btn btn-primary"
-              >
-                <Icon name="whatsapp" className="icon-btn" />
-                <span>Consultar Dosagem no WhatsApp</span>
-              </a>
             </div>
           </div>
         </section>
 
-        {/* SECTION LAUDO LABORATORIAL OFICIAL E CERTIFICAÇÕES */}
-        <section className="section section-lab" id="laudo">
+        {/* =================================================================
+            3. SEÇÃO ESTERCO DE PERU: O DIFERENCIAL TECNOLÓGICO +
+               INFOGRÁFICO DE AVIÁRIO + GRÁFICO E TABELA DE NUTRIENTES (RIO VERDE/GO)
+            ================================================================= */}
+        <section className="section section-diferencial" id="esterco-de-peru">
+          <div className="container">
+            <div className="section-head centered">
+              <span className="section-tag">{siteConfig.turkeyManure.tag}</span>
+              <h2 className="section-title">{siteConfig.turkeyManure.title}</h2>
+              <p className="section-subtitle">
+                <strong>{siteConfig.turkeyManure.subtitle}</strong>
+              </p>
+              <p className="diferencial-intro-text">{siteConfig.turkeyManure.intro}</p>
+            </div>
+
+            {/* Bloco Visual: Infográfico Oficial "Por quê o esterco de peru é melhor?" */}
+            <div className="aviary-infographic-wrapper">
+              <div className="aviary-infographic-header">
+                <h3>{siteConfig.turkeyManure.originTitle}</h3>
+                <p>{siteConfig.turkeyManure.originSubtitle}</p>
+              </div>
+
+              <div className="aviary-image-container">
+                <img
+                  src={siteConfig.turkeyManure.infographicImage}
+                  alt="Por quê o esterco de peru é melhor? Comparação entre Galinha (5 cm), Frango (8 cm) e Peru (16 cm) sobre 10 cm de maravalha"
+                  className="aviary-infographic-img"
+                />
+              </div>
+
+              <div className="turkey-blocks-grid">
+                {siteConfig.turkeyManure.blocks.map((b, i) => (
+                  <div className="diferencial-card" key={i}>
+                    <div className="dif-stat-pill">{b.badge}</div>
+                    <h4 className="dif-title">{b.title}</h4>
+                    <p className="dif-desc">{b.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* =============================================================
+                PAINEL CIENTÍFICO SOLICITADO PELO CLIENTE ("Colocar aqui"):
+                GRÁFICO DE BARRAS + TABELA + FONTES (MENEZES ET AL., 2026)
+                ============================================================= */}
+            <div className="scientific-study-panel" id="grafico-nutrientes">
+              <div className="study-panel-top">
+                <span className="study-badge-pill">
+                  <Icon name="BarChart" className="icon-sm" />
+                  {siteConfig.turkeyManure.studyChart.badge}
+                </span>
+                <h3 className="study-main-title">{siteConfig.turkeyManure.studyChart.title}</h3>
+                <p className="study-main-subtitle">{siteConfig.turkeyManure.studyChart.subtitle}</p>
+              </div>
+
+              <div className="study-chart-and-table-grid">
+                {/* Coluna Esquerda: Gráfico de Barras Fiel ao Estudo de Rio Verde (GO) */}
+                <div className="study-chart-card">
+                  <div className="chart-legend-row">
+                    <div className="chart-legend-item">
+                      <span className="legend-bar-indicator chicken-color" />
+                      <span>{siteConfig.turkeyManure.studyChart.legendChicken}</span>
+                    </div>
+                    <div className="chart-legend-item">
+                      <span className="legend-bar-indicator turkey-color" />
+                      <span>{siteConfig.turkeyManure.studyChart.legendTurkey}</span>
+                    </div>
+                  </div>
+
+                  {/* Área de Plotagem com Linhas Pontilhadas e Barras Agrupadas */}
+                  <div className="chart-plot-area">
+                    <div className="chart-grid-line line-top" />
+                    <div className="chart-grid-line line-mid-high" />
+                    <div className="chart-grid-line line-mid-low" />
+                    <div className="chart-grid-line line-bottom" />
+
+                    <div className="chart-groups-row">
+                      {siteConfig.turkeyManure.studyChart.bars.map((item, idx) => {
+                        const chickenHeightPct = Math.round((item.chickenValue / maxChartVal) * 100);
+                        const turkeyHeightPct = Math.round((item.turkeyValue / maxChartVal) * 100);
+                        return (
+                          <div className="chart-group-col" key={idx}>
+                            <div className="chart-bars-pair">
+                              {/* Barra Cama de Frango */}
+                              <div className="bar-wrapper">
+                                <span className="bar-value-label">{item.chickenDisplay}</span>
+                                <div
+                                  className="bar-column bar-chicken"
+                                  style={{ height: `${chickenHeightPct}%` }}
+                                  title={`Cama de frango — ${item.nutrient}: ${item.chickenDisplay}`}
+                                />
+                              </div>
+
+                              {/* Barra Cama de Peru */}
+                              <div className="bar-wrapper">
+                                <span className="bar-gain-pill">{item.diff}</span>
+                                <span className="bar-value-label bar-value-turkey">{item.turkeyDisplay}</span>
+                                <div
+                                  className="bar-column bar-turkey"
+                                  style={{ height: `${turkeyHeightPct}%` }}
+                                  title={`Cama de peru — ${item.nutrient}: ${item.turkeyDisplay} (${item.diff})`}
+                                />
+                              </div>
+                            </div>
+                            <span className="chart-axis-label">{item.nutrient}</span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  <p className="chart-source-caption">
+                    {siteConfig.turkeyManure.studyChart.source}
+                  </p>
+                </div>
+
+                {/* Coluna Direita: Tabela Comparativa Completa + Matéria Orgânica */}
+                <div className="study-table-card">
+                  <div className="study-table-header">
+                    <h4>Comparativo Bromatológico Direto</h4>
+                    <span>Amostras analisadas em base seca — Rio Verde (GO)</span>
+                  </div>
+
+                  <div className="study-table-wrapper">
+                    <table className="study-comparison-table">
+                      <thead>
+                        <tr>
+                          <th>Nutriente</th>
+                          <th>Cama de frango</th>
+                          <th>Cama de peru</th>
+                          <th>Diferença observada</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {siteConfig.turkeyManure.studyChart.tableRows.map((row, idx) => (
+                          <tr key={idx}>
+                            <td className="st-nutrient-cell">
+                              <strong>{row.nutrient}</strong>
+                            </td>
+                            <td className="st-chicken-cell">{row.chicken}</td>
+                            <td className="st-turkey-cell">
+                              <strong>{row.turkey}</strong>
+                            </td>
+                            <td className="st-diff-cell">
+                              <span className="st-diff-badge">{row.diff}</span>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  {/* Barra Visual Complementar de Matéria Orgânica (34% vs 47%) */}
+                  <div className="mo-comparison-box">
+                    <div className="mo-box-head">
+                      <strong>Densidade de Matéria Orgânica na Cama Bruta</strong>
+                      <span className="mo-diff-tag">+38% superior no Peru</span>
+                    </div>
+                    <div className="mo-bars-stack">
+                      <div className="mo-progress-row">
+                        <span className="mo-label">Cama de frango</span>
+                        <div className="mo-track">
+                          <div className="mo-fill mo-fill-chicken" style={{ width: "62%" }} />
+                        </div>
+                        <strong className="mo-val">34%</strong>
+                      </div>
+                      <div className="mo-progress-row">
+                        <span className="mo-label">Cama de peru</span>
+                        <div className="mo-track">
+                          <div className="mo-fill mo-fill-turkey" style={{ width: "88%" }} />
+                        </div>
+                        <strong className="mo-val text-gold">47%</strong>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 3 Cards de Relevância Agronômica + Nota Técnica e Fontes */}
+              <div className="study-insights-grid">
+                {siteConfig.turkeyManure.studyChart.agronomicHighlights.map((hl, i) => (
+                  <div className="study-insight-card" key={i}>
+                    <span className="insight-metric-pill">{hl.metric}</span>
+                    <h4>{hl.title}</h4>
+                    <p>{hl.desc}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="study-scientific-footnote">
+                <Icon name="Award" className="footnote-icon text-gold" />
+                <div>
+                  <strong>Referência Científica &amp; Fundamentação Agronômica:</strong>{" "}
+                  <span>
+                    {siteConfig.turkeyManure.studyChart.source} {siteConfig.turkeyManure.studyChart.complementarySources}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* =================================================================
+            4. SEÇÃO NOSSOS PRODUTOS:
+               - FERTILIZANTE ORGÂNICO SIMPLES CLASSE "A" + BOTÃO DE FOLDER + VÍDEO
+               - VITAPHOS MAX + ARTE CERTIFICADO QIMA + PDF DECLARAÇÃO
+               - FERTILIZANTES ORGANOMINERAIS CLASSE "A" (NPK PERSONALIZADO)
+            ================================================================= */}
+        <section className="section section-products" id="produtos">
+          <div className="container">
+            <div className="section-head centered">
+              <span className="section-tag">{siteConfig.productsSection.eyebrow}</span>
+              <h2 className="section-title">{siteConfig.productsSection.title}</h2>
+              <p className="section-subtitle">{siteConfig.productsSection.subtitle}</p>
+            </div>
+
+            {/* PRODUTO 1: FERTILIZANTE ORGÂNICO SIMPLES CLASSE “A” – À BASE DE ESTERCO DE PERU */}
+            <div className="product-feature-block">
+              <div className="pf-header">
+                <span className="pf-badge">{siteConfig.productsSection.organicSimple.badge}</span>
+                <h3 className="pf-title">{siteConfig.productsSection.organicSimple.title}</h3>
+                <p className="pf-subtitle">{siteConfig.productsSection.organicSimple.subtitle}</p>
+                <p className="pf-desc">{siteConfig.productsSection.organicSimple.description}</p>
+              </div>
+
+              <div className="pf-organic-grid">
+                <div className="pf-benefits-list-grid">
+                  {siteConfig.productsSection.organicSimple.benefits.map((b, i) => (
+                    <div className="pf-benefit-item" key={i}>
+                      <div className="pf-check-circle">
+                        <Icon name="check" className="icon-xs" />
+                      </div>
+                      <div>
+                        <strong>{b.title}</strong> <span>{b.desc}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Coluna Lateral: Vídeo do Produto + Botão de Folder Oficial */}
+                <div className="pf-media-sidebar">
+                  <div className="video-card-frame dark-frame">
+                    <div className="video-badge-header">
+                      <span className="video-live-dot" />
+                      <strong>VÍDEO TÉCNICO — FERTILIZANTE ORGÂNICO CLASSE “A”</strong>
+                    </div>
+                    <div className="video-responsive-embed">
+                      <iframe
+                        src={siteConfig.videos.productEmbed}
+                        title="Fertilizante Orgânico Simples Classe A — Vitadubo"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+
+                  {/* BOTÃO DE FOLDER OFICIAL SOLICITADO NO DOCUMENTO */}
+                  <div className="folder-download-card">
+                    <div className="folder-card-info">
+                      <Icon name="FileText" className="folder-icon text-gold" />
+                      <div>
+                        <span className="folder-eyebrow">CATÁLOGO &amp; ESPECIFICAÇÕES TÉCNICAS</span>
+                        <h4>Folder Oficial Vitadubo Fertilizantes</h4>
+                        <p>Confira todas as informações técnicas, recomendações e detalhes da nossa linha.</p>
+                      </div>
+                    </div>
+                    <div className="folder-card-actions">
+                      <a
+                        href={siteConfig.folderUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="btn btn-primary btn-full btn-glow"
+                      >
+                        <Icon name="FileText" className="icon-btn" />
+                        <span>Visualizar / Baixar Folder Oficial (PDF)</span>
+                      </a>
+                      <a
+                        href={createWhatsappUrl(
+                          "Olá! Gostaria de solicitar uma cotação do Fertilizante Orgânico Simples Classe 'A' à base de Esterco de Peru."
+                        )}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="btn btn-secondary btn-full"
+                      >
+                        <Icon name="whatsapp" className="icon-btn" />
+                        <span>Solicitar Cotação deste Produto</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* PRODUTO 2: FERTILIZANTE ORGANOMINERAL CLASSE “A” — VITAPHOS MAX + ARTE QIMA */}
+            <div className="product-feature-block vitaphos-highlight-block">
+              <div className="vitaphos-grid">
+                <div className="vitaphos-content-col">
+                  <span className="pf-badge gold-badge">{siteConfig.productsSection.vitaphosMax.badge}</span>
+                  <h3 className="pf-title light-title">{siteConfig.productsSection.vitaphosMax.title}</h3>
+                  <p className="pf-subtitle gold-subtitle">{siteConfig.productsSection.vitaphosMax.subtitle}</p>
+
+                  {siteConfig.productsSection.vitaphosMax.paragraphs.map((p, i) => (
+                    <p className="pf-desc light-desc" key={i}>{p}</p>
+                  ))}
+
+                  <h4 className="vitaphos-subhead">Principais diferenciais</h4>
+                  <ul className="vitaphos-diff-list">
+                    {siteConfig.productsSection.vitaphosMax.differentials.map((d, i) => (
+                      <li key={i}>
+                        <Icon name="check" className="icon-check text-gold" />
+                        <div>
+                          <strong>{d.title}</strong> <span>{d.desc}</span>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Bloco Certificado para uso na Agricultura Orgânica */}
+                  <div className="vitaphos-qima-box">
+                    <div className="vq-header">
+                      <Icon name="ShieldCheck" className="vq-icon text-gold" />
+                      <div>
+                        <span className="vq-tag">DECLARAÇÃO Nº {siteConfig.productsSection.vitaphosMax.qimaDeclarationNumber} • {siteConfig.productsSection.vitaphosMax.mapaReg}</span>
+                        <h4>{siteConfig.productsSection.vitaphosMax.certTitle}</h4>
+                      </div>
+                    </div>
+                    <p>{siteConfig.productsSection.vitaphosMax.certText1}</p>
+                    <p className="vq-highlight-quote">{siteConfig.productsSection.vitaphosMax.certText2}</p>
+
+                    <div className="vq-norms-row">
+                      <small>Normas Internacionais Aprovadas:</small>
+                      <div className="vq-norm-badges">
+                        {siteConfig.productsSection.vitaphosMax.approvedNorms.map((norm) => (
+                          <span key={norm} className="vq-norm-pill">{norm}</span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="vq-actions">
+                      <a
+                        href={siteConfig.vitaphosDeclarationUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="btn btn-primary btn-glow"
+                      >
+                        <Icon name="FileText" className="icon-btn" />
+                        <span>Ver Declaração QIMA — Vitaphos Max (PDF)</span>
+                      </a>
+                      <a
+                        href={siteConfig.certificateUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="btn btn-secondary"
+                      >
+                        <Icon name="ShieldCheck" className="icon-btn text-gold" />
+                        <span>Ver Certificado Regenera QIMA (PDF)</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Arte Oficial do Produto Certificado QIMA (rId10 do documento) */}
+                <div className="vitaphos-art-col">
+                  <div className="vitaphos-poster-card">
+                    <img
+                      src={siteConfig.productsSection.vitaphosMax.artImage}
+                      alt="Vitaphos Max — Insumo Aprovado para Uso na Agricultura Orgânica — Regenera QIMA"
+                      className="vitaphos-poster-img"
+                    />
+                    <div className="vitaphos-poster-caption">
+                      <span>✅ Insumo auditado e aprovado pela QIMA (Norma Regenera For Inputs &amp; Produção Orgânica)</span>
+                      <a
+                        href={createWhatsappUrl(
+                          "Olá! Quero saber mais e solicitar cotação do *Vitaphos Max* (Fertilizante Organomineral Classe 'A' aprovado para Agricultura Orgânica - QIMA)."
+                        )}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="btn btn-primary btn-full"
+                      >
+                        <Icon name="whatsapp" className="icon-btn" />
+                        <span>Solicitar Cotação do Vitaphos Max</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* PRODUTO 3: FERTILIZANTES ORGANOMINERAIS CLASSE “A” — VITADUBO (FORMULAÇÃO PERSONALIZADA) */}
+            <div className="product-feature-block custom-organo-block">
+              <div className="custom-organo-grid">
+                <div>
+                  <span className="pf-badge">{siteConfig.productsSection.organomineralCustom.badge}</span>
+                  <h3 className="pf-title">{siteConfig.productsSection.organomineralCustom.title}</h3>
+                  <p className="pf-subtitle">{siteConfig.productsSection.organomineralCustom.subtitle}</p>
+
+                  {siteConfig.productsSection.organomineralCustom.paragraphs.map((p, i) => (
+                    <p className="pf-desc" key={i}>{p}</p>
+                  ))}
+
+                  <h4 className="organo-tagline">{siteConfig.productsSection.organomineralCustom.tagline}</h4>
+                  <div className="organo-highlights-grid">
+                    {siteConfig.productsSection.organomineralCustom.highlights.map((h, i) => (
+                      <div className="organo-hl-card" key={i}>
+                        <Icon name="check" className="icon-check" />
+                        <div>
+                          <strong>{h.title}</strong> <span>{h.desc}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="organo-closing-card">
+                  <span className="organo-closing-tag">SOB MEDIDA PARA O SEU SOLO</span>
+                  <h4>{siteConfig.productsSection.organomineralCustom.closingTitle}</h4>
+                  <p>{siteConfig.productsSection.organomineralCustom.closingText}</p>
+                  <strong className="organo-closing-sig">
+                    {siteConfig.productsSection.organomineralCustom.closingSignature}
+                  </strong>
+                  <p className="organo-closing-cta-note">
+                    Solicite sua formulação personalizada e converse com nossa equipe comercial.
+                  </p>
+                  <a href="#formule-npk" className="btn btn-primary btn-full btn-glow">
+                    <span>Formular Meu NPK Agora</span>
+                    <Icon name="arrow-right" className="icon-btn" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* =================================================================
+            5. SEÇÃO FORMULE SEU NPK (CONFIGURADOR & SOLICITAÇÃO SOB MEDIDA)
+            ================================================================= */}
+        <section className="section section-formule-npk" id="formule-npk">
           <div className="container">
             <div className="section-head centered light">
-              <span className="section-tag light">TRANSPARÊNCIA TOTAL &amp; COMPROVAÇÃO CIENTÍFICA</span>
-              <h2 className="section-title">Laudo Técnico &amp; Certificações Oficiais</h2>
+              <span className="section-tag light">{siteConfig.formulateNpk.tag}</span>
+              <h2 className="section-title">{siteConfig.formulateNpk.title}</h2>
+              <p className="section-subtitle light">{siteConfig.formulateNpk.subtitle}</p>
+            </div>
+
+            <div className="npk-intro-box">
+              {siteConfig.formulateNpk.paragraphs.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+            </div>
+
+            {/* 4 Pilares da Formulação: N, P, K e Matéria Orgânica */}
+            <h3 className="npk-sub-heading">{siteConfig.formulateNpk.componentsTitle}</h3>
+            <div className="npk-components-grid">
+              {siteConfig.formulateNpk.components.map((c, i) => (
+                <div className="npk-comp-card" key={i}>
+                  <div className="npk-symbol-badge">{c.symbol}</div>
+                  <h4>{c.name}</h4>
+                  <p>{c.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Como funciona (4 etapas) + Configurador Interativo de NPK */}
+            <div className="npk-work-and-form-grid">
+              <div className="npk-steps-col">
+                <h3>{siteConfig.formulateNpk.howItWorksTitle}</h3>
+                <div className="npk-steps-list">
+                  {siteConfig.formulateNpk.steps.map((s, i) => (
+                    <div className="npk-step-item" key={i}>
+                      <div className="npk-step-num">{s.step}</div>
+                      <div>
+                        <strong>{s.title}</strong>
+                        <p>{s.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="npk-cta-text-box">
+                  <h4>{siteConfig.formulateNpk.ctaTitle}</h4>
+                  <p>{siteConfig.formulateNpk.ctaText}</p>
+                  <strong>{siteConfig.formulateNpk.ctaSignature}</strong>
+                </div>
+              </div>
+
+              {/* Card Interativo: Solicite sua Formulação Personalizada */}
+              <div className="npk-builder-card glass-panel">
+                <span className="contact-badge-pill">SIMULADOR DE PEDIDO • NPK + ESTERCO DE PERU</span>
+                <h3>Monte e Solicite sua Formulação</h3>
+                <p>Informe os teores desejados de N-P-K e envie diretamente para avaliação técnica da nossa indústria:</p>
+
+                <form onSubmit={handleNpkSubmit} className="custom-npk-form">
+                  <div className="npk-inputs-row">
+                    <div className="npk-input-group">
+                      <label htmlFor="npk-n">Nitrogênio (N %)</label>
+                      <input
+                        id="npk-n"
+                        type="text"
+                        value={npkForm.n}
+                        onChange={(e) => setNpkForm({ ...npkForm, n: e.target.value })}
+                        placeholder="Ex: 04"
+                      />
+                    </div>
+                    <div className="npk-input-group">
+                      <label htmlFor="npk-p">Fósforo (P₂O₅ %)</label>
+                      <input
+                        id="npk-p"
+                        type="text"
+                        value={npkForm.p}
+                        onChange={(e) => setNpkForm({ ...npkForm, p: e.target.value })}
+                        placeholder="Ex: 14"
+                      />
+                    </div>
+                    <div className="npk-input-group">
+                      <label htmlFor="npk-k">Potássio (K₂O %)</label>
+                      <input
+                        id="npk-k"
+                        type="text"
+                        value={npkForm.k}
+                        onChange={(e) => setNpkForm({ ...npkForm, k: e.target.value })}
+                        placeholder="Ex: 08"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="npk-preview-strip">
+                    <span>Formulação selecionada:</span>
+                    <strong>NPK {npkForm.n || "00"} - {npkForm.p || "00"} - {npkForm.k || "00"} + Base Orgânica de Peru</strong>
+                  </div>
+
+                  <div className="form-field-group">
+                    <label htmlFor="npk-crop">Cultura / Finalidade Agronômica</label>
+                    <input
+                      id="npk-crop"
+                      type="text"
+                      value={npkForm.crop}
+                      onChange={(e) => setNpkForm({ ...npkForm, crop: e.target.value })}
+                      placeholder="Ex: Soja, Milho, Trigo, Café, Pastagem, Hortifrúti..."
+                    />
+                  </div>
+
+                  <div className="form-row-2">
+                    <div className="form-field-group">
+                      <label htmlFor="npk-pkg">Embalagem Preferida</label>
+                      <select
+                        id="npk-pkg"
+                        value={npkForm.packaging}
+                        onChange={(e) => setNpkForm({ ...npkForm, packaging: e.target.value })}
+                      >
+                        <option value="Saca de 25 kg">Saca de 25 kg</option>
+                        <option value="Saca de 40 kg">Saca de 40 kg</option>
+                        <option value="Big Bag de 1.000 kg">Big Bag de 1.000 kg</option>
+                        <option value="Granel">Carga A Granel</option>
+                      </select>
+                    </div>
+                    <div className="form-field-group">
+                      <label htmlFor="npk-city">Sua Cidade / UF</label>
+                      <input
+                        id="npk-city"
+                        type="text"
+                        value={npkForm.city}
+                        onChange={(e) => setNpkForm({ ...npkForm, city: e.target.value })}
+                        placeholder="Ex: Chapecó - SC"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="form-row-2">
+                    <div className="form-field-group">
+                      <label htmlFor="npk-name">Seu Nome</label>
+                      <input
+                        id="npk-name"
+                        type="text"
+                        value={npkForm.name}
+                        onChange={(e) => setNpkForm({ ...npkForm, name: e.target.value })}
+                        placeholder="Seu nome completo"
+                      />
+                    </div>
+                    <div className="form-field-group">
+                      <label htmlFor="npk-phone">Telefone / WhatsApp</label>
+                      <input
+                        id="npk-phone"
+                        type="text"
+                        value={npkForm.phone}
+                        onChange={(e) => setNpkForm({ ...npkForm, phone: e.target.value })}
+                        placeholder="(00) 00000-0000"
+                      />
+                    </div>
+                  </div>
+
+                  <button type="submit" className="btn btn-primary btn-lg btn-full btn-glow">
+                    <Icon name="whatsapp" className="icon-btn" />
+                    <span>{siteConfig.formulateNpk.ctaButton}</span>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* =================================================================
+            6. SEÇÃO NOSSAS EMBALAGENS (25KG, 40KG, BIG BAG 1.000KG E GRANEL)
+            ================================================================= */}
+        <section className="section section-packaging" id="embalagens">
+          <div className="container">
+            <div className="section-head centered">
+              <span className="section-tag">{siteConfig.packagingSection.tag}</span>
+              <h2 className="section-title">{siteConfig.packagingSection.title}</h2>
+              <p className="section-subtitle">{siteConfig.packagingSection.subtitle}</p>
+              <p className="packaging-intro-text">{siteConfig.packagingSection.intro}</p>
+            </div>
+
+            <div className="packaging-grid">
+              {siteConfig.packagingSection.options.map((pkg, i) => (
+                <div className="packaging-card" key={i}>
+                  <div className="pkg-icon-circle">
+                    <Icon name="Package" className="icon-pkg" />
+                  </div>
+                  <span className="pkg-badge">{pkg.badge}</span>
+                  <h3 className="pkg-title">{pkg.title}</h3>
+                  <p className="pkg-desc">{pkg.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="logistics-notice">
+              <Icon name="ShieldCheck" className="logistics-icon" />
+              <div>
+                <strong>{siteConfig.packagingSection.closingSignature}</strong>
+                <span>{siteConfig.packagingSection.closingText}</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* =================================================================
+            7. SEÇÃO CERTIFICADOS OFICIAIS QIMA & LAUDO TÉCNICO
+            ================================================================= */}
+        <section className="section section-lab" id="certificados">
+          <div className="container">
+            <div className="section-head centered light">
+              <span className="section-tag light">TRANSPARÊNCIA TOTAL &amp; COMPROVAÇÃO OFICIAL</span>
+              <h2 className="section-title">Certificações QIMA &amp; Garantias Físico-Químicas</h2>
               <p className="section-subtitle light">
-                Amostra Nº 036278/2022 • Fertilizante Orgânico Simples Classe "A" – COLHA+ • Empresa Auditada QIMA Regenera
+                Documentos auditados pela QIMA (Programa Regenera &amp; Agricultura Orgânica) e Laudo Técnico Laboratorial da Vitadubo Fertilizantes.
               </p>
             </div>
 
-            {/* Destaque Oficial: Certificado QIMA Programa Regenera */}
-            <div className="qima-cert-banner glass-panel" id="certificados">
+            <div className="qima-cert-banner glass-panel">
               <div className="qima-cert-content">
                 <div className="qima-cert-badge-row">
                   <span className="qima-pill-gold">
@@ -547,6 +1171,7 @@ export function App() {
                     {siteConfig.qimaCertificate.badge}
                   </span>
                   <span className="qima-pill-code">Certificado Nº {siteConfig.qimaCertificate.certNumber}</span>
+                  <span className="qima-pill-code">Declaração Nº {siteConfig.qimaCertificate.declarationNumber}</span>
                   <span className="qima-pill-code">Cód. {siteConfig.qimaCertificate.companyCode}</span>
                 </div>
 
@@ -555,7 +1180,7 @@ export function App() {
 
                 <div className="qima-meta-grid">
                   <div className="qima-meta-item">
-                    <small>Empresa Certificada</small>
+                    <small>Unidade Responsável Auditada</small>
                     <strong>Vitadubo Fertilizantes Ltda (CNPJ: {siteConfig.cnpj})</strong>
                   </div>
                   <div className="qima-meta-item">
@@ -563,49 +1188,62 @@ export function App() {
                     <strong>{siteConfig.qimaCertificate.norm}</strong>
                   </div>
                   <div className="qima-meta-item">
-                    <small>Validade Oficial</small>
-                    <strong>{siteConfig.qimaCertificate.validity}</strong>
+                    <small>Escopo &amp; Normas Orgânicas</small>
+                    <strong>{siteConfig.qimaCertificate.scope}</strong>
                   </div>
                 </div>
               </div>
 
               <div className="qima-cert-actions">
+                <div className="qima-seal-box">
+                  <Icon name="Award" className="qima-seal-icon" />
+                  <strong>DOCUMENTOS OFICIAIS QIMA</strong>
+                  <span>Clique abaixo para abrir ou baixar os PDFs autenticados</span>
+                </div>
                 <a
                   href={siteConfig.certificateUrl}
                   target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-primary btn-glow btn-full"
+                  rel="noreferrer"
+                  className="btn btn-primary btn-full btn-glow"
                 >
                   <Icon name="FileText" className="icon-btn" />
-                  <span>Visualizar Certificado (PDF)</span>
+                  <span>Certificado QIMA Regenera (PDF)</span>
                 </a>
                 <a
-                  href={siteConfig.certificateUrl}
-                  download="Certificado-Conformidade-QIMA-Vitadubo.pdf"
+                  href={siteConfig.vitaphosDeclarationUrl}
+                  target="_blank"
+                  rel="noreferrer"
                   className="btn btn-secondary btn-full"
                 >
-                  <Icon name="Award" className="icon-btn text-gold" />
-                  <span>Baixar Certificado Oficial</span>
+                  <Icon name="FileText" className="icon-btn text-gold" />
+                  <span>Declaração Vitaphos Max Orgânico (PDF)</span>
                 </a>
-                <small className="qima-verify-note">
-                  ✓ Documento oficial assinado digitalmente com QR Code de autenticidade QIMA
-                </small>
+                <a
+                  href={siteConfig.folderUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-secondary btn-full"
+                >
+                  <Icon name="FileText" className="icon-btn text-gold" />
+                  <span>Folder Institucional Completo (PDF)</span>
+                </a>
               </div>
             </div>
 
+            {/* Tabela Resumo de Garantias e Laudo Laboratorial */}
             <div className="lab-panel-wrapper glass-panel">
               <div className="lab-header-info">
                 <div>
-                  <span className="lab-meta-label">EMPRESA:</span>
-                  <strong>Vitadubo Fertilizantes Ltda</strong>
+                  <span className="lab-meta-label">INDÚSTRIA:</span>
+                  <strong>{siteConfig.companyLegalName}</strong>
                 </div>
                 <div>
-                  <span className="lab-meta-label">LOCAL DA FÁBRICA:</span>
+                  <span className="lab-meta-label">SEDE INDUSTRIAL:</span>
                   <span>{siteConfig.address}</span>
                 </div>
                 <div>
-                  <span className="lab-meta-label">AMOSTRA AUDITADA:</span>
-                  <span className="lab-sample-pill">Nº {siteConfig.labReport.sampleId}</span>
+                  <span className="lab-meta-label">LAUDO LABORATORIAL:</span>
+                  <span className="lab-sample-pill">Amostra Nº {siteConfig.labReport.sampleId}</span>
                 </div>
               </div>
 
@@ -614,8 +1252,8 @@ export function App() {
                   <thead>
                     <tr>
                       <th>Ensaio / Parâmetro</th>
-                      <th>Resultado Encontrado</th>
-                      <th>Diferencial Agronômico</th>
+                      <th>Resultado Auditado</th>
+                      <th>Diferencial Agronômico no Solo</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -637,381 +1275,271 @@ export function App() {
               <div className="lab-footer-note">
                 <Icon name="Award" className="lab-footer-icon" />
                 <p>
-                  <strong>Micronutrientes presentes na formulação:</strong> {siteConfig.labReport.micros}
+                  <strong>Micronutrientes naturais presentes na base orgânica:</strong> {siteConfig.labReport.micros}
                 </p>
               </div>
-            </div>
-
-            {/* Certificações de Autoridade */}
-            <div className="certifications-grid">
-              {siteConfig.certifications.map((c, i) => (
-                <div className="cert-card" key={i}>
-                  <div className="cert-badge">{c.name}</div>
-                  <h4>{c.role}</h4>
-                  <p>{c.desc}</p>
-                </div>
-              ))}
             </div>
           </div>
         </section>
 
-        {/* SECTION GRANULOMETRIAS & FORMAS DE APLICAÇÃO */}
-        <section className="section section-granulometry" id="granulometria">
+        {/* =================================================================
+            8. SEÇÃO FALE COM UM ESPECIALISTA
+            ================================================================= */}
+        <section className="section section-specialist" id="especialista">
           <div className="container">
-            <div className="section-head centered">
-              <span className="section-tag">TECNOLOGIA DE APLICAÇÃO</span>
-              <h2 className="section-title">Granulometrias Sob Medida para o Seu Maquinário</h2>
-              <p className="section-subtitle">
-                O Fertilizante Orgânico Classe "A" COLHA+ é processado em diferentes granulometrias para atender com máxima fluidez e eficiência a sua operação no campo.
-              </p>
-            </div>
+            <div className="specialist-banner-card">
+              <div className="specialist-content">
+                <span className="section-tag">{siteConfig.specialistSection.tag}</span>
+                <h2 className="section-title">{siteConfig.specialistSection.title}</h2>
+                <p className="specialist-lead">{siteConfig.specialistSection.subtitle}</p>
 
-            <div className="granulometry-grid">
-              {siteConfig.granulometries.map((g, idx) => (
-                <div className="gran-card" key={idx}>
-                  <div className="gran-header">
-                    <span className="gran-tag">{g.tag}</span>
-                    <h3 className="gran-title">{g.type}</h3>
-                  </div>
-                  <p className="gran-desc">{g.desc}</p>
-                  <div className="gran-ideal">
-                    <strong>Culturas &amp; Aplicação Recomendada:</strong>
-                    <p>{g.ideal}</p>
-                  </div>
+                {siteConfig.specialistSection.paragraphs.map((p, i) => (
+                  <p className="specialist-p" key={i}>{p}</p>
+                ))}
+
+                <strong className="specialist-signature">{siteConfig.specialistSection.signature}</strong>
+              </div>
+
+              <div className="specialist-cta-col">
+                <div className="specialist-action-box">
+                  <Icon name="Users" className="spec-box-icon" />
+                  <h3>Orientação Técnica Personalizada</h3>
+                  <p>Converse diretamente com a equipe da Vitadubo pelo WhatsApp ou Telefone:</p>
+                  <a href={`tel:${siteConfig.phoneRaw}`} className="spec-phone-big">
+                    <Icon name="phone" className="icon-sm" />
+                    <span>{siteConfig.phoneDisplay}</span>
+                  </a>
                   <a
-                    href={createWhatsappUrl(`Olá! Gostaria de consultar cotação do COLHA+ na granulometria ${g.type}.`)}
+                    href={createWhatsappUrl(
+                      "Olá! Gostaria de falar com um especialista da Vitadubo Fertilizantes para orientação nutricional da minha lavoura."
+                    )}
                     target="_blank"
                     rel="noreferrer"
-                    className="btn btn-outline btn-full"
+                    className="btn btn-primary btn-lg btn-full btn-glow"
                   >
-                    <span>Cotar {g.type}</span>
-                    <Icon name="arrow-right" className="icon-sm" />
+                    <Icon name="whatsapp" className="icon-btn" />
+                    <span>{siteConfig.specialistSection.ctaButton}</span>
                   </a>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </section>
 
-        {/* SECTION SIMULADOR INTERATIVO */}
-        <section className="section section-simulator" id="simulador">
+        {/* =================================================================
+            9. SEÇÃO SEJA NOSSO PARCEIRO COMERCIAL (REPRESENTANTES, REVENDAS E DISTRIBUIDORES)
+            ================================================================= */}
+        <section className="section section-partner" id="parceiro">
           <div className="container">
             <div className="section-head centered">
-              <span className="section-tag">SIMULADOR OFICIAL VITADUBO</span>
-              <h2 className="section-title">Calcule a Rentabilidade da Sua Lavoura</h2>
-              <p className="section-subtitle">
-                Selecione a cultura e o tamanho da sua área para visualizar o ganho estimado e a tecnologia COLHA+ recomendada.
-              </p>
+              <span className="section-tag">{siteConfig.partnerSection.tag}</span>
+              <h2 className="section-title">{siteConfig.partnerSection.title}</h2>
+              <p className="section-subtitle">{siteConfig.partnerSection.subtitle}</p>
             </div>
 
-            <div className="simulator-box">
-              {/* Seletor de Cultura */}
-              <div className="crop-selector-tabs">
-                {siteConfig.simulatorCrops.map((crop) => (
-                  <button
-                    key={crop.id}
-                    className={`crop-tab-btn ${activeCropId === crop.id ? "active" : ""}`}
-                    onClick={() => setActiveCropId(crop.id)}
-                  >
-                    <span>{crop.name}</span>
-                  </button>
+            <div className="partner-main-grid">
+              <div className="partner-info-col">
+                {siteConfig.partnerSection.paragraphs.map((p, i) => (
+                  <p className="partner-p" key={i}>{p}</p>
                 ))}
-              </div>
 
-              <div className="simulator-interactive-area">
-                <div className="sim-slider-block">
-                  <div className="slider-header">
-                    <label htmlFor="area-slider">Área de Plantio:</label>
-                    <span className="slider-value-display">
-                      <strong>{hectares}</strong> hectares
-                    </span>
-                  </div>
-
-                  <input
-                    id="area-slider"
-                    type="range"
-                    min="10"
-                    max="1500"
-                    step="10"
-                    value={hectares}
-                    onChange={(e) => setHectares(Number(e.target.value))}
-                    className="range-input"
-                  />
-
-                  <div className="range-presets">
-                    {[30, 80, 150, 300, 600, 1000].map((val) => (
-                      <button
-                        key={val}
-                        className={`preset-btn ${hectares === val ? "active" : ""}`}
-                        onClick={() => setHectares(val)}
-                      >
-                        {val} ha
-                      </button>
-                    ))}
-                  </div>
-
-                  <div className="sim-recommendation-card">
-                    <span className="rec-eyebrow">Manejo Vitadubo Indicado:</span>
-                    <h4 className="rec-title">{currentCrop.recommendation}</h4>
-                    <p className="rec-desc">{currentCrop.summary}</p>
-                  </div>
-                </div>
-
-                <div className="sim-results-block">
-                  <div className="results-card">
-                    <span className="results-tag">ESTIMATIVA PARA {hectares} HECTARES</span>
-
-                    <div className="result-highlight">
-                      <span className="result-number">+{estimatedGainTotal}</span>
-                      <span className="result-unit">{currentCrop.unit}</span>
-                      <p className="result-caption">
-                        Estimativa média de ganho adicional em produtividade na colheita
-                      </p>
-                    </div>
-
-                    <div className="result-perks-grid">
-                      <div className="perk-box">
-                        <Icon name="Droplets" className="perk-icon" />
-                        <div>
-                          <strong>{currentCrop.waterRetention}</strong>
-                          <small>Retenção Hídrica no Solo</small>
-                        </div>
+                <h3 className="partner-subhead">{siteConfig.partnerSection.whyTitle}</h3>
+                <ul className="partner-reasons-list">
+                  {siteConfig.partnerSection.whyReasons.map((r, i) => (
+                    <li key={i}>
+                      <div className="pf-check-circle">
+                        <Icon name="check" className="icon-xs" />
                       </div>
-                      <div className="perk-box">
-                        <Icon name="TrendingUp" className="perk-icon" />
-                        <div>
-                          <strong>{currentCrop.rootDepth}</strong>
-                          <small>Enraizamento &amp; CTC 592</small>
-                        </div>
+                      <div>
+                        <strong>{r.title}</strong> <span>{r.desc}</span>
                       </div>
-                    </div>
+                    </li>
+                  ))}
+                </ul>
 
-                    <button onClick={handleSimulatorWhatsapp} className="btn btn-primary btn-full mt-4">
-                      <Icon name="whatsapp" className="icon-btn" />
-                      <span>Receber Cotação Deste Cálculo</span>
-                    </button>
-                    <small className="results-disclaimer">
-                      * Estimativas baseadas em histórico de ensaios agronômicos e dados de laudo laboratorial.
-                    </small>
-                  </div>
+                <div className="partner-who-box">
+                  <h4>{siteConfig.partnerSection.whoTitle}</h4>
+                  <p>{siteConfig.partnerSection.whoText1}</p>
+                  <p><strong>{siteConfig.partnerSection.whoText2}</strong></p>
+                </div>
+
+                <div className="partner-grow-box">
+                  <h4>{siteConfig.partnerSection.growTitle}</h4>
+                  <p>{siteConfig.partnerSection.growText}</p>
+                  <strong className="partner-sig">{siteConfig.partnerSection.signature}</strong>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
 
-        {/* SECTION EMBALAGENS & LOGÍSTICA */}
-        <section className="section section-packagings" id="embalagens">
-          <div className="container">
-            <div className="section-head centered">
-              <span className="section-tag">LOGÍSTICA &amp; PRATICIDADE</span>
-              <h2 className="section-title">Opções de Embalagens Direto da Indústria</h2>
-              <p className="section-subtitle">
-                Atendemos desde propriedades familiares até grandes grupos agrícolas com logística rápida e opções flexíveis de carregamento.
-              </p>
-            </div>
+              {/* Formulário de Cadastro de Parceiro Comercial */}
+              <div className="partner-form-col">
+                <div className="partner-form-card">
+                  <span className="pf-badge">CADASTRO DE PARCEIROS COMERCIAIS</span>
+                  <h3>Quero ser Parceiro Vitadubo</h3>
+                  <p>Preencha seus dados abaixo para falar com nossa diretoria comercial:</p>
 
-            <div className="packaging-grid">
-              {siteConfig.packagings.map((pkg, i) => (
-                <div className="pkg-card" key={i}>
-                  <div className="pkg-icon-wrap">
-                    <Icon name="Package" className="pkg-icon" />
-                  </div>
-                  <span className="pkg-badge">{pkg.badge}</span>
-                  <h3 className="pkg-title">{pkg.title}</h3>
-                  <p className="pkg-desc">{pkg.note}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="logistics-notice">
-              <Icon name="MapPin" className="logistics-icon" />
-              <div>
-                <strong>Fábrica em Santa Catarina com Atendimento Nacional e Exportação:</strong>
-                <span>
-                  {siteConfig.address} • Entregas programadas para coincidir com a janela ideal de plantio na sua região.
-                </span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* SECTION A INDÚSTRIA: MISSÃO, VISÃO & VALORES */}
-        <section className="section section-company" id="empresa">
-          <div className="container">
-            <div className="section-head centered">
-              <span className="section-tag">NOSSA HISTÓRIA &amp; PROPÓSITO</span>
-              <h2 className="section-title">Vitadubo Fertilizantes: Feita Para o Agro</h2>
-              <p className="section-subtitle">
-                Uma empresa 100% brasileira, apaixonada pelo campo e comprometida em atender o produtor rural com excelência técnica, humildade e integridade.
-              </p>
-            </div>
-
-            <div className="company-pillars-grid">
-              <div className="company-pillar-card">
-                <span className="pillar-tag-badge">PROPÓSITO</span>
-                <h3>{siteConfig.mission.title}</h3>
-                <p>{siteConfig.mission.text}</p>
-              </div>
-
-              <div className="company-pillar-card">
-                <span className="pillar-tag-badge">FUTURO</span>
-                <h3>{siteConfig.vision.title}</h3>
-                <p>{siteConfig.vision.text}</p>
-              </div>
-
-              <div className="company-pillar-card highlight-card">
-                <span className="pillar-tag-badge highlight">CONDUTA</span>
-                <h3>{siteConfig.values.title}</h3>
-                <p>{siteConfig.values.text}</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* SECTION FAQ (PERGUNTAS FREQUENTES) */}
-        <section className="section section-faq" id="faq">
-          <div className="container">
-            <div className="section-head centered">
-              <span className="section-tag">ESCLAREÇA SUAS DÚVIDAS</span>
-              <h2 className="section-title">Perguntas Frequentes sobre o COLHA+</h2>
-              <p className="section-subtitle">
-                Tudo o que você precisa saber sobre aplicação, retenção de água, compatibilidade com máquinas e logística.
-              </p>
-            </div>
-
-            <div className="faq-accordion-wrapper">
-              {siteConfig.faq.map((item, index) => {
-                const isOpen = openFaq === index;
-                return (
-                  <div className={`faq-card ${isOpen ? "open" : ""}`} key={index}>
-                    <button
-                      className="faq-question-btn"
-                      onClick={() => setOpenFaq(isOpen ? -1 : index)}
-                      aria-expanded={isOpen}
-                    >
-                      <span>{item.q}</span>
-                      <Icon
-                        name="chevron-down"
-                        className={`faq-icon ${isOpen ? "rotate" : ""}`}
+                  <form onSubmit={handlePartnerSubmit} className="partner-form">
+                    <div className="form-field-group light-field">
+                      <label htmlFor="pt-name">Seu Nome Completo *</label>
+                      <input
+                        id="pt-name"
+                        type="text"
+                        required
+                        value={partnerForm.name}
+                        onChange={(e) => setPartnerForm({ ...partnerForm, name: e.target.value })}
+                        placeholder="Digite seu nome"
                       />
-                    </button>
-                    {isOpen && (
-                      <div className="faq-answer-content">
-                        <p>{item.a}</p>
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
+                    </div>
 
-            <div className="faq-extra-help">
-              <p>Precisa de um esclarecimento técnico específico para o seu talhão?</p>
-              <a
-                href={createWhatsappUrl("Olá! Gostaria de tirar uma dúvida técnica sobre a aplicação do COLHA+ na minha lavoura.")}
-                target="_blank"
-                rel="noreferrer"
-                className="faq-help-link"
-              >
-                Falar diretamente com nosso agrônomo no WhatsApp (49) 3199-2722 <span>→</span>
-              </a>
+                    <div className="form-row-2">
+                      <div className="form-field-group light-field">
+                        <label htmlFor="pt-company">Empresa / Revenda</label>
+                        <input
+                          id="pt-company"
+                          type="text"
+                          value={partnerForm.company}
+                          onChange={(e) => setPartnerForm({ ...partnerForm, company: e.target.value })}
+                          placeholder="Nome da empresa (opcional)"
+                        />
+                      </div>
+                      <div className="form-field-group light-field">
+                        <label htmlFor="pt-role">Segmento de Atuação</label>
+                        <select
+                          id="pt-role"
+                          value={partnerForm.role}
+                          onChange={(e) => setPartnerForm({ ...partnerForm, role: e.target.value })}
+                        >
+                          <option value="Representante Comercial">Representante Comercial</option>
+                          <option value="Loja Agropecuária / Revenda">Loja Agropecuária / Revenda</option>
+                          <option value="Distribuidor Agrícola">Distribuidor Agrícola</option>
+                          <option value="Cooperativa">Cooperativa</option>
+                          <option value="Consultor Agronômico">Consultor Agronômico</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div className="form-row-2">
+                      <div className="form-field-group light-field">
+                        <label htmlFor="pt-city">Cidade e Região de Atuação *</label>
+                        <input
+                          id="pt-city"
+                          type="text"
+                          required
+                          value={partnerForm.cityRegion}
+                          onChange={(e) => setPartnerForm({ ...partnerForm, cityRegion: e.target.value })}
+                          placeholder="Ex: Oeste de SC / Sudoeste do PR"
+                        />
+                      </div>
+                      <div className="form-field-group light-field">
+                        <label htmlFor="pt-phone">Telefone / WhatsApp *</label>
+                        <input
+                          id="pt-phone"
+                          type="text"
+                          required
+                          value={partnerForm.phone}
+                          onChange={(e) => setPartnerForm({ ...partnerForm, phone: e.target.value })}
+                          placeholder="(00) 00000-0000"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="form-field-group light-field">
+                      <label htmlFor="pt-msg">Interesse Comercial / Mensagem</label>
+                      <textarea
+                        id="pt-msg"
+                        rows="3"
+                        value={partnerForm.message}
+                        onChange={(e) => setPartnerForm({ ...partnerForm, message: e.target.value })}
+                        placeholder="Conte um pouco sobre sua carteira de clientes, região e interesse de parceria..."
+                      />
+                    </div>
+
+                    <button type="submit" className="btn btn-primary btn-lg btn-full btn-glow">
+                      <Icon name="whatsapp" className="icon-btn" />
+                      <span>{siteConfig.partnerSection.ctaButton}</span>
+                    </button>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* SECTION CENTRAL DE VENDAS DIRETO DA FÁBRICA */}
+        {/* =================================================================
+            10. SEÇÃO CONTATOS OFICIAIS
+            ================================================================= */}
         <section className="section section-cta-form" id="contato">
           <div className="container">
-            <div className="cta-form-container">
-              <div className="cta-info-side">
-                <span className="section-tag light">ATENDIMENTO DIRETO DA INDÚSTRIA</span>
-                <h2 className="cta-title">
-                  Pronto para colher mais sacas <br />
-                  <span className="text-gold">por hectare na sua lavoura?</span>
-                </h2>
-                <p className="cta-desc">
-                  Compre direto da fábrica em Cordilheira Alta (SC) com frete programado e suporte técnico agronômico para a sua safra. Fale agora com a nossa equipe comercial:
-                </p>
+            <div className="section-head centered light">
+              <span className="section-tag light">CANAIS OFICIAIS DE ATENDIMENTO</span>
+              <h2 className="section-title">Contatos Vitadubo Fertilizantes</h2>
+              <p className="section-subtitle light">
+                Fale diretamente com nossa sede em Cordilheira Alta/SC por telefone, WhatsApp, e-mail ou redes sociais.
+              </p>
+            </div>
 
-                <div className="cta-perks-list">
-                  <div className="c-perk">
-                    <Icon name="check" className="icon-check text-gold" />
-                    <span>Faturamento direto da indústria sem intermediários</span>
-                  </div>
-                  <div className="c-perk">
-                    <Icon name="check" className="icon-check text-gold" />
-                    <span>Embalagens em Sacas de 25kg, 40kg, Big Bags de 1.000kg e Granel</span>
-                  </div>
-                  <div className="c-perk">
-                    <Icon name="check" className="icon-check text-gold" />
-                    <span>Entrega programada para a janela ideal de plantio na sua região</span>
-                  </div>
-                  <div className="c-perk">
-                    <Icon name="check" className="icon-check text-gold" />
-                    <span>Linhas oficiais: Vitaphos Max, Vitaphos Max Pro, Vitaplus Max Plus e COLHA+</span>
-                  </div>
-                  <div className="c-perk">
-                    <Icon name="check" className="icon-check text-gold" />
-                    <span>Certificado Oficial de Conformidade QIMA Regenera, MAPA, IMA e IBD</span>
-                  </div>
+            <div className="contacts-cards-grid">
+              <a href={`tel:${siteConfig.phoneRaw}`} className="contact-channel-card glass-panel">
+                <div className="cc-icon-wrap">
+                  <Icon name="phone" className="cc-icon" />
                 </div>
+                <span className="cc-label">TELEFONE COMERCIAL</span>
+                <strong className="cc-value">{siteConfig.phoneDisplay}</strong>
+                <span className="cc-action">Clique para ligar agora ↗</span>
+              </a>
+
+              <a
+                href={createWhatsappUrl()}
+                target="_blank"
+                rel="noreferrer"
+                className="contact-channel-card glass-panel highlight-channel"
+              >
+                <div className="cc-icon-wrap whatsapp-wrap">
+                  <Icon name="whatsapp" className="cc-icon" />
+                </div>
+                <span className="cc-label">WHATSAPP OFICIAL</span>
+                <strong className="cc-value">{siteConfig.whatsappDisplay}</strong>
+                <span className="cc-action">Iniciar conversa no WhatsApp ↗</span>
+              </a>
+
+              <a href={`mailto:${siteConfig.email}`} className="contact-channel-card glass-panel">
+                <div className="cc-icon-wrap">
+                  <Icon name="Mail" className="cc-icon" />
+                </div>
+                <span className="cc-label">E-MAIL CORPORATIVO</span>
+                <strong className="cc-value cc-email">{siteConfig.email}</strong>
+                <span className="cc-action">Enviar e-mail direto ↗</span>
+              </a>
+
+              <div className="contact-channel-card glass-panel">
+                <div className="cc-icon-wrap">
+                  <Icon name="MapPin" className="cc-icon" />
+                </div>
+                <span className="cc-label">SEDE INDUSTRIAL</span>
+                <strong className="cc-value cc-address">{siteConfig.address}</strong>
+                <span className="cc-action">Cordilheira Alta — Santa Catarina</span>
               </div>
+            </div>
 
-              <div className="cta-form-side">
-                <div className="quote-form-card glass-panel">
-                  <div className="contact-card-header">
-                    <span className="contact-badge-pill">FÁBRICA CORDILHEIRA ALTA • SC</span>
-                    <h3>Central de Vendas &amp; Cotação Direta</h3>
-                    <p>Atendimento comercial imediato para produtores rurais, cooperativas e revendas:</p>
-                  </div>
-
-                  <div className="contact-card-actions">
-                    <a
-                      href={createWhatsappUrl("Olá! Gostaria de falar com o time comercial da Vitadubo Fertilizantes e solicitar uma cotação direta da fábrica.")}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="btn btn-primary btn-full btn-lg btn-glow"
-                    >
-                      <Icon name="whatsapp" className="icon-btn" />
-                      <span>Falar no WhatsApp (49) 3199-2722</span>
-                    </a>
-
-                    <a
-                      href={siteConfig.certificateUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-secondary btn-full mt-2"
-                    >
-                      <Icon name="FileText" className="icon-btn text-gold" />
-                      <span>Ver Certificado de Conformidade QIMA (PDF)</span>
-                    </a>
-
-                    <div className="direct-call-box mt-4">
-                      <span className="call-title">Ligação Telefônica Direta:</span>
-                      <a href={`tel:${siteConfig.phoneRaw}`} className="call-number-link">
-                        <Icon name="phone" className="icon-call" />
-                        <strong>{siteConfig.phoneDisplay}</strong>
-                      </a>
-                      <small>Horário de Atendimento: {siteConfig.operatingHours}</small>
-                      <small className="factory-location-note">
-                        📍 <strong>Endereço da Indústria:</strong> {siteConfig.address}
-                      </small>
-                    </div>
-
-                    <div className="field-visit-note">
-                      <Icon name="ShieldCheck" className="icon-sm text-gold" />
-                      <span>Nossos agrônomos atendem produtores direto em suas propriedades com monitoramento de produtividade.</span>
-                    </div>
-                  </div>
-                </div>
+            {/* Barra de Redes Sociais Oficiais */}
+            <div className="contacts-social-bar glass-panel">
+              <span>Acompanhe a Vitadubo nas Redes Sociais:</span>
+              <div className="contacts-social-links">
+                <a href={siteConfig.socials.facebookUrl} target="_blank" rel="noreferrer" className="social-pill-btn">
+                  {siteConfig.socials.facebookLabel}
+                </a>
+                <a href={siteConfig.socials.instagramUrl} target="_blank" rel="noreferrer" className="social-pill-btn">
+                  {siteConfig.socials.instagramLabel}
+                </a>
+                <a href={siteConfig.socials.youtubeUrl} target="_blank" rel="noreferrer" className="social-pill-btn">
+                  {siteConfig.socials.youtubeLabel}
+                </a>
               </div>
             </div>
           </div>
         </section>
       </main>
 
-      {/* RODAPÉ CORPORATIVO OFICIAL COM LOGO COMPLETO */}
+      {/* RODAPÉ CORPORATIVO OFICIAL COM LOGOMARCA COMPLETA */}
       <footer className="site-footer">
         <div className="container">
           <div className="footer-columns">
@@ -1033,32 +1561,30 @@ export function App() {
               <h4>Navegação</h4>
               <ul className="footer-links-list">
                 <li><a href="#inicio">Início</a></li>
-                <li><a href="#diferencial">Esterco de Peru</a></li>
-                <li><a href="#produtos">Linhas de Produtos</a></li>
-                <li><a href="#colha-plus">COLHA+ Classe "A"</a></li>
-                <li><a href="#laudo">Laudo &amp; Certificados</a></li>
-                <li><a href={siteConfig.certificateUrl} target="_blank" rel="noopener noreferrer">Certificado QIMA (PDF) ↗</a></li>
-                <li><a href="#simulador">Simulador de Safra</a></li>
-                <li><a href="#embalagens">Embalagens</a></li>
-                <li><a href="#contato">Central de Vendas</a></li>
+                <li><a href="#quem-somos">Quem Somos</a></li>
+                <li><a href="#esterco-de-peru">Esterco de Peru</a></li>
+                <li><a href="#grafico-nutrientes">Estudo &amp; Gráfico de Nutrientes</a></li>
+                <li><a href="#produtos">Nossos Produtos</a></li>
+                <li><a href="#formule-npk">Formule seu NPK</a></li>
+                <li><a href="#embalagens">Nossas Embalagens</a></li>
+                <li><a href="#parceiro">Seja Nosso Parceiro</a></li>
               </ul>
             </div>
 
             <div className="footer-col">
-              <h4>Produtos Vitadubo</h4>
+              <h4>Produtos &amp; Documentos</h4>
               <ul className="footer-links-list">
-                <li><a href="#produtos">Vitaphos Max (Orgânico)</a></li>
-                <li><a href="#produtos">Vitaphos Max Pro</a></li>
-                <li><a href="#produtos">Vitaplus Max Plus</a></li>
-                <li><a href="#colha-plus">COLHA+ Classe "A"</a></li>
-                <li><a href="#embalagens">Sacas de 25kg e 40kg</a></li>
-                <li><a href="#embalagens">Big Bags 1.000kg e Granel</a></li>
+                <li><a href="#produtos">Fertilizante Orgânico Classe "A"</a></li>
+                <li><a href="#produtos">Vitaphos Max Organomineral</a></li>
+                <li><a href="#formule-npk">Organominerais NPK Sob Medida</a></li>
+                <li><a href={siteConfig.folderUrl} target="_blank" rel="noreferrer">📄 Folder Oficial Vitadubo (PDF)</a></li>
+                <li><a href={siteConfig.certificateUrl} target="_blank" rel="noreferrer">📄 Certificado QIMA Regenera (PDF)</a></li>
+                <li><a href={siteConfig.vitaphosDeclarationUrl} target="_blank" rel="noreferrer">📄 Declaração QIMA Vitaphos Max (PDF)</a></li>
               </ul>
             </div>
 
             <div className="footer-col footer-col-contact">
-              <h4>Fale com a Indústria</h4>
-              <p>Ligue ou envie mensagem para atendimento imediato:</p>
+              <h4>Contatos Oficiais</h4>
               <div className="footer-contact-actions">
                 <a href={`tel:${siteConfig.phoneRaw}`} className="footer-phone-cta">
                   <Icon name="phone" className="icon-sm" />
@@ -1071,65 +1597,45 @@ export function App() {
                   className="btn btn-whatsapp-footer"
                 >
                   <Icon name="whatsapp" className="icon-btn" />
-                  <span>WhatsApp Comercial</span>
+                  <span>WhatsApp {siteConfig.whatsappDisplay}</span>
                 </a>
               </div>
               <p className="footer-hours">
-                <strong>Localização da Fábrica:</strong>
+                <strong>E-mail:</strong>{" "}
+                <a href={`mailto:${siteConfig.email}`} style={{ textDecoration: "underline" }}>
+                  {siteConfig.email}
+                </a>
                 <br />
-                {siteConfig.address}
-                <br />
-                <strong>Horário:</strong> {siteConfig.operatingHours}
+                <strong>Sede:</strong> {siteConfig.address}
               </p>
             </div>
           </div>
 
           <div className="footer-bottom-bar">
             <span>{siteConfig.copyright}</span>
-            <span>Central Comercial: {siteConfig.phoneDisplay} • Cordilheira Alta - SC</span>
+            <span>{siteConfig.socials.facebookLabel} • {siteConfig.socials.instagramLabel} • {siteConfig.socials.youtubeLabel}</span>
           </div>
         </div>
       </footer>
 
-      {/* BOTÃO FLUTUANTE DE WHATSAPP COM BALÃO DE MENSAGEM */}
+      {/* BOTÃO FLUTUANTE DE WHATSAPP */}
       <div className="floating-whatsapp-container">
         <a
           href={createWhatsappUrl()}
           target="_blank"
           rel="noreferrer"
           className="floating-whatsapp-btn"
-          aria-label="Falar com Agrônomo da Vitadubo no WhatsApp"
-          title="Falar no WhatsApp (49) 3199-2722"
+          aria-label="Falar com a Vitadubo Fertilizantes pelo WhatsApp"
         >
-          <span className="floating-pulse-ring" />
-          <Icon name="whatsapp" className="floating-whatsapp-icon" />
-          <span className="floating-online-dot" />
+          <span className="whatsapp-ping" />
+          <Icon name="whatsapp" className="floating-wa-icon" />
         </a>
-
-        <div className="floating-tooltip">
-          <div className="tooltip-header">
-            <span className="tooltip-dot" />
-            <span>Vitadubo Fertilizantes Online</span>
-          </div>
-          <p className="tooltip-text">
-            Precisa de cotação do <strong>COLHA+ Classe A</strong> para a sua safra? Fale conosco no <strong>(49) 3199-2722</strong>!
-          </p>
-          <a
-            href={createWhatsappUrl()}
-            target="_blank"
-            rel="noreferrer"
-            className="tooltip-link"
-          >
-            Iniciar Conversa <span>→</span>
-          </a>
-        </div>
       </div>
     </div>
   );
 }
 
-createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const rootElement = document.getElementById("root");
+if (rootElement) {
+  createRoot(rootElement).render(<App />);
+}
