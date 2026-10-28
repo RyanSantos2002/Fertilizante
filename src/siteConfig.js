@@ -231,7 +231,7 @@ export const siteConfig = {
       tableHeaders: [
         "Critério",
         "Esterco industrializado resfriado — vantagem",
-        "Esterco secado em alta temperatura — possível desvantagem"
+        "Esterco secado em alta temperatura — desvantagem"
       ],
       tableRows: [
         {
@@ -261,9 +261,7 @@ export const siteConfig = {
         }
       ],
       references:
-        "Referências científicas: estudos sobre secagem de esterco de aves, perdas de nitrogênio e alterações nas formas de fósforo — ScienceDirect: \"Drying, a practical technology for reduction of poultry litter (environmental) pollution: methods and their effects on important parameters\"; MDPI (2020): \"The Effect of Drying Temperature on Nitrogen Loss and Pathogen Removal in Laying Hen Manure\"; Communications in Soil Science and Plant Analysis (Vol. 38, No. 13-14, 2007): \"Effect of Drying on Phosphorus Distribution in Poultry Manure\".",
-      technicalNote:
-        "os efeitos dependem da temperatura efetiva do material, do tempo de exposição e das condições de processamento. Para comprovar diferenças na qualidade agronômica, recomenda-se comparar amostras do mesmo lote por meio de análises laboratoriais."
+        "Referências científicas: estudos sobre secagem de esterco de aves, perdas de nitrogênio e alterações nas formas de fósforo — ScienceDirect: \"Drying, a practical technology for reduction of poultry litter (environmental) pollution: methods and their effects on important parameters\"; MDPI (2020): \"The Effect of Drying Temperature on Nitrogen Loss and Pathogen Removal in Laying Hen Manure\"; Communications in Soil Science and Plant Analysis (Vol. 38, No. 13-14, 2007): \"Effect of Drying on Phosphorus Distribution in Poultry Manure\"."
     }
   },
 

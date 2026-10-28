@@ -702,9 +702,6 @@ function App() {
                   <p className="industrial-ref-text">
                     <strong>📚 {siteConfig.turkeyManure.industrialProcess.references}</strong>
                   </p>
-                  <p className="industrial-note-text">
-                    <strong>Nota técnica:</strong> {siteConfig.turkeyManure.industrialProcess.technicalNote}
-                  </p>
                 </div>
               </div>
             </div>
@@ -974,9 +971,9 @@ function App() {
             </div>
 
             {/* Como funciona (4 etapas) + Configurador Interativo de NPK */}
+            <h3 className="npk-how-heading">{siteConfig.formulateNpk.howItWorksTitle}</h3>
             <div className="npk-work-and-form-grid">
               <div className="npk-steps-col">
-                <h3>{siteConfig.formulateNpk.howItWorksTitle}</h3>
                 <div className="npk-steps-list">
                   {siteConfig.formulateNpk.steps.map((s, i) => (
                     <div className="npk-step-item" key={i}>
@@ -1160,19 +1157,27 @@ function App() {
             </div>
 
             <div className="qima-cert-banner glass-panel">
-              <div className="qima-cert-content">
-                <div className="qima-cert-badge-row">
-                  <span className="qima-pill-gold">
-                    <Icon name="ShieldCheck" className="icon-sm" />
-                    {siteConfig.qimaCertificate.badge}
-                  </span>
-                  <span className="qima-pill-code">Certificado Nº {siteConfig.qimaCertificate.certNumber}</span>
-                  <span className="qima-pill-code">Declaração Nº {siteConfig.qimaCertificate.declarationNumber}</span>
-                  <span className="qima-pill-code">Cód. {siteConfig.qimaCertificate.companyCode}</span>
+              <div className="qima-cert-badge-row">
+                <span className="qima-pill-gold">
+                  <Icon name="ShieldCheck" className="icon-sm" />
+                  {siteConfig.qimaCertificate.badge}
+                </span>
+                <span className="qima-pill-code">Certificado Nº {siteConfig.qimaCertificate.certNumber}</span>
+                <span className="qima-pill-code">Declaração Nº {siteConfig.qimaCertificate.declarationNumber}</span>
+                <span className="qima-pill-code">Cód. {siteConfig.qimaCertificate.companyCode}</span>
+              </div>
+
+              <div className="qima-cert-aligned-grid">
+                <div className="qima-cert-intro-box">
+                  <h3 className="qima-cert-title">{siteConfig.qimaCertificate.title}</h3>
+                  <p className="qima-cert-desc">{siteConfig.qimaCertificate.description}</p>
                 </div>
 
-                <h3 className="qima-cert-title">{siteConfig.qimaCertificate.title}</h3>
-                <p className="qima-cert-desc">{siteConfig.qimaCertificate.description}</p>
+                <div className="qima-seal-box">
+                  <Icon name="Award" className="qima-seal-icon" />
+                  <strong>DOCUMENTOS OFICIAIS QIMA</strong>
+                  <span>Clique abaixo para abrir ou baixar os PDFs autenticados</span>
+                </div>
 
                 <div className="qima-meta-grid">
                   <div className="qima-meta-item">
@@ -1188,32 +1193,27 @@ function App() {
                     <strong>{siteConfig.qimaCertificate.scope}</strong>
                   </div>
                 </div>
-              </div>
 
-              <div className="qima-cert-actions">
-                <div className="qima-seal-box">
-                  <Icon name="Award" className="qima-seal-icon" />
-                  <strong>DOCUMENTOS OFICIAIS QIMA</strong>
-                  <span>Clique abaixo para abrir ou baixar os PDFs autenticados</span>
+                <div className="qima-cert-actions">
+                  <a
+                    href={siteConfig.certificateUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn btn-primary btn-full btn-glow"
+                  >
+                    <Icon name="FileText" className="icon-btn" />
+                    <span>Certificado QIMA Regenera (PDF)</span>
+                  </a>
+                  <a
+                    href={siteConfig.vitaphosDeclarationUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn btn-secondary btn-full"
+                  >
+                    <Icon name="FileText" className="icon-btn text-gold" />
+                    <span>Declaração Vitaphos Max Orgânico (PDF)</span>
+                  </a>
                 </div>
-                <a
-                  href={siteConfig.certificateUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn btn-primary btn-full btn-glow"
-                >
-                  <Icon name="FileText" className="icon-btn" />
-                  <span>Certificado QIMA Regenera (PDF)</span>
-                </a>
-                <a
-                  href={siteConfig.vitaphosDeclarationUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn btn-secondary btn-full"
-                >
-                  <Icon name="FileText" className="icon-btn text-gold" />
-                  <span>Declaração Vitaphos Max Orgânico (PDF)</span>
-                </a>
               </div>
             </div>
           </div>
@@ -1293,18 +1293,6 @@ function App() {
                     </li>
                   ))}
                 </ul>
-
-                <div className="partner-who-box">
-                  <h4>{siteConfig.partnerSection.whoTitle}</h4>
-                  <p>{siteConfig.partnerSection.whoText1}</p>
-                  <p><strong>{siteConfig.partnerSection.whoText2}</strong></p>
-                </div>
-
-                <div className="partner-grow-box">
-                  <h4>{siteConfig.partnerSection.growTitle}</h4>
-                  <p>{siteConfig.partnerSection.growText}</p>
-                  <strong className="partner-sig">{siteConfig.partnerSection.signature}</strong>
-                </div>
               </div>
 
               {/* Formulário de Cadastro de Parceiro Comercial */}
@@ -1396,6 +1384,18 @@ function App() {
                     </button>
                   </form>
                 </div>
+              </div>
+
+              <div className="partner-who-box">
+                <h4>{siteConfig.partnerSection.whoTitle}</h4>
+                <p>{siteConfig.partnerSection.whoText1}</p>
+                <p><strong>{siteConfig.partnerSection.whoText2}</strong></p>
+              </div>
+
+              <div className="partner-grow-box">
+                <h4>{siteConfig.partnerSection.growTitle}</h4>
+                <p>{siteConfig.partnerSection.growText}</p>
+                <strong className="partner-sig">{siteConfig.partnerSection.signature}</strong>
               </div>
             </div>
           </div>

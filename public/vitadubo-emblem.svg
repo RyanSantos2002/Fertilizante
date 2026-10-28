@@ -1,31 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="205 215 180 155" width="100%" height="100%">
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="205 215 180 155" width="100%" height="100%">
   <defs>
-    <linearGradient id="badgeWheat" x1="85%" y1="10%" x2="15%" y2="90%">
-      <stop offset="0%" stop-color="#dfba6b" />
-      <stop offset="35%" stop-color="#caa053" />
-      <stop offset="70%" stop-color="#a27433" />
-      <stop offset="100%" stop-color="#70471b" />
+    <linearGradient id="badgeWheat" x1="85%" y1="5%" x2="10%" y2="95%">
+      <stop offset="0%" stop-color="#dfaf50" />
+      <stop offset="40%" stop-color="#c3943a" />
+      <stop offset="75%" stop-color="#a78650" />
+      <stop offset="100%" stop-color="#8b6830" />
     </linearGradient>
-
-    <linearGradient id="badgeF1" x1="0%" y1="30%" x2="100%" y2="70%">
-      <stop offset="0%" stop-color="#a27433" />
-      <stop offset="50%" stop-color="#caa053" />
-      <stop offset="100%" stop-color="#dfbe75" />
+    <linearGradient id="badgeF1" x1="0%" y1="15%" x2="95%" y2="90%">
+      <stop offset="0%" stop-color="#eee8dc" />
+      <stop offset="28%" stop-color="#d8c8b4" />
+      <stop offset="65%" stop-color="#a68962" />
+      <stop offset="100%" stop-color="#88602c" />
     </linearGradient>
-
-    <linearGradient id="badgeF2" x1="0%" y1="30%" x2="100%" y2="70%">
-      <stop offset="0%" stop-color="#8c5e27" />
-      <stop offset="50%" stop-color="#b88a3f" />
-      <stop offset="100%" stop-color="#dfbe75" />
+    <linearGradient id="badgeF2" x1="0%" y1="15%" x2="95%" y2="90%">
+      <stop offset="0%" stop-color="#eee8dc" />
+      <stop offset="28%" stop-color="#d4c3ad" />
+      <stop offset="65%" stop-color="#a18158" />
+      <stop offset="100%" stop-color="#88602c" />
     </linearGradient>
-
-    <linearGradient id="badgeF3" x1="0%" y1="30%" x2="100%" y2="70%">
-      <stop offset="0%" stop-color="#70471b" />
-      <stop offset="50%" stop-color="#a87a36" />
-      <stop offset="100%" stop-color="#dfbe75" />
+    <linearGradient id="badgeF3" x1="0%" y1="15%" x2="95%" y2="90%">
+      <stop offset="0%" stop-color="#eee8dc" />
+      <stop offset="30%" stop-color="#cdbca6" />
+      <stop offset="68%" stop-color="#9d7b50" />
+      <stop offset="100%" stop-color="#88602c" />
     </linearGradient>
   </defs>
-
   <path d="M 243.03 332.46 C 258.74 341.35, 265.00 349.33, 274.30 357.27 C 278.71 361.04, 283.99 363.02, 289.29 363.39 C 295.18 363.81, 303.41 363.62, 312.14 362.30 C 318.30 361.37, 320.38 360.03, 309.16 352.33 C 290.17 339.31, 270.87 328.52, 247.33 323.38 C 243.83 322.62, 240.28 322.12, 236.56 322.06 C 222.31 321.84, 238.38 329.83, 243.03 332.46" fill="url(#badgeF1)" />
   <path d="M 275.84 328.19 C 279.46 329.70, 283.17 331.23, 286.88 332.81 C 295.64 336.53, 304.38 340.50, 311.94 344.92 C 317.40 348.10, 321.96 351.97, 325.82 353.56 C 329.40 355.04, 333.13 355.57, 337.42 354.98 C 344.54 354.02, 358.93 351.33, 345.05 343.46 C 339.02 340.03, 329.36 336.06, 324.99 334.20 C 316.35 330.52, 307.63 327.17, 298.04 324.30 C 288.60 321.47, 278.95 319.44, 269.66 319.95 C 265.68 320.17, 262.05 320.71, 261.96 322.00 C 261.84 323.59, 273.56 327.25, 275.84 328.19" fill="url(#badgeF2)" />
   <path d="M 325.05 319.56 C 333.03 320.64, 340.84 322.01, 349.57 323.88 C 358.91 325.90, 368.17 328.32, 375.04 331.44 C 377.21 332.42, 378.39 333.32, 375.95 335.77 C 374.00 337.72, 371.74 338.77, 368.15 339.48 C 358.17 341.46, 347.01 335.61, 336.61 332.00 C 327.01 328.66, 317.36 325.58, 307.37 323.30 C 304.38 322.62, 301.05 322.23, 298.98 321.33 C 294.58 319.41, 298.83 318.71, 304.00 318.51 C 310.55 318.26, 318.54 318.68, 325.05 319.56" fill="url(#badgeF3)" />
