@@ -803,10 +803,13 @@ function App() {
 
             {/* PRODUTO 2: FERTILIZANTE ORGANOMINERAL CLASSE “A” — VITAPHOS MAX + ARTE QIMA */}
             <div className="product-feature-block vitaphos-highlight-block">
+              <div className="vitaphos-full-header">
+                <span className="pf-badge gold-badge">{siteConfig.productsSection.vitaphosMax.badge}</span>
+                <h3 className="pf-title light-title">{siteConfig.productsSection.vitaphosMax.title}</h3>
+              </div>
+
               <div className="vitaphos-grid">
                 <div className="vitaphos-content-col">
-                  <span className="pf-badge gold-badge">{siteConfig.productsSection.vitaphosMax.badge}</span>
-                  <h3 className="pf-title light-title">{siteConfig.productsSection.vitaphosMax.title}</h3>
                   <p className="pf-subtitle gold-subtitle">{siteConfig.productsSection.vitaphosMax.subtitle}</p>
 
                   {siteConfig.productsSection.vitaphosMax.paragraphs.map((p, i) => (
@@ -824,9 +827,24 @@ function App() {
                       </li>
                     ))}
                   </ul>
+                </div>
 
-                  {/* Bloco Certificado para uso na Agricultura Orgânica */}
-                  <div className="vitaphos-qima-box">
+                {/* Arte Oficial do Produto Certificado QIMA Alinhada com o Texto */}
+                <div className="vitaphos-art-col">
+                  <div className="vitaphos-poster-card">
+                    <img
+                      src={siteConfig.productsSection.vitaphosMax.artImage}
+                      alt="Vitaphos Max — Insumo Aprovado para Uso na Agricultura Orgânica — Regenera QIMA"
+                      className="vitaphos-poster-img"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Card Inferior de Largura Total: Certificado para uso na Agricultura Orgânica + Cotação */}
+              <div className="vitaphos-qima-box vitaphos-qima-full-card">
+                <div className="vq-full-grid">
+                  <div className="vq-full-info">
                     <div className="vq-header">
                       <Icon name="ShieldCheck" className="vq-icon text-gold" />
                       <div>
@@ -845,50 +863,41 @@ function App() {
                         ))}
                       </div>
                     </div>
+                  </div>
 
-                    <div className="vq-actions">
+                  <div className="vq-full-cta">
+                    <span className="vq-audit-caption">
+                      ✅ Insumo auditado e aprovado pela QIMA (Norma Regenera For Inputs &amp; Produção Orgânica)
+                    </span>
+                    <a
+                      href={createWhatsappUrl(
+                        "Olá! Quero saber mais e solicitar cotação do *Vitaphos Max* (Fertilizante Organomineral Classe 'A' aprovado para Agricultura Orgânica - QIMA)."
+                      )}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="btn btn-primary btn-full btn-glow"
+                    >
+                      <Icon name="whatsapp" className="icon-btn" />
+                      <span>Solicitar Cotação do Vitaphos Max</span>
+                    </a>
+                    <div className="vq-pdf-buttons-row">
                       <a
                         href={siteConfig.vitaphosDeclarationUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="btn btn-primary btn-glow"
+                        className="btn btn-secondary btn-full"
                       >
-                        <Icon name="FileText" className="icon-btn" />
-                        <span>Ver Declaração QIMA — Vitaphos Max (PDF)</span>
+                        <Icon name="FileText" className="icon-btn text-gold" />
+                        <span>Ver Declaração QIMA (PDF)</span>
                       </a>
                       <a
                         href={siteConfig.certificateUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="btn btn-secondary"
+                        className="btn btn-secondary btn-full"
                       >
                         <Icon name="ShieldCheck" className="icon-btn text-gold" />
-                        <span>Ver Certificado Regenera QIMA (PDF)</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Arte Oficial do Produto Certificado QIMA (rId10 do documento) */}
-                <div className="vitaphos-art-col">
-                  <div className="vitaphos-poster-card">
-                    <img
-                      src={siteConfig.productsSection.vitaphosMax.artImage}
-                      alt="Vitaphos Max — Insumo Aprovado para Uso na Agricultura Orgânica — Regenera QIMA"
-                      className="vitaphos-poster-img"
-                    />
-                    <div className="vitaphos-poster-caption">
-                      <span>✅ Insumo auditado e aprovado pela QIMA (Norma Regenera For Inputs &amp; Produção Orgânica)</span>
-                      <a
-                        href={createWhatsappUrl(
-                          "Olá! Quero saber mais e solicitar cotação do *Vitaphos Max* (Fertilizante Organomineral Classe 'A' aprovado para Agricultura Orgânica - QIMA)."
-                        )}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="btn btn-primary btn-full"
-                      >
-                        <Icon name="whatsapp" className="icon-btn" />
-                        <span>Solicitar Cotação do Vitaphos Max</span>
+                        <span>Ver Certificado Regenera (PDF)</span>
                       </a>
                     </div>
                   </div>
@@ -1225,38 +1234,43 @@ function App() {
         <section className="section section-specialist" id="especialista">
           <div className="container">
             <div className="specialist-banner-card">
-              <div className="specialist-content">
+              <div className="specialist-header">
                 <span className="section-tag">{siteConfig.specialistSection.tag}</span>
                 <h2 className="section-title">{siteConfig.specialistSection.title}</h2>
-                <p className="specialist-lead">{siteConfig.specialistSection.subtitle}</p>
-
-                {siteConfig.specialistSection.paragraphs.map((p, i) => (
-                  <p className="specialist-p" key={i}>{p}</p>
-                ))}
-
-                <strong className="specialist-signature">{siteConfig.specialistSection.signature}</strong>
               </div>
 
-              <div className="specialist-cta-col">
-                <div className="specialist-action-box">
-                  <Icon name="Users" className="spec-box-icon" />
-                  <h3>Orientação Técnica Personalizada</h3>
-                  <p>Converse diretamente com a equipe da Vitadubo pelo WhatsApp ou Telefone:</p>
-                  <a href={`tel:${siteConfig.phoneRaw}`} className="spec-phone-big">
-                    <Icon name="phone" className="icon-sm" />
-                    <span>{siteConfig.phoneDisplay}</span>
-                  </a>
-                  <a
-                    href={createWhatsappUrl(
-                      "Olá! Gostaria de falar com um especialista da Vitadubo Fertilizantes para orientação nutricional da minha lavoura."
-                    )}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="btn btn-primary btn-lg btn-full btn-glow"
-                  >
-                    <Icon name="whatsapp" className="icon-btn" />
-                    <span>{siteConfig.specialistSection.ctaButton}</span>
-                  </a>
+              <div className="specialist-body-grid">
+                <div className="specialist-content">
+                  <p className="specialist-lead">{siteConfig.specialistSection.subtitle}</p>
+
+                  {siteConfig.specialistSection.paragraphs.map((p, i) => (
+                    <p className="specialist-p" key={i}>{p}</p>
+                  ))}
+
+                  <strong className="specialist-signature">{siteConfig.specialistSection.signature}</strong>
+                </div>
+
+                <div className="specialist-cta-col">
+                  <div className="specialist-action-box">
+                    <Icon name="Users" className="spec-box-icon" />
+                    <h3>Orientação Técnica Personalizada</h3>
+                    <p>Converse diretamente com a equipe da Vitadubo pelo WhatsApp ou Telefone:</p>
+                    <a href={`tel:${siteConfig.phoneRaw}`} className="spec-phone-big">
+                      <Icon name="phone" className="icon-sm" />
+                      <span>{siteConfig.phoneDisplay}</span>
+                    </a>
+                    <a
+                      href={createWhatsappUrl(
+                        "Olá! Gostaria de falar com um especialista da Vitadubo Fertilizantes para orientação nutricional da minha lavoura."
+                      )}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="btn btn-primary btn-lg btn-full btn-glow"
+                    >
+                      <Icon name="whatsapp" className="icon-btn" />
+                      <span>{siteConfig.specialistSection.ctaButton}</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

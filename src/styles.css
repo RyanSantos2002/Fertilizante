@@ -1840,14 +1840,15 @@ img {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: 32px;
-  align-items: start;
+  align-items: stretch;
   margin-top: 24px;
 }
 
 .pf-benefits-list-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
 }
 
 .pf-benefit-item {
@@ -1856,10 +1857,10 @@ img {
   gap: 12px;
   background: #ffffff;
   border: 1px solid var(--line-warm);
-  padding: 13px 16px;
+  padding: 10px 14px;
   border-radius: var(--radius-md);
-  font-size: 13.8px;
-  line-height: 1.5;
+  font-size: 13.5px;
+  line-height: 1.45;
 }
 
 .pf-benefit-item strong {
@@ -1885,16 +1886,21 @@ img {
 .pf-media-sidebar {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  justify-content: space-between;
+  gap: 18px;
 }
 
 .folder-download-card {
   background: linear-gradient(135deg, var(--forest-950) 0%, var(--forest-850) 100%);
   border: 2px solid var(--gold-400);
   border-radius: var(--radius-lg);
-  padding: 26px;
+  padding: 24px;
   color: #ffffff;
   box-shadow: var(--shadow-lg);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .folder-card-info {
@@ -1944,10 +1950,18 @@ img {
   color: #ffffff;
 }
 
+.vitaphos-full-header {
+  margin-bottom: 22px;
+}
+
+.vitaphos-full-header .pf-title {
+  margin-bottom: 0;
+}
+
 .vitaphos-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
-  gap: 38px;
+  gap: 34px;
   align-items: stretch;
 }
 
@@ -1964,15 +1978,17 @@ img {
 .vitaphos-subhead {
   font-size: 18px;
   color: var(--gold-300);
-  margin: 22px 0 12px;
+  margin: 18px 0 12px;
 }
 
 .vitaphos-diff-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 24px;
+  margin: 0;
+  flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 10px;
 }
 
@@ -1983,7 +1999,7 @@ img {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.88);
   background: rgba(255, 255, 255, 0.04);
-  padding: 11px 14px;
+  padding: 12px 15px;
   border-radius: var(--radius-sm);
   border: 1px solid rgba(223, 186, 107, 0.14);
 }
@@ -1999,8 +2015,48 @@ img {
   background: rgba(223, 186, 107, 0.1);
   border: 1.5px solid var(--gold-400);
   border-radius: var(--radius-md);
-  padding: 22px;
-  margin-top: auto;
+  padding: 24px 28px;
+}
+
+.vitaphos-qima-full-card {
+  margin-top: 28px;
+}
+
+.vq-full-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.vq-full-cta {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(223, 186, 107, 0.25);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vq-audit-caption {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--gold-200);
+  text-align: center;
+  line-height: 1.45;
+}
+
+.vq-pdf-buttons-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.vq-pdf-buttons-row .btn {
+  padding: 10px 12px;
+  font-size: 12.5px;
 }
 
 .vq-header {
@@ -2046,7 +2102,7 @@ img {
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
-  margin: 14px 0 18px;
+  margin: 14px 0 0;
 }
 
 .vq-norms-row small {
@@ -2079,22 +2135,22 @@ img {
 .vitaphos-poster-card {
   background: #ffffff;
   border-radius: var(--radius-lg);
-  padding: 14px;
+  padding: 12px;
   border: 2px solid var(--gold-400);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
   height: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
 }
 
 .vitaphos-poster-img {
   width: 100%;
-  height: auto;
-  flex: 1;
-  object-fit: cover;
+  height: 100%;
+  max-height: 490px;
+  object-fit: contain;
   border-radius: var(--radius-md);
-  margin-bottom: 14px;
+  margin-bottom: 0;
 }
 
 .vitaphos-poster-caption {
@@ -2699,16 +2755,17 @@ img {
 .qima-cert-actions {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 14px;
+  justify-content: center;
+  gap: 12px;
   background: rgba(0, 0, 0, 0.25);
-  padding: 22px;
+  padding: 18px 22px;
   border-radius: var(--radius-md);
   border: 1px solid rgba(223, 186, 107, 0.22);
 }
 
 .qima-cert-actions .btn {
-  flex: 1;
+  padding: 12px 18px;
+  font-size: 13.5px;
 }
 
 .qima-seal-box {
@@ -2836,15 +2893,25 @@ img {
 }
 
 .specialist-banner-card {
-  display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
-  gap: 36px;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
   background: var(--bg-tint);
   border: 2px solid var(--gold-400);
   border-radius: var(--radius-lg);
   padding: 42px;
   box-shadow: var(--shadow-md);
+}
+
+.specialist-header .section-title {
+  margin-bottom: 0;
+}
+
+.specialist-body-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 36px;
+  align-items: center;
 }
 
 .specialist-lead {
@@ -3337,10 +3404,11 @@ img {
   .study-chart-and-table-grid,
   .pf-organic-grid,
   .vitaphos-grid,
+  .vq-full-grid,
   .custom-organo-grid,
   .npk-work-and-form-grid,
   .qima-cert-aligned-grid,
-  .specialist-banner-card,
+  .specialist-body-grid,
   .partner-main-grid {
     grid-template-columns: 1fr;
     gap: 32px;
