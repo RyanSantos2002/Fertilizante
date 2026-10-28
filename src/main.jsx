@@ -907,10 +907,13 @@ function App() {
 
             {/* PRODUTO 3: FERTILIZANTES ORGANOMINERAIS CLASSE “A” — VITADUBO (FORMULAÇÃO PERSONALIZADA) */}
             <div className="product-feature-block custom-organo-block">
+              <div className="custom-organo-full-header">
+                <span className="pf-badge">{siteConfig.productsSection.organomineralCustom.badge}</span>
+                <h3 className="pf-title">{siteConfig.productsSection.organomineralCustom.title}</h3>
+              </div>
+
               <div className="custom-organo-grid">
-                <div>
-                  <span className="pf-badge">{siteConfig.productsSection.organomineralCustom.badge}</span>
-                  <h3 className="pf-title">{siteConfig.productsSection.organomineralCustom.title}</h3>
+                <div className="custom-organo-content-col">
                   <p className="pf-subtitle">{siteConfig.productsSection.organomineralCustom.subtitle}</p>
 
                   {siteConfig.productsSection.organomineralCustom.paragraphs.map((p, i) => (
@@ -931,19 +934,23 @@ function App() {
                 </div>
 
                 <div className="organo-closing-card">
-                  <span className="organo-closing-tag">SOB MEDIDA PARA O SEU SOLO</span>
-                  <h4>{siteConfig.productsSection.organomineralCustom.closingTitle}</h4>
-                  <p>{siteConfig.productsSection.organomineralCustom.closingText}</p>
-                  <strong className="organo-closing-sig">
-                    {siteConfig.productsSection.organomineralCustom.closingSignature}
-                  </strong>
-                  <p className="organo-closing-cta-note">
-                    Solicite sua formulação personalizada e converse com nossa equipe comercial.
-                  </p>
-                  <a href="#formule-npk" className="btn btn-primary btn-full btn-glow">
-                    <span>Formular Meu NPK Agora</span>
-                    <Icon name="arrow-right" className="icon-btn" />
-                  </a>
+                  <div className="organo-closing-top">
+                    <span className="organo-closing-tag">SOB MEDIDA PARA O SEU SOLO</span>
+                    <h4>{siteConfig.productsSection.organomineralCustom.closingTitle}</h4>
+                    <p>{siteConfig.productsSection.organomineralCustom.closingText}</p>
+                    <strong className="organo-closing-sig">
+                      {siteConfig.productsSection.organomineralCustom.closingSignature}
+                    </strong>
+                  </div>
+                  <div className="organo-closing-bottom">
+                    <p className="organo-closing-cta-note">
+                      Solicite sua formulação personalizada e converse com nossa equipe comercial.
+                    </p>
+                    <a href="#formule-npk" className="btn btn-primary btn-full btn-glow">
+                      <span>Formular Meu NPK Agora</span>
+                      <Icon name="arrow-right" className="icon-btn" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
