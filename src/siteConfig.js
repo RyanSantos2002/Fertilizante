@@ -4,8 +4,8 @@
 
 export const siteConfig = {
   // Informações da Empresa & Marca
-  companyName: "VITADUBO Fertilizantes",
-  companyLegalName: "Vitadubo Fertilizantes Ltda",
+  companyName: "Vitadubo Fertilizantes",
+  companyLegalName: "Vitadubo Fertilizantes Ltda.",
   cnpj: "42.493.126/0001-95",
   companyBadge: "100% BRASILEIRA • PADRÃO EXPORTAÇÃO",
   companySubtitle: "INDÚSTRIA DE FERTILIZANTES ORGÂNICOS E ORGANOMINERAIS",
@@ -45,6 +45,9 @@ export const siteConfig = {
     institutionalId: "17FZiOCBrxc",
     institutionalUrl: "https://www.youtube.com/watch?v=17FZiOCBrxc",
     institutionalEmbed: "https://www.youtube.com/embed/17FZiOCBrxc",
+    turkeyManureId: "9Qha-hzVI7E",
+    turkeyManureUrl: "https://www.youtube.com/watch?v=9Qha-hzVI7E",
+    turkeyManureEmbed: "https://www.youtube.com/embed/9Qha-hzVI7E",
     productId: "IDMpCt-YUBM",
     productUrl: "https://www.youtube.com/watch?v=IDMpCt-YUBM",
     productEmbed: "https://www.youtube.com/embed/IDMpCt-YUBM"
@@ -54,7 +57,7 @@ export const siteConfig = {
   hero: {
     eyebrow: "TECNOLOGIA, NATUREZA E COMPROMISSO COM O CAMPO",
     titleLine1: "Nutrição que transforma o solo.",
-    titleLine2: "Tecnologia que impulsiona o agro.",
+    titleLine2: "Tecnologia que impulsiona a agricultura.",
     paragraph1:
       "Desenvolvemos soluções em fertilizantes que unem matéria-prima orgânica, conhecimento técnico e processos de transformação para contribuir com a fertilidade do solo e o desenvolvimento das culturas.",
     paragraph2:
@@ -366,7 +369,7 @@ export const siteConfig = {
       title: "Fertilizantes Organominerais Classe “A” — Vitadubo",
       subtitle: "Uma formulação personalizada para a necessidade de cada lavoura.",
       paragraphs: [
-        "A Vitadubo Fertilizantes desenvolve fertilizantes organominerais à base de esterco de peru, combinando matéria orgânica com fontes minerais de nutrientes para oferecer soluções personalizadas às necessidades do agronegócio.",
+        "A Vitadubo Fertilizantes desenvolve fertilizantes organominerais à base de esterco de peru, combinando matéria orgânica com fontes minerais de nutrientes para oferecer soluções personalizadas às necessidades da agricultura.",
         "Aqui, a formulação NPK pode ser definida conforme a necessidade de cada cliente. Trabalhamos com diferentes fontes de nutrientes, como sulfato de amônio, superfosfato triplo e cloreto de potássio (KCl), permitindo desenvolver formulações específicas de nitrogênio (N), fósforo (P) e potássio (K), conforme a viabilidade técnica e as especificações desejadas."
       ],
       tagline: "Seu fertilizante. Sua formulação. Sua necessidade.",
@@ -469,7 +472,7 @@ export const siteConfig = {
     scope:
       "Produção e Comercialização de Fertilizantes e Condicionadores de Solo para uso na Agricultura Regenerativa e na Produção Orgânica (Normas BR, BD, CA, CE, IB, JP e US).",
     description:
-      "A Vitadubo Fertilizantes Ltda (Código I-0240SC) possui Certificado de Conformidade (Nº REG0048/26) e Declaração de Conformidade do insumo Vitaphos MAX (Nº AI1401/26) emitidos pela QIMA, auditando método de produção, matérias-primas nobres, controle de contaminantes e rastreabilidade integral."
+      "A Vitadubo Fertilizantes Ltda. (Código I-0240SC) possui Certificado de Conformidade (Nº REG0048/26) e Declaração de Conformidade do insumo Vitaphos MAX (Nº AI1401/26) emitidos pela QIMA, auditando método de produção, matérias-primas nobres, controle de contaminantes e rastreabilidade integral."
   },
 
   labReport: {
@@ -534,7 +537,7 @@ export const siteConfig = {
       "Precisa de uma formulação NPK personalizada? Converse conosco! Desenvolvemos opções de fertilizantes organominerais conforme as necessidades do cliente e a viabilidade técnica de fabricação.",
       "Entre em contato com a Vitadubo e descubra como nossas soluções podem fazer parte do manejo nutricional da sua lavoura."
     ],
-    signature: "Vitadubo Fertilizantes — atendimento próximo, soluções personalizadas e compromisso com o agronegócio.",
+    signature: "Vitadubo Fertilizantes — atendimento próximo, soluções personalizadas e compromisso com a agricultura.",
     ctaButton: "FALE COM NOSSA EQUIPE"
   },
 
@@ -573,17 +576,17 @@ export const siteConfig = {
     whoTitle: "Quem buscamos?",
     whoText1:
       "Representantes comerciais, lojas agropecuárias, cooperativas, distribuidores e empresas que desejam ampliar seu portfólio com soluções em fertilizantes.",
-    whoText2: "Se você atua no agronegócio e busca novas oportunidades de negócio, queremos conhecer você.",
+    whoText2: "Se você atua na agricultura e busca novas oportunidades de negócio, queremos conhecer você.",
     growTitle: "Vamos crescer juntos?",
     growText:
       "Preencha o formulário de contato e informe sua cidade, região de atuação e interesse comercial. Nossa equipe entrará em contato para avaliar as possibilidades de parceria.",
-    signature: "Vitadubo Fertilizantes — conectando soluções, parceiros e oportunidades no agronegócio.",
+    signature: "Vitadubo Fertilizantes — conectando soluções, parceiros e oportunidades na agricultura.",
     ctaButton: "QUERO SER PARCEIRO VITADUBO"
   },
 
   // Rodapé Oficial
   footerDescription:
-    "VITADUBO Fertilizantes Ltda (CNPJ 42.493.126/0001-95) — Indústria de Fertilizantes Orgânicos e Organominerais à base de Esterco de Peru. Sede: SC 157 | KM 89 | Cordilheira Alta/SC | CEP 89.819-000.",
+    "Vitadubo Fertilizantes Ltda. (CNPJ 42.493.126/0001-95) — Indústria de Fertilizantes Orgânicos e Organominerais à base de Esterco de Peru. Sede: SC 157 | KM 89 | Cordilheira Alta/SC | CEP 89.819-000.",
   cnpjText: "CNPJ: 42.493.126/0001-95 • Certificada QIMA Regenera & MAPA • Padrão Exportação",
-  copyright: `© ${new Date().getFullYear()} VITADUBO FERTILIZANTES LTDA. Todos os direitos reservados.`
+  copyright: `© ${new Date().getFullYear()} Vitadubo Fertilizantes Ltda. Todos os direitos reservados.`
 };

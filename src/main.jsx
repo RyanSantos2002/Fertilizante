@@ -465,6 +465,37 @@ function App() {
               <p className="diferencial-intro-text">{siteConfig.turkeyManure.intro}</p>
             </div>
 
+            {/* Vídeo Oficial: Esterco de Peru */}
+            <div className="turkey-video-showcase">
+              <div className="video-card-frame">
+                <div className="video-badge-header">
+                  <span className="video-live-dot" />
+                  <strong>VÍDEO TÉCNICO — POR QUE O ESTERCO DE PERU ENTREGA MAIS RESULTADOS?</strong>
+                </div>
+                <div className="video-responsive-embed">
+                  <iframe
+                    src={siteConfig.videos.turkeyManureEmbed}
+                    title="Por que a base de esterco de peru entrega mais resultados? — Vitadubo Fertilizantes"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    loading="lazy"
+                  />
+                </div>
+                <div className="video-card-footer">
+                  <span>Assista e entenda o diferencial da matéria-prima à base de esterco de peru da Vitadubo.</span>
+                  <a
+                    href={siteConfig.videos.turkeyManureUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="video-ext-link"
+                  >
+                    Abrir no YouTube ↗
+                  </a>
+                </div>
+              </div>
+            </div>
+
             {/* Bloco Visual: Infográfico Oficial "Por quê o esterco de peru é melhor?" */}
             <div className="aviary-infographic-wrapper">
               <div className="aviary-infographic-header">
@@ -1198,7 +1229,7 @@ function App() {
                 <div className="qima-meta-grid">
                   <div className="qima-meta-item">
                     <small>Unidade Responsável Auditada</small>
-                    <strong>Vitadubo Fertilizantes Ltda (CNPJ: {siteConfig.cnpj})</strong>
+                    <strong>Vitadubo Fertilizantes Ltda. (CNPJ: {siteConfig.cnpj})</strong>
                   </div>
                   <div className="qima-meta-item">
                     <small>Norma &amp; Sustentabilidade</small>

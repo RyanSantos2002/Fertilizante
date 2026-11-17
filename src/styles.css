@@ -1083,6 +1083,11 @@ img {
   line-height: 1.65;
 }
 
+.turkey-video-showcase {
+  max-width: 860px;
+  margin: 0 auto 44px;
+}
+
 .aviary-infographic-wrapper {
   background: #ffffff;
   border: 1px solid var(--line-warm);
